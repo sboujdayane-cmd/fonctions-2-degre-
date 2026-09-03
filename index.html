@@ -20,11 +20,10 @@
   --muted:#657987;
   --border:#cbdce8;
   --bg:#f4f8fb;
-  --shadow:0 8px 25px rgba(16,47,70,.10);
+  --shadow:0 8px 25px rgba(16,47,70,.10)
 }
 
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -32,11 +31,10 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
   color:var(--text);
-  line-height:1.55;
+  line-height:1.55
 }
 
 button,input,select,textarea{font:inherit}
-
 button{cursor:pointer}
 
 button:focus-visible,
@@ -44,7 +42,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible{
   outline:3px solid #ffbd40;
-  outline-offset:3px;
+  outline-offset:3px
 }
 
 header{
@@ -53,7 +51,7 @@ header{
   z-index:30;
   background:linear-gradient(135deg,var(--navy),#17608f);
   color:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,.15);
+  box-shadow:0 4px 12px rgba(0,0,0,.15)
 }
 
 .header-inner{
@@ -63,17 +61,17 @@ header{
   display:flex;
   justify-content:space-between;
   gap:20px;
-  align-items:center;
+  align-items:center
 }
 
 header h1{
   margin:0;
-  font-size:1.2rem;
+  font-size:1.2rem
 }
 
 .small{
   font-size:.86rem;
-  color:var(--muted);
+  color:var(--muted)
 }
 
 header .small{color:#dceefa}
@@ -84,14 +82,14 @@ header .small{color:#dceefa}
   height:10px;
   background:#ffffff35;
   border-radius:999px;
-  overflow:hidden;
+  overflow:hidden
 }
 
 .progress>div{
   height:100%;
   width:0;
   background:#58dd9a;
-  transition:.3s;
+  transition:.3s
 }
 
 nav{
@@ -100,7 +98,7 @@ nav{
   z-index:25;
   background:#fff;
   border-bottom:1px solid var(--border);
-  overflow-x:auto;
+  overflow-x:auto
 }
 
 .nav{
@@ -108,7 +106,7 @@ nav{
   margin:auto;
   padding:8px;
   display:flex;
-  gap:5px;
+  gap:5px
 }
 
 .nav button{
@@ -118,19 +116,19 @@ nav{
   padding:10px 12px;
   border-radius:9px;
   white-space:nowrap;
-  font-weight:700;
+  font-weight:700
 }
 
 .nav button:hover,
 .nav button.active{
   background:var(--light);
-  color:#07598e;
+  color:#07598e
 }
 
 main{
   max-width:1250px;
   margin:24px auto;
-  padding:0 16px 70px;
+  padding:0 16px 70px
 }
 
 .page{display:none}
@@ -139,42 +137,39 @@ main{
 h2{
   color:var(--navy);
   font-size:1.9rem;
-  margin-top:0;
+  margin-top:0
 }
 
 h3,h4{color:var(--navy)}
 
-.hero,
-.panel,
-.card{
+.hero,.panel,.card{
   background:#fff;
   border:1px solid var(--border);
   border-radius:17px;
-  box-shadow:var(--shadow);
+  box-shadow:var(--shadow)
 }
 
 .hero{padding:30px}
 .panel{padding:22px;margin-bottom:18px}
 .card{padding:18px}
 
-.hero-grid,
-.grid2{
+.hero-grid,.grid2{
   display:grid;
   grid-template-columns:1.12fr 1fr;
   gap:25px;
-  align-items:start;
+  align-items:start
 }
 
 .grid3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  gap:15px
 }
 
 .grid4{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;
+  gap:14px
 }
 
 .btn{
@@ -182,7 +177,7 @@ h3,h4{color:var(--navy)}
   border-radius:10px;
   padding:11px 16px;
   min-height:44px;
-  font-weight:700;
+  font-weight:700
 }
 
 .btn-primary{background:var(--blue);color:#fff}
@@ -194,27 +189,27 @@ h3,h4{color:var(--navy)}
 
 .btn:disabled{
   opacity:.55;
-  cursor:not-allowed;
+  cursor:not-allowed
 }
 
 .actions{
   display:flex;
   flex-wrap:wrap;
   gap:9px;
-  margin-top:14px;
+  margin-top:14px
 }
 
 .skillbox{
   background:#eaf8f0;
   border-left:5px solid var(--green);
   border-radius:10px;
-  padding:16px;
+  padding:16px
 }
 
 .notice{
   border-radius:11px;
   padding:14px 16px;
-  margin:12px 0;
+  margin:12px 0
 }
 
 .info{background:#eaf5fc;border-left:5px solid var(--blue)}
@@ -229,13 +224,13 @@ h3,h4{color:var(--navy)}
   padding:12px;
   background:#f2f6f9;
   border-radius:9px;
-  margin:10px 0;
+  margin:10px 0
 }
 
 .chips{
   display:flex;
   flex-wrap:wrap;
-  gap:7px;
+  gap:7px
 }
 
 .chip,.badge{
@@ -243,7 +238,7 @@ h3,h4{color:var(--navy)}
   border-radius:999px;
   padding:5px 10px;
   font-size:.82rem;
-  font-weight:700;
+  font-weight:700
 }
 
 .chip{background:var(--light)}
@@ -251,6 +246,7 @@ h3,h4{color:var(--navy)}
 .badge-green{background:#e5f6ed;color:#126b43}
 .badge-orange{background:#fff0d5;color:#875400}
 .badge-purple{background:#eee8ff;color:#593ca3}
+.badge-red{background:#fdebec;color:#a32424}
 
 input[type=text],
 input[type=number],
@@ -261,12 +257,12 @@ textarea{
   color:var(--text);
   border-radius:8px;
   padding:10px;
-  min-height:44px;
+  min-height:44px
 }
 
 textarea{
   width:100%;
-  min-height:110px;
+  min-height:110px
 }
 
 .answer-row{
@@ -274,42 +270,193 @@ textarea{
   flex-wrap:wrap;
   gap:10px;
   align-items:end;
-  margin:14px 0;
+  margin:14px 0
 }
 
 .answer-row label{
   display:block;
   font-weight:700;
-  margin-bottom:5px;
+  margin-bottom:5px
 }
 
 .hidden{display:none!important}
 
 /* ACCUEIL */
+
 .hero-illustration{
   background:linear-gradient(160deg,#eaf5fc,#fff);
   padding:15px;
-  border-radius:15px;
+  border-radius:15px
+}
+
+/* VIDÉO COURS */
+
+.video-shell{
+  background:#061423;
+  color:#fff;
+  border-radius:18px;
+  overflow:hidden
+}
+
+.video-screen{
+  min-height:400px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  background:
+    radial-gradient(circle at 85% 15%,#1a6899 0,#0e3e63 30%,#061423 70%)
+}
+
+.video-slide{
+  width:min(900px,100%);
+  text-align:center
+}
+
+.video-section{
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#9ed8ff;
+  font-weight:700;
+  font-size:.82rem
+}
+
+.video-title{
+  font-size:1.9rem;
+  font-weight:800;
+  margin:8px 0
+}
+
+.video-formula{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:1.65rem;
+  background:#ffffff15;
+  border:1px solid #ffffff35;
+  padding:15px;
+  border-radius:12px;
+  margin:15px 0
+}
+
+.video-text{
+  max-width:820px;
+  margin:auto;
+  text-align:left;
+  background:#06142388;
+  padding:15px 18px;
+  border-radius:10px
+}
+
+.video-controls{
+  padding:15px;
+  background:#050f1a
+}
+
+.video-progress{
+  height:8px;
+  background:#ffffff20;
+  border-radius:999px;
+  overflow:hidden;
+  margin-bottom:12px
+}
+
+.video-progress div{
+  height:100%;
+  background:#55baff;
+  transition:.3s
+}
+
+.video-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center
+}
+
+.video-buttons button{
+  background:#102a40;
+  color:#fff;
+  border:1px solid #33566f;
+  border-radius:8px;
+  padding:9px 12px;
+  min-height:42px
+}
+
+.video-settings{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:12px
+}
+
+.video-settings label{
+  display:block;
+  color:#d4e9f8;
+  font-size:.88rem;
+  margin-bottom:4px
+}
+
+.video-settings select{
+  width:100%;
+  background:#102a40;
+  color:#fff;
+  border-color:#3a627e
+}
+
+.video-chapters{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:7px;
+  margin-top:12px
+}
+
+.video-chapters button{
+  border:1px solid #33566f;
+  background:#102a40;
+  color:#fff;
+  border-radius:8px;
+  padding:9px
+}
+
+/* THÉORIE */
+
+.theory-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px
+}
+
+.theory-card{
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:18px;
+  background:#fff
+}
+
+.theory-card summary{
+  font-weight:800;
+  cursor:pointer;
+  color:var(--navy)
 }
 
 /* EXPLORATION */
+
 .controls{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:12px
 }
 
 .control{
   background:#f7fafc;
   border:1px solid var(--border);
   border-radius:11px;
-  padding:12px;
+  padding:12px
 }
 
 .control label{
   display:block;
   font-weight:700;
-  margin-bottom:5px;
+  margin-bottom:5px
 }
 
 .control input[type=range]{width:100%}
@@ -318,13 +465,13 @@ textarea{
   background:#fff;
   border:1px solid var(--border);
   border-radius:14px;
-  padding:10px;
+  padding:10px
 }
 
 .canvas-wrap{
   position:relative;
   overflow:auto;
-  width:100%;
+  width:100%
 }
 
 #graphCanvas{
@@ -334,7 +481,7 @@ textarea{
   height:auto;
   background:#fff;
   border-radius:9px;
-  touch-action:none;
+  touch-action:none
 }
 
 .graph-toolbar{
@@ -342,74 +489,87 @@ textarea{
   flex-wrap:wrap;
   gap:8px;
   margin-bottom:9px;
-  align-items:center;
+  align-items:center
 }
 
 .graph-toolbar label{
   display:flex;
   align-items:center;
   gap:5px;
-  font-size:.88rem;
+  font-size:.88rem
 }
 
 .precise-box{
   background:#f7fafc;
   padding:10px;
   border-radius:9px;
-  margin-top:10px;
-}
-
-.values-table{
-  max-height:350px;
-  overflow:auto;
-}
-
-/* CARTES */
-.lesson-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
-.lesson-card{
-  border:1px solid var(--border);
-  border-radius:13px;
-  background:#fff;
-  padding:18px;
-}
-
-.lesson-card summary{
-  cursor:pointer;
-  font-weight:800;
-  color:var(--navy);
+  margin-top:10px
 }
 
 /* EXERCICES */
+
+.level-selector{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:14px 0
+}
+
+.level-card{
+  border:2px solid var(--border);
+  background:#fff;
+  border-radius:12px;
+  padding:14px;
+  cursor:pointer;
+  text-align:left
+}
+
+.level-card.active{
+  border-color:var(--blue);
+  background:var(--light)
+}
+
 .exercise-box{
   background:#fbfdff;
   border:2px solid #dbeaf5;
   border-radius:15px;
-  padding:20px;
+  padding:20px
 }
 
 .exercise-box h3{
-  margin-top:10px;
+  margin-top:10px
 }
 
 .method-steps{
   margin:12px 0;
-  padding-left:20px;
+  padding-left:20px
 }
 
-.method-steps li{margin-bottom:7px}
+.method-steps li{
+  margin-bottom:7px
+}
+
+.level-progress{
+  height:10px;
+  background:#e3edf4;
+  border-radius:999px;
+  overflow:hidden;
+  margin:8px 0
+}
+
+.level-progress div{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--green))
+}
 
 /* QUIZ */
+
 .quiz-question{
   background:#fff;
   border:1px solid var(--border);
   border-radius:13px;
   padding:18px;
-  margin-bottom:12px;
+  margin-bottom:12px
 }
 
 .quiz-option{
@@ -420,58 +580,59 @@ textarea{
   border:2px solid transparent;
   padding:10px;
   border-radius:9px;
-  margin:7px 0;
+  margin:7px 0
 }
 
 .quiz-option:hover{border-color:var(--blue2)}
+
 .quiz-option.selected{
   border-color:var(--blue);
-  background:#eaf5fc;
+  background:#eaf5fc
 }
 
 /* PROGRÈS */
+
 .stat strong{
   display:block;
   color:var(--navy);
-  font-size:1.7rem;
+  font-size:1.7rem
 }
 
 .bar{
   height:13px;
   background:#e4edf3;
   border-radius:999px;
-  overflow:hidden;
+  overflow:hidden
 }
 
 .bar div{
   height:100%;
-  background:var(--blue);
+  background:var(--blue)
 }
 
-/* TABLE */
 table{
   width:100%;
-  border-collapse:collapse;
+  border-collapse:collapse
 }
 
 th,td{
   padding:9px;
   border-bottom:1px solid var(--border);
-  text-align:left;
+  text-align:left
 }
 
 th{background:#f2f6f9}
 
-/* RESPONSIVE */
 @media(max-width:850px){
   .hero-grid,.grid2,.grid3,.grid4,
-  .controls,.lesson-grid{
-    grid-template-columns:1fr;
+  .controls,.theory-grid,.video-settings,
+  .video-chapters,.level-selector{
+    grid-template-columns:1fr
   }
 
   .header-inner{
     align-items:flex-start;
-    flex-direction:column;
+    flex-direction:column
   }
 
   nav{top:111px}
@@ -480,8 +641,16 @@ th{background:#f2f6f9}
 
   .progressbox{
     min-width:0;
-    width:100%;
+    width:100%
   }
+
+  .video-screen{
+    min-height:320px;
+    padding:20px
+  }
+
+  .video-title{font-size:1.5rem}
+  .video-formula{font-size:1.25rem}
 }
 
 @media(max-width:500px){
@@ -495,27 +664,33 @@ th{background:#f2f6f9}
 
 <header>
 <div class="header-inner">
-  <div>
-    <h1>📐 Fonctions du 2e degré interactives – 4e secondaire</h1>
-    <div class="small">Graphiques • Sommet • Axe de symétrie • Zéros • Discriminant • Problèmes</div>
-  </div>
 
-  <div class="progressbox">
-    <div style="font-size:.83rem;margin-bottom:4px">
-      Progression globale : <span id="globalProgressText">0 %</span>
-    </div>
-    <div class="progress">
-      <div id="globalProgressBar"></div>
-    </div>
+<div>
+  <h1>📐 Fonctions du 2e degré interactives – 4e secondaire</h1>
+  <div class="small">
+    Théorie • Vidéo • Graphiques • Sommet • Discriminant • Zéros • Problèmes
   </div>
+</div>
+
+<div class="progressbox">
+  <div style="font-size:.83rem;margin-bottom:4px">
+    Progression globale :
+    <span id="globalProgressText">0 %</span>
+  </div>
+  <div class="progress">
+    <div id="globalProgressBar"></div>
+  </div>
+</div>
+
 </div>
 </header>
 
 <nav aria-label="Navigation principale">
 <div class="nav">
   <button data-page="home" class="active">Accueil</button>
+  <button data-page="course">Cours + vidéo</button>
   <button data-page="discover">Explorer</button>
-  <button data-page="understand">Comprendre</button>
+  <button data-page="theory">Synthèse</button>
   <button data-page="practice">S'entraîner</button>
   <button data-page="reason">Raisonner</button>
   <button data-page="quiz">Quiz final</button>
@@ -526,161 +701,316 @@ th{background:#f2f6f9}
 <main>
 
 <!-- ACCUEIL -->
+
 <section id="home" class="page active">
+
 <div class="hero">
+
 <div class="hero-grid">
 
 <div>
-  <div class="chips">
-    <span class="chip">Mathématiques</span>
-    <span class="chip">4e secondaire</span>
-    <span class="chip">Fonctions quadratiques</span>
-  </div>
 
-  <h2>Comprendre et maîtriser les fonctions du 2e degré</h2>
+<div class="chips">
+  <span class="chip">Mathématiques</span>
+  <span class="chip">4e secondaire</span>
+  <span class="chip">Fonctions quadratiques</span>
+</div>
 
-  <p>
-    Cette application permet d'observer une parabole, de lire précisément ses
-    coordonnées, de calculer son sommet, son axe de symétrie et ses zéros,
-    puis de résoudre des problèmes de niveau progressivement plus élevé.
-  </p>
+<h2>Comprendre et maîtriser les fonctions du 2e degré</h2>
 
-  <div class="skillbox">
-    <strong>À la fin, je serai capable de…</strong>
-    <ul>
-      <li>reconnaître une fonction du second degré ;</li>
-      <li>interpréter les coefficients a, b et c ;</li>
-      <li>déterminer le sommet et l'axe de symétrie ;</li>
-      <li>calculer et interpréter le discriminant ;</li>
-      <li>déterminer les zéros d'une fonction quadratique ;</li>
-      <li>relier une expression, un tableau et un graphique ;</li>
-      <li>résoudre un problème contextualisé.</li>
-    </ul>
-  </div>
+<p>
+Cette application te permet de découvrir les fonctions quadratiques,
+de manipuler leur graphique, d'apprendre la théorie avec une présentation
+animée et une voix de synthèse, puis de progresser grâce à des exercices
+de difficulté croissante.
+</p>
 
-  <div class="actions">
-    <button class="btn btn-primary" onclick="go('discover')">
-      Commencer l'activité
-    </button>
-    <button class="btn btn-purple" onclick="go('practice')">
-      Aller aux exercices
-    </button>
-  </div>
+<div class="skillbox">
+
+<strong>À la fin, je serai capable de…</strong>
+
+<ul>
+<li>reconnaître une fonction du second degré ;</li>
+<li>interpréter les coefficients a, b et c ;</li>
+<li>lire précisément une parabole dans un repère gradué ;</li>
+<li>déterminer le sommet et l'axe de symétrie ;</li>
+<li>calculer et interpréter le discriminant ;</li>
+<li>déterminer les zéros d'une fonction quadratique ;</li>
+<li>passer d'une expression à un graphique ;</li>
+<li>résoudre des problèmes contextualisés.</li>
+</ul>
+
+</div>
+
+<div class="actions">
+<button class="btn btn-primary" onclick="go('course')">
+🎬 Commencer le cours
+</button>
+
+<button class="btn btn-success" onclick="go('practice')">
+💪 Commencer les exercices
+</button>
+</div>
+
 </div>
 
 <div class="hero-illustration">
-<svg viewBox="0 0 520 360" role="img" aria-label="Parabole dans un repère gradué">
-  <rect width="520" height="360" rx="18" fill="#ffffff"/>
 
-  <g stroke="#e6eef4" stroke-width="1">
-    <line x1="60" y1="40" x2="60" y2="320"/>
-    <line x1="100" y1="40" x2="100" y2="320"/>
-    <line x1="140" y1="40" x2="140" y2="320"/>
-    <line x1="180" y1="40" x2="180" y2="320"/>
-    <line x1="220" y1="40" x2="220" y2="320"/>
-    <line x1="260" y1="40" x2="260" y2="320"/>
-    <line x1="300" y1="40" x2="300" y2="320"/>
-    <line x1="340" y1="40" x2="340" y2="320"/>
-    <line x1="380" y1="40" x2="380" y2="320"/>
-    <line x1="420" y1="40" x2="420" y2="320"/>
-    <line x1="460" y1="40" x2="460" y2="320"/>
+<svg viewBox="0 0 520 360"
+     role="img"
+     aria-label="Parabole dans un repère gradué">
 
-    <line x1="40" y1="80" x2="480" y2="80"/>
-    <line x1="40" y1="120" x2="480" y2="120"/>
-    <line x1="40" y1="160" x2="480" y2="160"/>
-    <line x1="40" y1="200" x2="480" y2="200"/>
-    <line x1="40" y1="240" x2="480" y2="240"/>
-    <line x1="40" y1="280" x2="480" y2="280"/>
-  </g>
+<rect width="520" height="360" rx="18" fill="#fff"/>
 
-  <line x1="40" y1="240" x2="480" y2="240" stroke="#102f46" stroke-width="2"/>
-  <line x1="260" y1="40" x2="260" y2="320" stroke="#102f46" stroke-width="2"/>
+<g stroke="#e6eef4">
+<line x1="60" y1="40" x2="60" y2="320"/>
+<line x1="100" y1="40" x2="100" y2="320"/>
+<line x1="140" y1="40" x2="140" y2="320"/>
+<line x1="180" y1="40" x2="180" y2="320"/>
+<line x1="220" y1="40" x2="220" y2="320"/>
+<line x1="260" y1="40" x2="260" y2="320"/>
+<line x1="300" y1="40" x2="300" y2="320"/>
+<line x1="340" y1="40" x2="340" y2="320"/>
+<line x1="380" y1="40" x2="380" y2="320"/>
+<line x1="420" y1="40" x2="420" y2="320"/>
+<line x1="460" y1="40" x2="460" y2="320"/>
 
-  <path d="M100 85 Q260 390 420 85"
-        fill="none"
-        stroke="#287fc1"
-        stroke-width="6"/>
+<line x1="40" y1="80" x2="480" y2="80"/>
+<line x1="40" y1="120" x2="480" y2="120"/>
+<line x1="40" y1="160" x2="480" y2="160"/>
+<line x1="40" y1="200" x2="480" y2="200"/>
+<line x1="40" y1="240" x2="480" y2="240"/>
+<line x1="40" y1="280" x2="480" y2="280"/>
+</g>
 
-  <circle cx="260" cy="285" r="7" fill="#20864e"/>
-  <text x="272" y="282" fill="#102f46" font-size="16">Sommet</text>
+<line x1="40" y1="240" x2="480" y2="240"
+      stroke="#102f46" stroke-width="2"/>
+
+<line x1="260" y1="40" x2="260" y2="320"
+      stroke="#102f46" stroke-width="2"/>
+
+<path d="M100 85 Q260 390 420 85"
+      fill="none"
+      stroke="#287fc1"
+      stroke-width="6"/>
+
+<circle cx="260" cy="285" r="7" fill="#20864e"/>
+
+<text x="272" y="282"
+      fill="#102f46"
+      font-size="16">
+Sommet
+</text>
+
 </svg>
+
 </div>
 
 </div>
 </div>
+
 </section>
 
-<!-- EXPLORER -->
-<section id="discover" class="page">
-<h2>1. Explorer une parabole</h2>
+<!-- COURS VIDEO -->
+
+<section id="course" class="page">
+
+<h2>1. Cours vidéo interactif</h2>
 
 <div class="panel">
-<p>On étudie la fonction :</p>
+
+<p>
+Cette présentation explique progressivement les notions essentielles.
+Active la voix pour entendre les explications. La voix utilisée dépend
+du navigateur et des voix françaises installées sur l'appareil.
+</p>
+
+<div class="video-shell">
+
+<div class="video-screen">
+  <div id="videoSlide" class="video-slide"></div>
+</div>
+
+<div class="video-controls">
+
+<div class="video-progress">
+  <div id="videoProgress"></div>
+</div>
+
+<div class="video-buttons">
+
+<button onclick="videoPrevious()">⏮ Précédent</button>
+
+<button id="videoPlayButton"
+        onclick="toggleVideo()">
+▶ Lecture
+</button>
+
+<button onclick="videoNext()">Suivant ⏭</button>
+
+<button onclick="repeatNarration()">🔁 Réécouter</button>
+
+<button id="voiceButton"
+        onclick="toggleNarration()">
+🔇 Activer la voix
+</button>
+
+<span id="videoCounter"></span>
+
+</div>
+
+<div class="video-settings">
+
+<div>
+<label for="voiceSelect">Voix française</label>
+<select id="voiceSelect">
+<option value="">Voix automatique</option>
+</select>
+</div>
+
+<div>
+<label for="speechRate">Vitesse</label>
+<select id="speechRate">
+<option value="0.75">Lente</option>
+<option value="0.9" selected>Normale</option>
+<option value="1.05">Rapide</option>
+</select>
+</div>
+
+</div>
+
+<div id="voiceStatus"
+     class="small"
+     style="margin-top:8px">
+</div>
+
+<div class="video-chapters">
+
+<button onclick="jumpVideo(0)">
+Introduction
+</button>
+
+<button onclick="jumpVideo(3)">
+Sommet
+</button>
+
+<button onclick="jumpVideo(7)">
+Discriminant
+</button>
+
+<button onclick="jumpVideo(11)">
+Zéros
+</button>
+
+<button onclick="jumpVideo(15)">
+Problèmes
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EXPLORATION -->
+
+<section id="discover" class="page">
+
+<h2>2. Explorer une parabole</h2>
+
+<div class="panel">
 
 <div class="formula">
-f(x) = ax² + bx + c
+f(x)=ax²+bx+c
 </div>
 
 <div class="controls">
 
 <div class="control">
-  <label for="sliderA">
-    a : <span id="valueA">1</span>
-  </label>
 
-  <input id="sliderA"
-         type="range"
-         min="-4"
-         max="4"
-         step="0.5"
-         value="1">
+<label for="sliderA">
+a :
+<span id="valueA">1</span>
+</label>
 
-  <div class="small">
-    Signe de a : sens d'ouverture.
-  </div>
+<input id="sliderA"
+       type="range"
+       min="-4"
+       max="4"
+       step="0.5"
+       value="1">
+
+<div class="small">
+Signe et ouverture de la parabole.
+</div>
+
 </div>
 
 <div class="control">
-  <label for="sliderB">
-    b : <span id="valueB">0</span>
-  </label>
 
-  <input id="sliderB"
-         type="range"
-         min="-10"
-         max="10"
-         step="0.5"
-         value="0">
+<label for="sliderB">
+b :
+<span id="valueB">0</span>
+</label>
 
-  <div class="small">
-    Influence la position horizontale du sommet.
-  </div>
+<input id="sliderB"
+       type="range"
+       min="-10"
+       max="10"
+       step="0.5"
+       value="0">
+
+<div class="small">
+Influence la position du sommet.
+</div>
+
 </div>
 
 <div class="control">
-  <label for="sliderC">
-    c : <span id="valueC">0</span>
-  </label>
 
-  <input id="sliderC"
-         type="range"
-         min="-10"
-         max="10"
-         step="0.5"
-         value="0">
+<label for="sliderC">
+c :
+<span id="valueC">0</span>
+</label>
 
-  <div class="small">
-    c = f(0), ordonnée à l'origine.
-  </div>
+<input id="sliderC"
+       type="range"
+       min="-10"
+       max="10"
+       step="0.5"
+       value="0">
+
+<div class="small">
+c=f(0), ordonnée à l'origine.
+</div>
+
 </div>
 
 </div>
 
 <div class="actions">
-  <button class="btn btn-secondary" onclick="resetGraph()">Réinitialiser</button>
-  <button class="btn btn-primary" onclick="randomFunction()">Nouvel exemple</button>
-  <button class="btn btn-warning" onclick="graphHint()">Indice</button>
+
+<button class="btn btn-secondary"
+        onclick="resetGraph()">
+Réinitialiser
+</button>
+
+<button class="btn btn-primary"
+        onclick="randomFunction()">
+Nouvel exemple
+</button>
+
+<button class="btn btn-warning"
+        onclick="graphHint()">
+Indice
+</button>
+
 </div>
+
 </div>
 
 <div class="grid2">
@@ -688,43 +1018,64 @@ f(x) = ax² + bx + c
 <div class="graph-shell">
 
 <div class="graph-toolbar">
-  <button class="btn btn-secondary" onclick="zoomGraph(1.25)">Zoom +</button>
-  <button class="btn btn-secondary" onclick="zoomGraph(0.8)">Zoom −</button>
 
-  <label>
-    <input id="showGrid" type="checkbox" checked>
-    grille
-  </label>
+<button class="btn btn-secondary"
+        onclick="zoomGraph(1.25)">
+Zoom +
+</button>
 
-  <label>
-    <input id="showMinorGrid" type="checkbox" checked>
-    demi-unités
-  </label>
+<button class="btn btn-secondary"
+        onclick="zoomGraph(0.8)">
+Zoom −
+</button>
 
-  <label>
-    <input id="showLabels" type="checkbox" checked>
-    étiquettes
-  </label>
+<label>
+<input id="showGrid"
+       type="checkbox"
+       checked>
+grille
+</label>
 
-  <label>
-    <input id="preciseMode" type="checkbox" checked>
-    lecture précise
-  </label>
+<label>
+<input id="showMinorGrid"
+       type="checkbox"
+       checked>
+demi-unités
+</label>
+
+<label>
+<input id="showLabels"
+       type="checkbox"
+       checked>
+coordonnées
+</label>
+
+<label>
+<input id="preciseMode"
+       type="checkbox"
+       checked>
+lecture précise
+</label>
+
 </div>
 
 <div class="canvas-wrap">
+
 <canvas id="graphCanvas"
         width="760"
-        height="560"
-        aria-label="Repère gradué avec la courbe d'une fonction du second degré">
+        height="560">
 </canvas>
+
 </div>
 
 <div class="precise-box">
-  <strong>Lecture précise :</strong>
-  <span id="pointerCoordinates">
-    déplace le pointeur dans le repère
-  </span>
+
+<strong>Lecture précise :</strong>
+
+<span id="pointerCoordinates">
+déplace le pointeur dans le repère
+</span>
+
 </div>
 
 </div>
@@ -732,213 +1083,419 @@ f(x) = ax² + bx + c
 <div>
 
 <div class="notice info">
-  <strong>J'observe</strong>
-  <div id="observation"></div>
+
+<strong>J'observe</strong>
+
+<div id="observation"></div>
+
 </div>
 
-<div class="panel" style="box-shadow:none">
+<div class="panel"
+     style="box-shadow:none">
+
 <h3>Caractéristiques</h3>
 
 <table>
 <tbody>
+
 <tr>
-  <th>Expression</th>
-  <td id="functionExpression"></td>
+<th>Expression</th>
+<td id="functionExpression"></td>
 </tr>
+
 <tr>
-  <th>Sommet</th>
-  <td id="vertexInfo"></td>
+<th>Sommet</th>
+<td id="vertexInfo"></td>
 </tr>
+
 <tr>
-  <th>Axe de symétrie</th>
-  <td id="axisInfo"></td>
+<th>Axe</th>
+<td id="axisInfo"></td>
 </tr>
+
 <tr>
-  <th>Ordonnée à l'origine</th>
-  <td id="originInfo"></td>
+<th>Ordonnée à l'origine</th>
+<td id="originInfo"></td>
 </tr>
+
 <tr>
-  <th>Discriminant</th>
-  <td id="deltaInfo"></td>
+<th>Discriminant</th>
+<td id="deltaInfo"></td>
 </tr>
+
 <tr>
-  <th>Zéro(x)</th>
-  <td id="rootsInfo"></td>
+<th>Zéro(x)</th>
+<td id="rootsInfo"></td>
 </tr>
+
 </tbody>
 </table>
+
 </div>
 
-<div class="panel values-table" style="box-shadow:none">
+<div class="panel"
+     style="box-shadow:none">
+
 <h3>Tableau de valeurs</h3>
+
 <table>
+
 <thead>
 <tr>
-  <th>x</th>
-  <th>f(x)</th>
+<th>x</th>
+<th>f(x)</th>
 </tr>
 </thead>
+
 <tbody id="valuesBody"></tbody>
+
 </table>
-</div>
 
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<!-- COMPRENDRE -->
-<section id="understand" class="page">
-<h2>2. Comprendre les notions</h2>
+<!-- THEORIE -->
 
-<div class="lesson-grid">
+<section id="theory" class="page">
 
-<details class="lesson-card">
-<summary>Fonction du second degré</summary>
+<h2>3. Synthèse de théorie</h2>
+
+<div class="notice info">
+Cette page rassemble les formules et les raisonnements essentiels à connaître.
+</div>
+
+<div class="theory-grid">
+
+<details class="theory-card" open>
+
+<summary>1. Forme générale</summary>
+
+<div class="formula">
+f(x)=ax²+bx+c
+</div>
+
 <p>
-Une fonction du second degré s'écrit :
+Pour être du second degré, il faut impérativement :
 </p>
-<div class="formula">f(x)=ax²+bx+c</div>
+
+<div class="formula">
+a ≠ 0
+</div>
+
 <p>
-avec <strong>a ≠ 0</strong>.
+Le graphique est une parabole.
 </p>
-<p>
-Sa représentation graphique est une parabole.
-</p>
+
 </details>
 
-<details class="lesson-card">
-<summary>Sens d'ouverture</summary>
-<p>
-Si a&gt;0, la parabole est ouverte vers le haut.
-</p>
-<p>
-Si a&lt;0, elle est ouverte vers le bas.
-</p>
+<details class="theory-card">
+
+<summary>2. Rôle de a</summary>
+
+<p>Le signe de a détermine l'ouverture.</p>
+
+<ul>
+<li>a&gt;0 : ouverture vers le haut ;</li>
+<li>a&lt;0 : ouverture vers le bas.</li>
+</ul>
+
 <p>
 Plus |a| est grand, plus la parabole est resserrée.
 </p>
+
 </details>
 
-<details class="lesson-card">
-<summary>Sommet</summary>
-<p>L'abscisse du sommet est :</p>
-<div class="formula">xS = −b/(2a)</div>
+<details class="theory-card">
+
+<summary>3. Ordonnée à l'origine</summary>
+
+<div class="formula">
+f(0)=c
+</div>
+
+<p>
+La parabole coupe l'axe des ordonnées au point :
+</p>
+
+<div class="formula">
+(0 ; c)
+</div>
+
+</details>
+
+<details class="theory-card">
+
+<summary>4. Sommet</summary>
+
+<div class="formula">
+xS = −b/(2a)
+</div>
+
 <p>Puis :</p>
-<div class="formula">yS = f(xS)</div>
+
+<div class="formula">
+yS=f(xS)
+</div>
+
+<p>
+Le sommet est S(xS ; yS).
+</p>
+
 </details>
 
-<details class="lesson-card">
-<summary>Axe de symétrie</summary>
+<details class="theory-card">
+
+<summary>5. Axe de symétrie</summary>
+
+<div class="formula">
+x=xS
+</div>
+
 <p>
-La parabole est symétrique par rapport à la droite :
+Si deux abscisses sont à égale distance de xS,
+leurs images sont identiques.
 </p>
-<div class="formula">x = xS</div>
-<p>
-Ainsi, si deux abscisses sont à la même distance de xS,
-leurs images sont égales.
-</p>
+
 </details>
 
-<details class="lesson-card">
-<summary>Discriminant</summary>
-<div class="formula">Δ = b² − 4ac</div>
+<details class="theory-card">
+
+<summary>6. Discriminant</summary>
+
+<div class="formula">
+Δ=b²−4ac
+</div>
+
 <ul>
 <li>Δ&gt;0 : deux solutions réelles ;</li>
 <li>Δ=0 : une solution réelle double ;</li>
 <li>Δ&lt;0 : aucune solution réelle.</li>
 </ul>
+
 </details>
 
-<details class="lesson-card">
-<summary>Zéros</summary>
+<details class="theory-card">
+
+<summary>7. Formule des racines</summary>
+
+<p>Si Δ&gt;0 :</p>
+
+<div class="formula">
+x₁=(-b−√Δ)/(2a)
+</div>
+
+<div class="formula">
+x₂=(-b+√Δ)/(2a)
+</div>
+
+<p>Si Δ=0 :</p>
+
+<div class="formula">
+x₀=−b/(2a)
+</div>
+
+</details>
+
+<details class="theory-card">
+
+<summary>8. Interprétation graphique</summary>
+
 <p>
-Les zéros sont les solutions de :
+Les solutions de :
 </p>
-<div class="formula">ax²+bx+c=0</div>
+
+<div class="formula">
+f(x)=0
+</div>
+
 <p>
-Graphiquement, ce sont les abscisses des points où la parabole coupe l'axe des x.
+sont les abscisses des points d'intersection
+entre la parabole et l'axe des x.
 </p>
+
+</details>
+
+<details class="theory-card">
+
+<summary>9. Maximum ou minimum</summary>
+
+<p>
+Si a&gt;0, le sommet correspond au minimum.
+</p>
+
+<p>
+Si a&lt;0, le sommet correspond au maximum.
+</p>
+
+<p>
+Dans un problème, il faut toujours interpréter ce résultat.
+</p>
+
 </details>
 
 </div>
 
-<div class="panel" style="margin-top:18px">
-<h3>Question rapide</h3>
+<div class="panel"
+     style="margin-top:18px">
 
-<p>
-Une parabole a pour sommet S(3 ; −2).
-Quelle est l'équation de son axe de symétrie ?
-</p>
+<h3>Méthode complète</h3>
 
-<div class="answer-row">
-<input id="quickAnswer"
-       type="text"
-       placeholder="Ex. x=3">
+<ol class="method-steps">
 
-<button class="btn btn-primary" onclick="checkQuickQuestion()">
-  Vérifier
-</button>
+<li>Identifier a, b et c.</li>
+
+<li>Observer le signe de a.</li>
+
+<li>Calculer le sommet si nécessaire.</li>
+
+<li>Calculer Δ pour étudier les zéros.</li>
+
+<li>Déterminer les solutions.</li>
+
+<li>Faire le lien avec le graphique.</li>
+
+<li>Interpréter dans le contexte du problème.</li>
+
+</ol>
+
 </div>
 
-<div id="quickFeedback"></div>
-</div>
 </section>
 
-<!-- ENTRAINEMENT -->
+<!-- EXERCICES -->
+
 <section id="practice" class="page">
-<h2>3. S'entraîner</h2>
+
+<h2>4. Exercices progressifs</h2>
 
 <div class="panel">
 
-<div class="answer-row">
+<h3>Choisis ton niveau</h3>
 
-<div>
-<label for="exerciseLevel">Type d'exercice</label>
-<select id="exerciseLevel">
-<option value="read">Comprendre / lire</option>
-<option value="apply">Appliquer</option>
-<option value="roots">Zéros et discriminant</option>
-<option value="reason">Raisonner</option>
-<option value="transfer">Transférer</option>
-<option value="mixed">Mélange</option>
-</select>
+<div class="level-selector">
+
+<button class="level-card active"
+        data-level="1"
+        onclick="selectExerciseLevel(1,this)">
+
+<strong>Niveau 1 — Comprendre</strong>
+
+<div class="small">
+Lire, reconnaître, identifier.
 </div>
 
-<div>
-<label for="exerciseDifficulty">Difficulté</label>
-<select id="exerciseDifficulty">
-<option value="Facile">Facile</option>
-<option value="Intermédiaire" selected>Intermédiaire</option>
-<option value="Avancée">Avancée</option>
-</select>
+</button>
+
+<button class="level-card"
+        data-level="2"
+        onclick="selectExerciseLevel(2,this)">
+
+<strong>Niveau 2 — Appliquer</strong>
+
+<div class="small">
+Calculer et utiliser les formules.
 </div>
 
-<button class="btn btn-primary" onclick="generateExercise()">
-  Nouvel exercice
+</button>
+
+<button class="level-card"
+        data-level="3"
+        onclick="selectExerciseLevel(3,this)">
+
+<strong>Niveau 3 — Raisonner</strong>
+
+<div class="small">
+Choisir une méthode et justifier.
+</div>
+
+</button>
+
+<button class="level-card"
+        data-level="4"
+        onclick="selectExerciseLevel(4,this)">
+
+<strong>Niveau 4 — Transférer</strong>
+
+<div class="small">
+Résoudre un problème contextualisé.
+</div>
+
 </button>
 
 </div>
 
+<div class="answer-row">
+
+<div>
+
+<label for="exerciseDifficulty">
+Difficulté
+</label>
+
+<select id="exerciseDifficulty"
+        onchange="generateExercise()">
+
+<option value="Facile">
+Facile
+</option>
+
+<option value="Intermédiaire"
+        selected>
+Intermédiaire
+</option>
+
+<option value="Avancée">
+Avancée
+</option>
+
+</select>
+
 </div>
 
-<div id="exerciseArea" class="exercise-box"></div>
+<button class="btn btn-primary"
+        onclick="generateExercise()">
+Nouvel exercice
+</button>
+
+</div>
+
+<div id="levelStatus"></div>
+
+</div>
+
+<div id="exerciseArea"
+     class="exercise-box">
+</div>
+
 </section>
 
 <!-- RAISONNER -->
+
 <section id="reason" class="page">
-<h2>4. Raisonner et résoudre</h2>
+
+<h2>5. Raisonner et résoudre</h2>
 
 <div class="panel">
 
 <div class="chips">
-<span class="badge badge-orange">Raisonner</span>
-<span class="chip">Erreur fréquente</span>
+<span class="badge badge-orange">
+Raisonner
+</span>
+<span class="chip">
+Corriger une erreur
+</span>
 </div>
 
 <h3>Analyse le raisonnement de Lina</h3>
 
-<p>On considère :</p>
+<p>
+On considère :
+</p>
 
 <div class="formula">
 f(x)=2x²−8x+5
@@ -947,28 +1504,37 @@ f(x)=2x²−8x+5
 <p>Lina écrit :</p>
 
 <div class="notice warn">
-« Le sommet a pour abscisse −8/(2×2)=−2. »
+
+« Le sommet a pour abscisse
+−8/(2×2)=−2. »
+
 </div>
 
 <p>
-Explique précisément son erreur puis détermine correctement le sommet.
+Explique son erreur puis détermine correctement le sommet.
 </p>
 
 <textarea id="reasonText"
-          placeholder="Écris ta justification et tes calculs…"></textarea>
+          placeholder="Écris ton raisonnement…">
+</textarea>
 
 <div class="actions">
-<button class="btn btn-primary" onclick="saveReasoning()">
-  Enregistrer ma démarche
+
+<button class="btn btn-primary"
+        onclick="saveReasoning()">
+Enregistrer
 </button>
 
-<button class="btn btn-warning" onclick="showReasonHint()">
-  Indice
+<button class="btn btn-warning"
+        onclick="showReasonHint()">
+Indice
 </button>
 
-<button class="btn btn-secondary" onclick="showReasonCorrection()">
-  Correction détaillée
+<button class="btn btn-secondary"
+        onclick="showReasonCorrection()">
+Correction
 </button>
+
 </div>
 
 <div id="reasonFeedback"></div>
@@ -976,11 +1542,8 @@ Explique précisément son erreur puis détermine correctement le sommet.
 </div>
 
 <div class="panel">
-<h3>Problème contextualisé — trajectoire d'un ballon</h3>
 
-<p>
-La hauteur d'un ballon est modélisée par :
-</p>
+<h3>Problème — trajectoire d'un ballon</h3>
 
 <div class="formula">
 h(t)=−5t²+20t+1
@@ -991,65 +1554,104 @@ t est exprimé en secondes et h(t) en mètres.
 </p>
 
 <ol class="method-steps">
-<li>Détermine l'instant où la hauteur est maximale.</li>
+
+<li>Détermine l'instant de hauteur maximale.</li>
+
 <li>Calcule cette hauteur maximale.</li>
+
+<li>Explique pourquoi il s'agit bien d'un maximum.</li>
+
 <li>Interprète le résultat dans le contexte.</li>
+
 </ol>
 
 <textarea id="ballReasoning"
-          placeholder="Calculs et interprétation…"></textarea>
+          placeholder="Calculs et interprétation…">
+</textarea>
 
 <div class="actions">
-<button class="btn btn-warning" onclick="showBallHint()">Indice</button>
-<button class="btn btn-secondary" onclick="showBallCorrection()">Correction</button>
+
+<button class="btn btn-warning"
+        onclick="showBallHint()">
+Indice
+</button>
+
+<button class="btn btn-secondary"
+        onclick="showBallCorrection()">
+Correction détaillée
+</button>
+
 </div>
 
 <div id="ballFeedback"></div>
+
 </div>
+
 </section>
 
 <!-- QUIZ -->
+
 <section id="quiz" class="page">
-<h2>5. Quiz final</h2>
+
+<h2>6. Quiz final</h2>
 
 <div class="panel">
+
 <p>
-Le quiz comporte <strong>15 questions aléatoires</strong>
-sur les notions étudiées. La note est calculée sur 20.
+Le quiz comporte 15 questions aléatoires.
+La note est calculée sur 20.
 </p>
 
-<button class="btn btn-success" onclick="startQuiz()">
-  Démarrer un nouveau quiz
+<button class="btn btn-success"
+        onclick="startQuiz()">
+Démarrer le quiz
 </button>
+
 </div>
 
 <div id="quizArea"></div>
+
 </section>
 
 <!-- PROGRES -->
+
 <section id="progress" class="page">
-<h2>6. Mes progrès</h2>
 
-<div id="stats" class="grid4"></div>
+<h2>7. Mes progrès</h2>
 
-<div class="grid2" style="margin-top:18px">
+<div id="stats"
+     class="grid4">
+</div>
+
+<div class="grid2"
+     style="margin-top:18px">
 
 <div class="panel">
+
 <h3>Résultats par compétence</h3>
+
 <div id="skillsProgress"></div>
+
 </div>
 
 <div class="panel">
+
 <h3>Recommandations</h3>
+
 <div id="recommendations"></div>
+
 </div>
 
 </div>
 
 <div class="panel">
+
 <h3>Historique récent</h3>
+
 <div id="history"></div>
+
 </div>
+
 </section>
 
 </main>
@@ -1058,34 +1660,34 @@ sur les notions étudiées. La note est calculée sur 20.
 "use strict";
 
 /* =========================================================
-   CONFIGURATION
+   CONFIGURATION ET ETAT
    ========================================================= */
 
-const CONFIG = {
-  storageKey: "fonctions_second_degre_4e_v3",
-  modules: ["discover","understand","practice","reason","quiz"]
+const CONFIG={
+  storageKey:"second_degre_4e_complete_v4",
+  modules:[
+    "course",
+    "discover",
+    "theory",
+    "practice",
+    "reason",
+    "quiz"
+  ]
 };
 
-const state = loadState();
-
-let graphZoom = 1;
-let currentExercise = null;
-let exerciseAttempts = 0;
-let currentQuiz = [];
-let quizAnswers = [];
-let pointerGraphPosition = null;
-
-/* =========================================================
-   ÉTAT ET STOCKAGE
-   ========================================================= */
-
 function defaultState(){
-  return {
+  return{
     completed:{},
     attempts:0,
     successes:0,
     quizBest:0,
     reasonText:"",
+    levelSuccess:{
+      1:0,
+      2:0,
+      3:0,
+      4:0
+    },
     skills:{
       Lecture:[0,0],
       Calcul:[0,0],
@@ -1098,49 +1700,97 @@ function defaultState(){
 }
 
 function loadState(){
+
   try{
-    const saved = localStorage.getItem(CONFIG.storageKey);
+
+    const saved=
+      localStorage.getItem(
+        CONFIG.storageKey
+      );
 
     if(!saved){
       return defaultState();
     }
 
-    const parsed = JSON.parse(saved);
-    const base = defaultState();
+    const parsed=
+      JSON.parse(saved);
 
-    return {
+    const base=
+      defaultState();
+
+    return{
       ...base,
       ...parsed,
       completed:{
         ...base.completed,
-        ...(parsed.completed || {})
+        ...(parsed.completed||{})
+      },
+      levelSuccess:{
+        ...base.levelSuccess,
+        ...(parsed.levelSuccess||{})
       },
       skills:{
         ...base.skills,
-        ...(parsed.skills || {})
-      },
-      history:Array.isArray(parsed.history) ? parsed.history : []
+        ...(parsed.skills||{})
+      }
     };
+
   }catch(error){
-    console.warn("Chargement impossible :",error);
+
+    console.warn(
+      "Impossible de charger les données.",
+      error
+    );
+
     return defaultState();
+
   }
 }
 
+const state=loadState();
+
+let currentExerciseLevel=1;
+let currentExercise=null;
+let exerciseAttempts=0;
+
+let graphZoom=1;
+let pointerGraphPosition=null;
+
+let currentQuiz=[];
+let quizAnswers=[];
+
+/* =========================================================
+   SAUVEGARDE
+   ========================================================= */
+
 function saveState(){
+
   try{
+
     localStorage.setItem(
       CONFIG.storageKey,
       JSON.stringify(state)
     );
+
   }catch(error){
-    console.warn("Sauvegarde impossible :",error);
+
+    console.warn(
+      "Impossible d'enregistrer.",
+      error
+    );
+
   }
 
   updateGlobalProgress();
 }
 
-function recordResult(skill,success,label){
+function recordResult(
+  skill,
+  success,
+  label,
+  level=null
+){
+
   state.attempts++;
 
   if(!state.skills[skill]){
@@ -1150,8 +1800,15 @@ function recordResult(skill,success,label){
   state.skills[skill][1]++;
 
   if(success){
+
     state.successes++;
+
     state.skills[skill][0]++;
+
+    if(level){
+      state.levelSuccess[level]++;
+    }
+
   }
 
   state.history.unshift({
@@ -1161,7 +1818,8 @@ function recordResult(skill,success,label){
     label
   });
 
-  state.history = state.history.slice(0,35);
+  state.history=
+    state.history.slice(0,40);
 
   saveState();
 }
@@ -1170,36 +1828,54 @@ function recordResult(skill,success,label){
    NAVIGATION
    ========================================================= */
 
-document.querySelectorAll(".nav button").forEach(button=>{
-  button.addEventListener("click",()=>{
-    go(button.dataset.page);
-  });
+document
+.querySelectorAll(".nav button")
+.forEach(button=>{
+
+  button.addEventListener(
+    "click",
+    ()=>{
+      go(button.dataset.page);
+    }
+  );
+
 });
 
 function go(id){
-  const page = document.getElementById(id);
 
-  if(!page){
-    console.error("Page inconnue :",id);
+  document
+  .querySelectorAll(".page")
+  .forEach(page=>{
+    page.classList.remove("active");
+  });
+
+  const target=
+    document.getElementById(id);
+
+  if(!target){
     return;
   }
 
-  document.querySelectorAll(".page").forEach(p=>{
-    p.classList.remove("active");
-  });
+  target.classList.add("active");
 
-  page.classList.add("active");
+  document
+  .querySelectorAll(".nav button")
+  .forEach(button=>{
 
-  document.querySelectorAll(".nav button").forEach(b=>{
-    b.classList.toggle(
+    button.classList.toggle(
       "active",
-      b.dataset.page===id
+      button.dataset.page===id
     );
+
   });
 
-  if(CONFIG.modules.includes(id)){
+  if(
+    CONFIG.modules.includes(id)
+  ){
+
     state.completed[id]=true;
     saveState();
+
   }
 
   if(id==="discover"){
@@ -1217,18 +1893,31 @@ function go(id){
 }
 
 function updateGlobalProgress(){
-  const done = CONFIG.modules.filter(
-    module=>state.completed[module]
-  ).length;
 
-  const pct = Math.round(
-    done / CONFIG.modules.length * 100
-  );
+  const done=
+    CONFIG.modules.filter(
+      module=>state.completed[module]
+    ).length;
 
-  document.getElementById("globalProgressBar").style.width =
+  const pct=
+    Math.round(
+      done/
+      CONFIG.modules.length*
+      100
+    );
+
+  document
+  .getElementById(
+    "globalProgressBar"
+  )
+  .style.width=
     pct+"%";
 
-  document.getElementById("globalProgressText").textContent =
+  document
+  .getElementById(
+    "globalProgressText"
+  )
+  .textContent=
     pct+" %";
 }
 
@@ -1237,1070 +1926,157 @@ function updateGlobalProgress(){
    ========================================================= */
 
 function randInt(min,max){
+
   return Math.floor(
-    Math.random()*(max-min+1)
+    Math.random()*
+    (max-min+1)
   )+min;
+
 }
 
 function pick(array){
+
   return array[
-    Math.floor(Math.random()*array.length)
+    Math.floor(
+      Math.random()*
+      array.length
+    )
   ];
+
 }
 
 function formatNumber(value){
-  if(!Number.isFinite(value)){
+
+  if(
+    !Number.isFinite(value)
+  ){
     return "—";
   }
 
-  if(Math.abs(value-Math.round(value))<1e-9){
-    return String(Math.round(value));
+  if(
+    Math.abs(
+      value-Math.round(value)
+    )<1e-9
+  ){
+    return String(
+      Math.round(value)
+    );
   }
 
-  return Number(value.toFixed(2))
-    .toString()
-    .replace(".",",");
+  return Number(
+    value.toFixed(2)
+  )
+  .toString()
+  .replace(".",",");
+
 }
 
 function parseStudentNumber(value){
-  const cleaned = String(value)
+
+  let text=
+    String(value)
     .trim()
     .replace(",",".")
     .replace(/\s/g,"");
 
-  if(cleaned.includes("/")){
-    const parts = cleaned.split("/");
+  if(text.includes("/")){
+
+    const parts=
+      text.split("/");
 
     if(parts.length===2){
-      const a = Number(parts[0]);
-      const b = Number(parts[1]);
+
+      const a=
+        Number(parts[0]);
+
+      const b=
+        Number(parts[1]);
 
       if(
         Number.isFinite(a) &&
         Number.isFinite(b) &&
         b!==0
       ){
+
         return a/b;
+
       }
+
     }
+
   }
 
-  return Number(cleaned);
+  return Number(text);
 }
 
-function numericCorrect(given,expected,tolerance=0.01){
-  const value = parseStudentNumber(given);
+function numericCorrect(
+  value,
+  expected,
+  tolerance=.01
+){
 
-  return Number.isFinite(value) &&
-         Math.abs(value-expected)<=tolerance;
+  const parsed=
+    parseStudentNumber(value);
+
+  return(
+    Number.isFinite(parsed) &&
+    Math.abs(
+      parsed-expected
+    )<=tolerance
+  );
 }
 
-function setCorrect(given,expected){
-  const cleaned = String(given)
+function setCorrect(
+  value,
+  expected
+){
+
+  const cleaned=
+    String(value)
     .replace(/[{}\[\]]/g,"")
     .replace(/,/g,".")
     .replace(/x\s*=/gi,"")
     .trim();
 
-  const values = cleaned
+  const values=
+    cleaned
     .split(/[;|\s]+/)
     .filter(Boolean)
     .map(Number);
 
-  if(values.some(v=>!Number.isFinite(v))){
+  if(
+    values.some(
+      x=>!Number.isFinite(x)
+    )
+  ){
     return false;
   }
 
-  const received = [...new Set(values)]
+  const received=
+    [...new Set(values)]
     .sort((a,b)=>a-b);
 
-  const target = [...expected]
+  const target=
+    [...expected]
     .sort((a,b)=>a-b);
 
-  if(received.length!==target.length){
+  if(
+    received.length!==
+    target.length
+  ){
     return false;
   }
 
   return received.every(
-    (value,index)=>
-      Math.abs(value-target[index])<0.01
+    (x,index)=>
+      Math.abs(
+        x-target[index]
+      )<.01
   );
-}
-
-/* =========================================================
-   GRAPHIQUE
-   ========================================================= */
-
-const sliderA = document.getElementById("sliderA");
-const sliderB = document.getElementById("sliderB");
-const sliderC = document.getElementById("sliderC");
-
-[
-  sliderA,
-  sliderB,
-  sliderC,
-  document.getElementById("showGrid"),
-  document.getElementById("showMinorGrid"),
-  document.getElementById("showLabels"),
-  document.getElementById("preciseMode")
-].forEach(element=>{
-  element.addEventListener(
-    element.type==="range" ? "input" : "change",
-    drawGraph
-  );
-});
-
-function graphParameters(){
-  let a = parseFloat(sliderA.value);
-  const b = parseFloat(sliderB.value);
-  const c = parseFloat(sliderC.value);
-
-  if(Math.abs(a)<0.001){
-    a = a<0 ? -0.5 : 0.5;
-    sliderA.value=String(a);
-  }
-
-  return {a,b,c};
-}
-
-function functionValue(x,a,b,c){
-  return a*x*x+b*x+c;
-}
-
-function discriminant(a,b,c){
-  return b*b-4*a*c;
-}
-
-function rootsOf(a,b,c){
-  const delta = discriminant(a,b,c);
-
-  if(delta< -1e-9){
-    return [];
-  }
-
-  if(Math.abs(delta)<1e-9){
-    return [-b/(2*a)];
-  }
-
-  const sqrtDelta = Math.sqrt(delta);
-
-  return [
-    (-b-sqrtDelta)/(2*a),
-    (-b+sqrtDelta)/(2*a)
-  ].sort((x,y)=>x-y);
-}
-
-function expressionHTML(a,b,c){
-  let html="f(x)=";
-
-  if(a===1){
-    html+="x²";
-  }else if(a===-1){
-    html+="−x²";
-  }else{
-    html+=formatNumber(a)+"x²";
-  }
-
-  if(b>0){
-    html+=" + "+formatNumber(b)+"x";
-  }else if(b<0){
-    html+=" − "+formatNumber(Math.abs(b))+"x";
-  }
-
-  if(c>0){
-    html+=" + "+formatNumber(c);
-  }else if(c<0){
-    html+=" − "+formatNumber(Math.abs(c));
-  }
-
-  return html;
-}
-
-function drawGraph(){
-  const {a,b,c}=graphParameters();
-
-  document.getElementById("valueA").textContent =
-    formatNumber(a);
-
-  document.getElementById("valueB").textContent =
-    formatNumber(b);
-
-  document.getElementById("valueC").textContent =
-    formatNumber(c);
-
-  const xs = -b/(2*a);
-  const ys = functionValue(xs,a,b,c);
-  const delta = discriminant(a,b,c);
-  const roots = rootsOf(a,b,c);
-
-  document.getElementById("functionExpression").textContent =
-    expressionHTML(a,b,c);
-
-  document.getElementById("vertexInfo").textContent =
-    `S(${formatNumber(xs)} ; ${formatNumber(ys)})`;
-
-  document.getElementById("axisInfo").textContent =
-    "x = "+formatNumber(xs);
-
-  document.getElementById("originInfo").textContent =
-    `f(0) = ${formatNumber(c)}`;
-
-  document.getElementById("deltaInfo").textContent =
-    formatNumber(delta);
-
-  document.getElementById("rootsInfo").textContent =
-    roots.length===0
-      ? "aucun zéro réel"
-      : roots.map(
-          (r,i)=>`x${i+1} = ${formatNumber(r)}`
-        ).join(" ; ");
-
-  let observation =
-    `Le sommet est <strong>S(${formatNumber(xs)} ; ${formatNumber(ys)})</strong>. `+
-    `L'axe de symétrie est <strong>x=${formatNumber(xs)}</strong>. `;
-
-  observation +=
-    a>0
-      ? "La parabole est ouverte vers le <strong>haut</strong>. "
-      : "La parabole est ouverte vers le <strong>bas</strong>. ";
-
-  if(Math.abs(a)>1){
-    observation +=
-      "Comme |a| est supérieur à 1, la parabole est plutôt resserrée. ";
-  }else if(Math.abs(a)<1){
-    observation +=
-      "Comme |a| est inférieur à 1, la parabole est plutôt large. ";
-  }
-
-  if(delta>0){
-    observation +=
-      "Comme Δ>0, elle coupe l'axe des abscisses en deux points.";
-  }else if(Math.abs(delta)<1e-9){
-    observation +=
-      "Comme Δ=0, elle touche l'axe des abscisses en un seul point.";
-  }else{
-    observation +=
-      "Comme Δ<0, elle ne coupe pas l'axe des abscisses.";
-  }
-
-  document.getElementById("observation").innerHTML =
-    observation;
-
-  renderValueTable(a,b,c,xs);
-  renderCanvas(a,b,c,xs,ys,roots);
-}
-
-function renderValueTable(a,b,c,xs){
-  const start = Math.floor(xs)-3;
-
-  let html="";
-
-  for(let i=0;i<7;i++){
-    const x = start+i;
-    const y = functionValue(x,a,b,c);
-
-    html += `
-      <tr>
-        <td>${formatNumber(x)}</td>
-        <td>${formatNumber(y)}</td>
-      </tr>
-    `;
-  }
-
-  document.getElementById("valuesBody").innerHTML =
-    html;
-}
-
-function renderCanvas(a,b,c,xs,ys,roots){
-  const canvas = document.getElementById("graphCanvas");
-  const ctx = canvas.getContext("2d");
-
-  const W = canvas.width;
-  const H = canvas.height;
-
-  ctx.clearRect(0,0,W,H);
-
-  const originX = W/2;
-  const originY = H/2;
-
-  const pixelsPerUnit = 45*graphZoom;
-  const minorStep = pixelsPerUnit/2;
-
-  const showGrid =
-    document.getElementById("showGrid").checked;
-
-  const showMinor =
-    document.getElementById("showMinorGrid").checked;
-
-  const showLabels =
-    document.getElementById("showLabels").checked;
-
-  /* FOND */
-  ctx.fillStyle="#ffffff";
-  ctx.fillRect(0,0,W,H);
-
-  /* GRILLE SECONDAIRE : 0,5 unité */
-  if(showGrid && showMinor){
-    ctx.strokeStyle="#edf3f7";
-    ctx.lineWidth=1;
-
-    for(
-      let px=originX%minorStep;
-      px<=W;
-      px+=minorStep
-    ){
-      ctx.beginPath();
-      ctx.moveTo(px,0);
-      ctx.lineTo(px,H);
-      ctx.stroke();
-    }
-
-    for(
-      let py=originY%minorStep;
-      py<=H;
-      py+=minorStep
-    ){
-      ctx.beginPath();
-      ctx.moveTo(0,py);
-      ctx.lineTo(W,py);
-      ctx.stroke();
-    }
-  }
-
-  /* GRILLE PRINCIPALE : 1 unité */
-  if(showGrid){
-    ctx.strokeStyle="#d5e4ee";
-    ctx.lineWidth=1;
-
-    for(
-      let px=originX%pixelsPerUnit;
-      px<=W;
-      px+=pixelsPerUnit
-    ){
-      ctx.beginPath();
-      ctx.moveTo(px,0);
-      ctx.lineTo(px,H);
-      ctx.stroke();
-    }
-
-    for(
-      let py=originY%pixelsPerUnit;
-      py<=H;
-      py+=pixelsPerUnit
-    ){
-      ctx.beginPath();
-      ctx.moveTo(0,py);
-      ctx.lineTo(W,py);
-      ctx.stroke();
-    }
-  }
-
-  /* AXES */
-  ctx.strokeStyle="#102f46";
-  ctx.lineWidth=2;
-
-  ctx.beginPath();
-  ctx.moveTo(0,originY);
-  ctx.lineTo(W,originY);
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.moveTo(originX,0);
-  ctx.lineTo(originX,H);
-  ctx.stroke();
-
-  /* FLÈCHES */
-  ctx.fillStyle="#102f46";
-
-  ctx.beginPath();
-  ctx.moveTo(W-7,originY);
-  ctx.lineTo(W-18,originY-5);
-  ctx.lineTo(W-18,originY+5);
-  ctx.closePath();
-  ctx.fill();
-
-  ctx.beginPath();
-  ctx.moveTo(originX,5);
-  ctx.lineTo(originX-5,16);
-  ctx.lineTo(originX+5,16);
-  ctx.closePath();
-  ctx.fill();
-
-  /* GRADUATIONS */
-  ctx.font="12px Arial";
-  ctx.fillStyle="#263e50";
-  ctx.strokeStyle="#102f46";
-  ctx.lineWidth=1;
-
-  const maxX =
-    Math.ceil(W/(2*pixelsPerUnit))+1;
-
-  const maxY =
-    Math.ceil(H/(2*pixelsPerUnit))+1;
-
-  for(let i=-maxX;i<=maxX;i++){
-    const px = originX+i*pixelsPerUnit;
-
-    if(px<0 || px>W){
-      continue;
-    }
-
-    ctx.beginPath();
-    ctx.moveTo(px,originY-5);
-    ctx.lineTo(px,originY+5);
-    ctx.stroke();
-
-    if(showLabels && i!==0){
-      ctx.textAlign="center";
-      ctx.textBaseline="top";
-      ctx.fillText(
-        String(i),
-        px,
-        originY+8
-      );
-    }
-  }
-
-  for(let j=-maxY;j<=maxY;j++){
-    const py = originY-j*pixelsPerUnit;
-
-    if(py<0 || py>H){
-      continue;
-    }
-
-    ctx.beginPath();
-    ctx.moveTo(originX-5,py);
-    ctx.lineTo(originX+5,py);
-    ctx.stroke();
-
-    if(showLabels && j!==0){
-      ctx.textAlign="left";
-      ctx.textBaseline="middle";
-      ctx.fillText(
-        String(j),
-        originX+8,
-        py
-      );
-    }
-  }
-
-  if(showLabels){
-    ctx.fillStyle="#102f46";
-    ctx.font="bold 14px Arial";
-
-    ctx.fillText(
-      "x",
-      W-22,
-      originY-17
-    );
-
-    ctx.fillText(
-      "y",
-      originX+10,
-      18
-    );
-
-    ctx.font="12px Arial";
-    ctx.fillText(
-      "0",
-      originX+8,
-      originY+14
-    );
-  }
-
-  /* AXE DE SYMÉTRIE */
-  const symmetryPX =
-    originX+xs*pixelsPerUnit;
-
-  if(symmetryPX>=0 && symmetryPX<=W){
-    ctx.save();
-    ctx.strokeStyle="#9c7ed8";
-    ctx.setLineDash([6,5]);
-    ctx.lineWidth=1.5;
-
-    ctx.beginPath();
-    ctx.moveTo(symmetryPX,0);
-    ctx.lineTo(symmetryPX,H);
-    ctx.stroke();
-
-    ctx.restore();
-  }
-
-  /* PARABOLE */
-  ctx.strokeStyle="#287fc1";
-  ctx.lineWidth=3.5;
-  ctx.beginPath();
-
-  let started=false;
-
-  for(let px=0;px<=W;px+=1){
-    const x =
-      (px-originX)/pixelsPerUnit;
-
-    const y =
-      functionValue(x,a,b,c);
-
-    const py =
-      originY-y*pixelsPerUnit;
-
-    if(
-      Number.isFinite(py) &&
-      py>-1000 &&
-      py<H+1000
-    ){
-      if(!started){
-        ctx.moveTo(px,py);
-        started=true;
-      }else{
-        ctx.lineTo(px,py);
-      }
-    }else{
-      started=false;
-    }
-  }
-
-  ctx.stroke();
-
-  /* SOMMET */
-  drawSpecialPoint(
-    ctx,
-    originX+xs*pixelsPerUnit,
-    originY-ys*pixelsPerUnit,
-    "#20864e",
-    `S(${formatNumber(xs)} ; ${formatNumber(ys)})`,
-    showLabels
-  );
-
-  /* ZÉROS */
-  roots.forEach((root,index)=>{
-    drawSpecialPoint(
-      ctx,
-      originX+root*pixelsPerUnit,
-      originY,
-      "#c63838",
-      `Z${index+1}(${formatNumber(root)} ; 0)`,
-      showLabels
-    );
-  });
-
-  /* ORDONNÉE À L'ORIGINE */
-  const y0=c;
-
-  drawSpecialPoint(
-    ctx,
-    originX,
-    originY-y0*pixelsPerUnit,
-    "#e98916",
-    `A(0 ; ${formatNumber(y0)})`,
-    showLabels
-  );
-
-  /* POINTEUR PRÉCIS */
-  if(
-    pointerGraphPosition &&
-    document.getElementById("preciseMode").checked
-  ){
-    const px =
-      originX +
-      pointerGraphPosition.x*pixelsPerUnit;
-
-    const py =
-      originY -
-      pointerGraphPosition.y*pixelsPerUnit;
-
-    if(px>=0 && px<=W && py>=0 && py<=H){
-      ctx.save();
-
-      ctx.strokeStyle="#555";
-      ctx.setLineDash([3,3]);
-
-      ctx.beginPath();
-      ctx.moveTo(px,0);
-      ctx.lineTo(px,H);
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.moveTo(0,py);
-      ctx.lineTo(W,py);
-      ctx.stroke();
-
-      ctx.restore();
-
-      ctx.fillStyle="#102f46";
-      ctx.beginPath();
-      ctx.arc(px,py,4,0,2*Math.PI);
-      ctx.fill();
-    }
-  }
-}
-
-function drawSpecialPoint(
-  ctx,
-  px,
-  py,
-  color,
-  label,
-  showLabel
-){
-  const canvas = ctx.canvas;
-
-  if(
-    px<0 ||
-    px>canvas.width ||
-    py<0 ||
-    py>canvas.height
-  ){
-    return;
-  }
-
-  ctx.fillStyle=color;
-  ctx.beginPath();
-  ctx.arc(px,py,6,0,2*Math.PI);
-  ctx.fill();
-
-  if(showLabel){
-    ctx.font="bold 12px Arial";
-    ctx.textAlign="left";
-    ctx.textBaseline="bottom";
-
-    const width =
-      ctx.measureText(label).width;
-
-    const labelX =
-      Math.min(px+9,canvas.width-width-8);
-
-    const labelY =
-      Math.max(16,py-8);
-
-    ctx.fillStyle=color;
-    ctx.fillText(label,labelX,labelY);
-  }
-}
-
-function zoomGraph(factor){
-  graphZoom *= factor;
-
-  graphZoom =
-    Math.max(0.65,Math.min(2.2,graphZoom));
-
-  drawGraph();
-}
-
-function resetGraph(){
-  sliderA.value="1";
-  sliderB.value="0";
-  sliderC.value="0";
-  graphZoom=1;
-  pointerGraphPosition=null;
-
-  document.getElementById(
-    "pointerCoordinates"
-  ).textContent=
-    "déplace le pointeur dans le repère";
-
-  drawGraph();
-}
-
-function randomFunction(){
-  const allowedA = [
-    -3,-2,-1.5,-1,-0.5,
-    0.5,1,1.5,2,3
-  ];
-
-  sliderA.value=
-    String(pick(allowedA));
-
-  sliderB.value=
-    String(randInt(-12,12)/2);
-
-  sliderC.value=
-    String(randInt(-12,12)/2);
-
-  drawGraph();
-}
-
-function graphHint(){
-  alert(
-    "Repères utiles :\n\n"+
-    "• le sommet a pour abscisse −b/(2a) ;\n"+
-    "• l'axe de symétrie passe par le sommet ;\n"+
-    "• c=f(0) ;\n"+
-    "• les zéros sont les intersections avec l'axe des x."
-  );
-}
-
-/* LECTURE PRÉCISE AU POINTEUR */
-
-const canvas =
-  document.getElementById("graphCanvas");
-
-canvas.addEventListener(
-  "pointermove",
-  event=>{
-    if(
-      !document.getElementById("preciseMode").checked
-    ){
-      return;
-    }
-
-    const rect =
-      canvas.getBoundingClientRect();
-
-    const scaleX =
-      canvas.width/rect.width;
-
-    const scaleY =
-      canvas.height/rect.height;
-
-    const canvasX =
-      (event.clientX-rect.left)*scaleX;
-
-    const canvasY =
-      (event.clientY-rect.top)*scaleY;
-
-    const pixelsPerUnit =
-      45*graphZoom;
-
-    let x =
-      (canvasX-canvas.width/2)/
-      pixelsPerUnit;
-
-    let y =
-      (canvas.height/2-canvasY)/
-      pixelsPerUnit;
-
-    /* Arrondi au dixième pour lecture précise */
-    x=Math.round(x*10)/10;
-    y=Math.round(y*10)/10;
-
-    pointerGraphPosition={x,y};
-
-    document.getElementById(
-      "pointerCoordinates"
-    ).textContent=
-      `x ≈ ${formatNumber(x)} ; y ≈ ${formatNumber(y)}`;
-
-    drawGraph();
-  }
-);
-
-canvas.addEventListener(
-  "pointerleave",
-  ()=>{
-    pointerGraphPosition=null;
-
-    document.getElementById(
-      "pointerCoordinates"
-    ).textContent=
-      "déplace le pointeur dans le repère";
-
-    drawGraph();
-  }
-);
-
-/* =========================================================
-   QUESTION RAPIDE
-   ========================================================= */
-
-function checkQuickQuestion(){
-  const value =
-    document.getElementById("quickAnswer")
-      .value
-      .replace(/\s/g,"")
-      .toLowerCase();
-
-  const correct =
-    value==="x=3" ||
-    value==="3";
-
-  document.getElementById(
-    "quickFeedback"
-  ).innerHTML=
-    correct
-      ?`
-        <div class="notice ok">
-          Correct. L'axe de symétrie est la droite x=3.
-        </div>
-       `
-      :`
-        <div class="notice warn">
-          Le sommet a pour abscisse 3.
-          L'axe vertical qui passe par le sommet est donc x=3.
-        </div>
-       `;
-
-  recordResult(
-    "Lecture",
-    correct,
-    "Axe de symétrie"
-  );
-}
-
-/* =========================================================
-   EXERCICES
-   ========================================================= */
-
-function generateExercise(){
-  let type =
-    document.getElementById("exerciseLevel").value;
-
-  const difficulty =
-    document.getElementById(
-      "exerciseDifficulty"
-    ).value;
-
-  if(type==="mixed"){
-    type=pick([
-      "read",
-      "apply",
-      "roots",
-      "reason",
-      "transfer"
-    ]);
-  }
-
-  if(type==="read"){
-    currentExercise =
-      makeReadExercise(difficulty);
-  }
-
-  if(type==="apply"){
-    currentExercise =
-      makeApplyExercise(difficulty);
-  }
-
-  if(type==="roots"){
-    currentExercise =
-      makeRootsExercise(difficulty);
-  }
-
-  if(type==="reason"){
-    currentExercise =
-      makeReasonExercise(difficulty);
-  }
-
-  if(type==="transfer"){
-    currentExercise =
-      makeTransferExercise(difficulty);
-  }
-
-  exerciseAttempts=0;
-
-  renderExercise();
-}
-
-function makeReadExercise(difficulty){
-  const a=pick([-4,-3,-2,-1,1,2,3,4]);
-  const questionType=randInt(1,3);
-
-  if(questionType===1){
-    return{
-      skill:"Lecture",
-      label:"Sens d'ouverture",
-      difficulty,
-      question:
-        `Une fonction du second degré a pour coefficient a=${a}. `+
-        `La parabole est-elle ouverte vers le haut ou vers le bas ?`,
-      kind:"choice",
-      choices:["vers le haut","vers le bas"],
-      answer:a>0
-        ?"vers le haut"
-        :"vers le bas",
-      hint1:"Observe uniquement le signe de a.",
-      hint2:
-        a>0
-          ?"a est positif."
-          :"a est négatif.",
-      correction:
-        a>0
-          ?"Comme a>0, la parabole est ouverte vers le haut."
-          :"Comme a<0, la parabole est ouverte vers le bas."
-    };
-  }
-
-  if(questionType===2){
-    const xs=randInt(-4,4);
-    const ys=randInt(-5,5);
-
-    return{
-      skill:"Lecture",
-      label:"Axe de symétrie",
-      difficulty,
-      question:
-        `Une parabole a pour sommet S(${xs} ; ${ys}). `+
-        `Donne la valeur de x de son axe de symétrie.`,
-      kind:"number",
-      answer:xs,
-      hint1:"L'axe est vertical et passe par le sommet.",
-      hint2:`Il a donc pour équation x=${xs}.`,
-      correction:
-        `Le sommet a pour abscisse ${xs}. `+
-        `L'axe de symétrie est donc x=${xs}.`
-    };
-  }
-
-  const c=randInt(-7,7);
-
-  return{
-    skill:"Lecture",
-    label:"Ordonnée à l'origine",
-    difficulty,
-    question:
-      `On considère f(x)=2x²−3x${c>=0?"+":""}${c}. `+
-      `Quelle est l'ordonnée à l'origine ?`,
-    kind:"number",
-    answer:c,
-    hint1:"L'ordonnée à l'origine est f(0).",
-    hint2:"Dans ax²+bx+c, elle vaut directement c.",
-    correction:
-      `f(0)=${c}. L'ordonnée à l'origine vaut donc ${c}.`
-  };
-}
-
-function makeApplyExercise(difficulty){
-  const a=pick([1,2,3,-1,-2,-3]);
-  const xs=randInt(-4,4);
-  const ys=randInt(-5,6);
-
-  const b=-2*a*xs;
-  const c=ys+a*xs*xs;
-
-  const mode=randInt(1,2);
-
-  if(mode===1){
-    return{
-      skill:"Calcul",
-      label:"Calcul du sommet",
-      difficulty,
-      question:
-        `Soit f(x)=${formatStandard(a,b,c)}. `+
-        `Détermine l'abscisse du sommet.`,
-      kind:"number",
-      answer:xs,
-      hint1:"Utilise xS=−b/(2a).",
-      hint2:
-        `Ici a=${a} et b=${b}.`,
-      correction:
-        `xS=−b/(2a)=−(${b})/(2×${a})=${xs}. `+
-        `L'abscisse du sommet est ${xs}.`
-    };
-  }
-
-  const x=randInt(-3,4);
-  const y=functionValue(x,a,b,c);
-
-  return{
-    skill:"Calcul",
-    label:"Calcul d'image",
-    difficulty,
-    question:
-      `Soit f(x)=${formatStandard(a,b,c)}. `+
-      `Calcule f(${x}).`,
-    kind:"number",
-    answer:y,
-    hint1:`Remplace x par ${x}.`,
-    hint2:
-      `Respecte l'ordre des opérations : carré, multiplications, sommes.`,
-    correction:
-      `f(${x})=${a}×(${x})²+(${b})×(${x})+(${c})=${y}.`
-  };
-}
-
-function makeRootsExercise(difficulty){
-  let r1=randInt(-5,2);
-  let r2=randInt(r1+1,6);
-
-  if(difficulty==="Facile"){
-    r1=pick([-4,-3,-2,-1]);
-    r2=pick([1,2,3,4]);
-  }
-
-  const a=
-    difficulty==="Avancée"
-      ? pick([1,2,3,-1,-2])
-      : 1;
-
-  const b=-a*(r1+r2);
-  const c=a*r1*r2;
-
-  return{
-    skill:"Zeros",
-    label:"Détermination des zéros",
-    difficulty,
-    question:
-      `Détermine les deux zéros de f(x)=${formatStandard(a,b,c)}. `+
-      `Écris-les séparés par un point-virgule.`,
-    kind:"set",
-    answer:[r1,r2],
-    hint1:"Résoudre f(x)=0.",
-    hint2:
-      difficulty==="Facile"
-        ?"Cherche deux nombres dont le produit donne c et la somme donne b."
-        :"Tu peux factoriser ou utiliser le discriminant.",
-    correction:
-      `Les zéros sont x=${r1} et x=${r2}. `+
-      `On peut écrire f(x)=${a===1?"":a+" "}(${factorText(r1)})(${factorText(r2)}).`
-  };
-}
-
-function makeReasonExercise(difficulty){
-  const xs=randInt(-3,3);
-  const distance=randInt(1,4);
-  const a=pick([-2,-1,1,2]);
-  const ys=randInt(-4,4);
-
-  const y=
-    a*distance*distance+ys;
-
-  return{
-    skill:"Raisonnement",
-    label:"Symétrie",
-    difficulty,
-    question:
-      `Le sommet d'une parabole est S(${xs} ; ${ys}). `+
-      `On sait que f(${xs-distance})=${y}. `+
-      `Sans refaire un calcul complet, détermine f(${xs+distance}).`,
-    kind:"number",
-    answer:y,
-    hint1:
-      `Les abscisses ${xs-distance} et ${xs+distance} sont-elles à la même distance de ${xs} ?`,
-    hint2:
-      `Une parabole est symétrique par rapport à x=${xs}.`,
-    correction:
-      `Les deux abscisses sont à ${distance} unité(s) de l'axe x=${xs}. `+
-      `Par symétrie, leurs images sont égales. Donc f(${xs+distance})=${y}.`
-  };
-}
-
-function makeTransferExercise(difficulty){
-  const tMax=randInt(2,5);
-  const hMax=randInt(12,30);
-  const a=pick([-1,-2,-3]);
-
-  const b=-2*a*tMax;
-  const c=hMax+a*tMax*tMax;
-
-  return{
-    skill:"Transfert",
-    label:"Maximum contextualisé",
-    difficulty,
-    question:
-      `La hauteur d'un objet est modélisée par `+
-      `h(t)=${formatStandard(a,b,c)}. `+
-      `À quel instant t la hauteur est-elle maximale ?`,
-    kind:"number",
-    answer:tMax,
-    hint1:
-      "Comme a<0, le sommet correspond au maximum.",
-    hint2:
-      "Calcule tS=−b/(2a).",
-    correction:
-      `tS=−(${b})/(2×${a})=${tMax}. `+
-      `L'objet atteint donc sa hauteur maximale après ${tMax} seconde(s).`
-  };
 }
 
 function formatStandard(a,b,c){
+
   let text="";
 
   if(a===1){
@@ -2326,153 +2102,2276 @@ function formatStandard(a,b,c){
   return text;
 }
 
-function factorText(root){
-  if(root>0){
-    return "x−"+root;
+/* =========================================================
+   VIDEO COURS
+   ========================================================= */
+
+const videoSlides=[
+{
+  section:"Introduction",
+  title:"Qu'est-ce qu'une fonction du second degré ?",
+  formula:"f(x)=ax²+bx+c avec a≠0",
+  text:
+  "Une fonction du second degré contient un terme en x². Sa représentation graphique est une parabole.",
+  narration:
+  "Une fonction du second degré s'écrit f de x égale a x carré plus b x plus c, avec a différent de zéro. Sa représentation graphique est une parabole."
+},
+{
+  section:"Introduction",
+  title:"Identifier les coefficients",
+  formula:"a : x²   •   b : x   •   c : terme constant",
+  text:
+  "Avant tout calcul, repère soigneusement a, b et c, en conservant leurs signes.",
+  narration:
+  "Avant tout calcul, il faut identifier correctement les coefficients a, b et c. Attention à conserver leurs signes."
+},
+{
+  section:"Graphique",
+  title:"Le rôle du coefficient a",
+  formula:"a>0 : ∪   •   a<0 : ∩",
+  text:
+  "Le signe de a détermine le sens d'ouverture. La valeur absolue de a influence la largeur.",
+  narration:
+  "Le signe du coefficient a détermine le sens d'ouverture de la parabole. Si a est positif elle est ouverte vers le haut. S'il est négatif elle est ouverte vers le bas."
+},
+{
+  section:"Sommet",
+  title:"Déterminer l'abscisse du sommet",
+  formula:"xS=−b/(2a)",
+  text:
+  "Le sommet est le point central de la parabole. Commence par calculer son abscisse.",
+  narration:
+  "Pour déterminer le sommet, on commence par calculer x indice S égal à moins b divisé par deux a."
+},
+{
+  section:"Sommet",
+  title:"Déterminer l'ordonnée du sommet",
+  formula:"yS=f(xS)",
+  text:
+  "Une fois xS calculé, remplace x par xS dans la fonction.",
+  narration:
+  "Une fois l'abscisse du sommet calculée, on détermine son ordonnée en calculant f de x indice S."
+},
+{
+  section:"Sommet",
+  title:"Exemple",
+  formula:"f(x)=2x²−8x+5",
+  text:
+  "xS=−(−8)/(2×2)=2. Puis yS=f(2)=−3. Donc S(2 ; −3).",
+  narration:
+  "Pour f de x égale deux x carré moins huit x plus cinq, x indice S vaut moins moins huit sur deux fois deux, donc deux. Ensuite f de deux vaut moins trois. Le sommet est donc deux moins trois."
+},
+{
+  section:"Symétrie",
+  title:"Axe de symétrie",
+  formula:"x=xS",
+  text:
+  "La parabole est symétrique par rapport à la droite verticale passant par son sommet.",
+  narration:
+  "L'axe de symétrie de la parabole est la droite verticale d'équation x égale x indice S."
+},
+{
+  section:"Discriminant",
+  title:"Pourquoi calculer Δ ?",
+  formula:"Δ=b²−4ac",
+  text:
+  "Le discriminant permet de connaître le nombre de solutions de f(x)=0.",
+  narration:
+  "Le discriminant delta se calcule avec la formule b carré moins quatre a c. Il permet de déterminer le nombre de solutions réelles."
+},
+{
+  section:"Discriminant",
+  title:"Si Δ est positif",
+  formula:"Δ>0 → deux solutions",
+  text:
+  "La parabole coupe l'axe des abscisses en deux points distincts.",
+  narration:
+  "Si delta est strictement positif, l'équation possède deux solutions réelles distinctes."
+},
+{
+  section:"Discriminant",
+  title:"Si Δ est nul",
+  formula:"Δ=0 → une solution double",
+  text:
+  "La parabole touche l'axe des abscisses au niveau du sommet.",
+  narration:
+  "Si delta vaut zéro, l'équation possède une solution réelle double."
+},
+{
+  section:"Discriminant",
+  title:"Si Δ est négatif",
+  formula:"Δ<0 → aucune solution réelle",
+  text:
+  "La parabole ne rencontre pas l'axe des abscisses.",
+  narration:
+  "Si delta est négatif, l'équation ne possède aucune solution réelle."
+},
+{
+  section:"Zéros",
+  title:"Formule des racines",
+  formula:"x=(-b±√Δ)/(2a)",
+  text:
+  "Lorsque Δ>0, on calcule deux racines grâce au signe moins et au signe plus.",
+  narration:
+  "Lorsque delta est positif, les deux solutions se calculent grâce à la formule moins b moins ou plus racine de delta, le tout divisé par deux a."
+},
+{
+  section:"Zéros",
+  title:"Interprétation graphique",
+  formula:"f(x)=0",
+  text:
+  "Les zéros sont les abscisses des points où la parabole coupe l'axe des x.",
+  narration:
+  "Graphiquement, les zéros sont les abscisses des points d'intersection de la parabole avec l'axe horizontal."
+},
+{
+  section:"Zéros",
+  title:"Exemple factorisé",
+  formula:"x²−5x+6=(x−2)(x−3)",
+  text:
+  "Les zéros sont 2 et 3.",
+  narration:
+  "L'expression x carré moins cinq x plus six peut se factoriser en x moins deux fois x moins trois. Les zéros sont donc deux et trois."
+},
+{
+  section:"Variation",
+  title:"Maximum ou minimum",
+  formula:"a>0 : minimum   •   a<0 : maximum",
+  text:
+  "Le sommet est un minimum si la parabole monte, et un maximum si elle descend.",
+  narration:
+  "Si a est positif, le sommet représente un minimum. Si a est négatif, il représente un maximum."
+},
+{
+  section:"Problèmes",
+  title:"Interpréter le sommet",
+  formula:"h(t)=−5t²+20t+1",
+  text:
+  "Dans un problème de hauteur, le sommet peut représenter la hauteur maximale.",
+  narration:
+  "Dans un problème de trajectoire, lorsque la parabole est ouverte vers le bas, le sommet représente la hauteur maximale."
+},
+{
+  section:"Problèmes",
+  title:"Toujours interpréter",
+  formula:"Calcul → conclusion dans le contexte",
+  text:
+  "Une réponse mathématique n'est pas terminée tant qu'elle n'est pas reliée au problème.",
+  narration:
+  "Dans un problème, il ne suffit pas de donner un nombre. Il faut expliquer ce que ce nombre représente dans la situation étudiée."
+},
+{
+  section:"Conclusion",
+  title:"La méthode à retenir",
+  formula:"Observer → Calculer → Vérifier → Interpréter",
+  text:
+  "Identifie les coefficients, étudie le sommet et le discriminant, puis relie les résultats au graphique.",
+  narration:
+  "Pour conclure, commence toujours par observer la fonction, identifie les coefficients, calcule le sommet ou le discriminant selon la question, vérifie tes calculs et interprète ton résultat."
+}
+];
+
+let videoIndex=0;
+let videoPlaying=false;
+let videoTimer=null;
+let narrationEnabled=false;
+let frenchVoices=[];
+
+function renderVideo(){
+
+  const slide=
+    videoSlides[videoIndex];
+
+  document
+  .getElementById("videoSlide")
+  .innerHTML=`
+    <div class="video-section">
+      ${slide.section}
+    </div>
+
+    <div class="video-title">
+      ${slide.title}
+    </div>
+
+    <div class="video-formula">
+      ${slide.formula}
+    </div>
+
+    <div class="video-text">
+      ${slide.text}
+    </div>
+  `;
+
+  document
+  .getElementById("videoProgress")
+  .style.width=
+    (
+      (videoIndex+1)/
+      videoSlides.length*
+      100
+    )+"%";
+
+  document
+  .getElementById("videoCounter")
+  .textContent=
+    `${videoIndex+1} / ${videoSlides.length}`;
+
+  if(narrationEnabled){
+    speakCurrentSlide();
+  }
+}
+
+function loadVoices(){
+
+  if(
+    !("speechSynthesis" in window)
+  ){
+
+    document
+    .getElementById("voiceStatus")
+    .textContent=
+      "Synthèse vocale non disponible dans ce navigateur.";
+
+    return;
   }
 
-  if(root<0){
-    return "x+"+Math.abs(root);
+  frenchVoices=
+    speechSynthesis
+    .getVoices()
+    .filter(
+      voice=>
+        voice.lang &&
+        voice.lang
+        .toLowerCase()
+        .startsWith("fr")
+    );
+
+  const select=
+    document.getElementById(
+      "voiceSelect"
+    );
+
+  select.innerHTML=
+    '<option value="">Voix automatique</option>'+
+    frenchVoices
+    .map(
+      voice=>
+      `<option value="${escapeHTML(voice.name)}">
+        ${escapeHTML(voice.name)} — ${escapeHTML(voice.lang)}
+      </option>`
+    )
+    .join("");
+
+  document
+  .getElementById("voiceStatus")
+  .textContent=
+    frenchVoices.length
+    ?`${frenchVoices.length} voix française(s) détectée(s).`
+    :"Aucune voix française spécifique détectée. Le navigateur utilisera sa voix par défaut.";
+}
+
+function escapeHTML(text){
+
+  return String(text)
+  .replace(
+    /[&<>"']/g,
+    char=>({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    })[char]
+  );
+}
+
+function selectedVoice(){
+
+  const name=
+    document
+    .getElementById("voiceSelect")
+    .value;
+
+  if(name){
+
+    return frenchVoices.find(
+      voice=>voice.name===name
+    )||null;
+
   }
 
-  return "x";
+  return(
+    frenchVoices.find(
+      voice=>
+        voice.lang
+        .toLowerCase()==="fr-fr"
+    )
+    ||
+    frenchVoices[0]
+    ||
+    null
+  );
+}
+
+function speakCurrentSlide(){
+
+  if(
+    !("speechSynthesis" in window)
+  ){
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const slide=
+    videoSlides[videoIndex];
+
+  const utterance=
+    new SpeechSynthesisUtterance(
+      slide.title+". "+slide.narration
+    );
+
+  utterance.lang="fr-FR";
+
+  utterance.rate=
+    Number(
+      document
+      .getElementById("speechRate")
+      .value
+    )||.9;
+
+  const voice=
+    selectedVoice();
+
+  if(voice){
+    utterance.voice=voice;
+  }
+
+  speechSynthesis.speak(
+    utterance
+  );
+}
+
+function toggleNarration(){
+
+  narrationEnabled=
+    !narrationEnabled;
+
+  document
+  .getElementById("voiceButton")
+  .textContent=
+    narrationEnabled
+      ?"🔊 Désactiver la voix"
+      :"🔇 Activer la voix";
+
+  if(narrationEnabled){
+
+    speakCurrentSlide();
+
+  }else if(
+    "speechSynthesis" in window
+  ){
+
+    speechSynthesis.cancel();
+
+  }
+}
+
+function repeatNarration(){
+  speakCurrentSlide();
+}
+
+function toggleVideo(){
+
+  videoPlaying=
+    !videoPlaying;
+
+  document
+  .getElementById("videoPlayButton")
+  .textContent=
+    videoPlaying
+      ?"⏸ Pause"
+      :"▶ Lecture";
+
+  clearInterval(
+    videoTimer
+  );
+
+  if(videoPlaying){
+
+    if(narrationEnabled){
+      speakCurrentSlide();
+    }
+
+    videoTimer=
+      setInterval(
+        ()=>{
+
+          if(
+            videoIndex<
+            videoSlides.length-1
+          ){
+
+            videoIndex++;
+            renderVideo();
+
+          }else{
+
+            videoPlaying=false;
+
+            clearInterval(
+              videoTimer
+            );
+
+            document
+            .getElementById(
+              "videoPlayButton"
+            )
+            .textContent=
+              "▶ Lecture";
+
+          }
+
+        },
+        13000
+      );
+
+  }else{
+
+    if(
+      "speechSynthesis" in window
+    ){
+      speechSynthesis.cancel();
+    }
+
+  }
+}
+
+function videoNext(){
+
+  videoIndex=
+    Math.min(
+      videoSlides.length-1,
+      videoIndex+1
+    );
+
+  renderVideo();
+}
+
+function videoPrevious(){
+
+  videoIndex=
+    Math.max(
+      0,
+      videoIndex-1
+    );
+
+  renderVideo();
+}
+
+function jumpVideo(index){
+
+  videoIndex=
+    Math.min(
+      videoSlides.length-1,
+      Math.max(0,index)
+    );
+
+  renderVideo();
+}
+
+/* =========================================================
+   GRAPHIQUE
+   ========================================================= */
+
+const sliderA=
+  document.getElementById("sliderA");
+
+const sliderB=
+  document.getElementById("sliderB");
+
+const sliderC=
+  document.getElementById("sliderC");
+
+[
+  sliderA,
+  sliderB,
+  sliderC
+]
+.forEach(slider=>{
+
+  slider.addEventListener(
+    "input",
+    drawGraph
+  );
+
+});
+
+[
+  "showGrid",
+  "showMinorGrid",
+  "showLabels",
+  "preciseMode"
+]
+.forEach(id=>{
+
+  document
+  .getElementById(id)
+  .addEventListener(
+    "change",
+    drawGraph
+  );
+
+});
+
+function graphParameters(){
+
+  let a=
+    Number(sliderA.value);
+
+  const b=
+    Number(sliderB.value);
+
+  const c=
+    Number(sliderC.value);
+
+  if(
+    Math.abs(a)<.001
+  ){
+
+    a=.5;
+    sliderA.value=".5";
+
+  }
+
+  return {a,b,c};
+}
+
+function functionValue(
+  x,a,b,c
+){
+  return a*x*x+b*x+c;
+}
+
+function discriminant(
+  a,b,c
+){
+  return b*b-4*a*c;
+}
+
+function rootsOf(
+  a,b,c
+){
+
+  const delta=
+    discriminant(a,b,c);
+
+  if(delta<0){
+    return [];
+  }
+
+  if(
+    Math.abs(delta)<1e-9
+  ){
+
+    return [
+      -b/(2*a)
+    ];
+
+  }
+
+  const sqrtDelta=
+    Math.sqrt(delta);
+
+  return[
+    (-b-sqrtDelta)/(2*a),
+    (-b+sqrtDelta)/(2*a)
+  ]
+  .sort((x,y)=>x-y);
+}
+
+function drawGraph(){
+
+  const {a,b,c}=
+    graphParameters();
+
+  document
+  .getElementById("valueA")
+  .textContent=
+    formatNumber(a);
+
+  document
+  .getElementById("valueB")
+  .textContent=
+    formatNumber(b);
+
+  document
+  .getElementById("valueC")
+  .textContent=
+    formatNumber(c);
+
+  const xs=
+    -b/(2*a);
+
+  const ys=
+    functionValue(
+      xs,a,b,c
+    );
+
+  const delta=
+    discriminant(a,b,c);
+
+  const roots=
+    rootsOf(a,b,c);
+
+  document
+  .getElementById(
+    "functionExpression"
+  )
+  .textContent=
+    "f(x)="+
+    formatStandard(a,b,c);
+
+  document
+  .getElementById(
+    "vertexInfo"
+  )
+  .textContent=
+    `S(${formatNumber(xs)} ; ${formatNumber(ys)})`;
+
+  document
+  .getElementById(
+    "axisInfo"
+  )
+  .textContent=
+    "x="+
+    formatNumber(xs);
+
+  document
+  .getElementById(
+    "originInfo"
+  )
+  .textContent=
+    "f(0)="+
+    formatNumber(c);
+
+  document
+  .getElementById(
+    "deltaInfo"
+  )
+  .textContent=
+    formatNumber(delta);
+
+  document
+  .getElementById(
+    "rootsInfo"
+  )
+  .textContent=
+    roots.length
+      ?roots
+        .map(
+          (root,index)=>
+            `x${index+1}=${formatNumber(root)}`
+        )
+        .join(" ; ")
+      :"aucun zéro réel";
+
+  let observation=
+    `Sommet : <strong>S(${formatNumber(xs)} ; ${formatNumber(ys)})</strong>. `+
+    `Axe : <strong>x=${formatNumber(xs)}</strong>. `;
+
+  observation+=
+    a>0
+      ?"La parabole est ouverte vers le <strong>haut</strong>. "
+      :"La parabole est ouverte vers le <strong>bas</strong>. ";
+
+  if(delta>0){
+
+    observation+=
+      "Elle coupe l'axe des x en deux points.";
+
+  }else if(
+    Math.abs(delta)<1e-9
+  ){
+
+    observation+=
+      "Elle touche l'axe des x en un point.";
+
+  }else{
+
+    observation+=
+      "Elle ne coupe pas l'axe des x.";
+
+  }
+
+  document
+  .getElementById(
+    "observation"
+  )
+  .innerHTML=
+    observation;
+
+  renderValueTable(
+    a,b,c,xs
+  );
+
+  renderCanvas(
+    a,b,c,xs,ys,roots
+  );
+}
+
+function renderValueTable(
+  a,b,c,xs
+){
+
+  const start=
+    Math.floor(xs)-3;
+
+  let html="";
+
+  for(
+    let i=0;
+    i<7;
+    i++
+  ){
+
+    const x=
+      start+i;
+
+    const y=
+      functionValue(
+        x,a,b,c
+      );
+
+    html+=`
+      <tr>
+        <td>${formatNumber(x)}</td>
+        <td>${formatNumber(y)}</td>
+      </tr>
+    `;
+
+  }
+
+  document
+  .getElementById(
+    "valuesBody"
+  )
+  .innerHTML=
+    html;
+}
+
+function renderCanvas(
+  a,b,c,xs,ys,roots
+){
+
+  const canvas=
+    document
+    .getElementById(
+      "graphCanvas"
+    );
+
+  const ctx=
+    canvas.getContext("2d");
+
+  const W=
+    canvas.width;
+
+  const H=
+    canvas.height;
+
+  const originX=
+    W/2;
+
+  const originY=
+    H/2;
+
+  const unit=
+    45*graphZoom;
+
+  const half=
+    unit/2;
+
+  ctx.clearRect(
+    0,0,W,H
+  );
+
+  ctx.fillStyle="#fff";
+  ctx.fillRect(0,0,W,H);
+
+  const showGrid=
+    document
+    .getElementById(
+      "showGrid"
+    )
+    .checked;
+
+  const showMinor=
+    document
+    .getElementById(
+      "showMinorGrid"
+    )
+    .checked;
+
+  const showLabels=
+    document
+    .getElementById(
+      "showLabels"
+    )
+    .checked;
+
+  if(
+    showGrid &&
+    showMinor
+  ){
+
+    ctx.strokeStyle="#eef3f7";
+    ctx.lineWidth=1;
+
+    for(
+      let px=originX%half;
+      px<W;
+      px+=half
+    ){
+
+      ctx.beginPath();
+      ctx.moveTo(px,0);
+      ctx.lineTo(px,H);
+      ctx.stroke();
+
+    }
+
+    for(
+      let py=originY%half;
+      py<H;
+      py+=half
+    ){
+
+      ctx.beginPath();
+      ctx.moveTo(0,py);
+      ctx.lineTo(W,py);
+      ctx.stroke();
+
+    }
+
+  }
+
+  if(showGrid){
+
+    ctx.strokeStyle="#d6e4ed";
+
+    for(
+      let px=originX%unit;
+      px<W;
+      px+=unit
+    ){
+
+      ctx.beginPath();
+      ctx.moveTo(px,0);
+      ctx.lineTo(px,H);
+      ctx.stroke();
+
+    }
+
+    for(
+      let py=originY%unit;
+      py<H;
+      py+=unit
+    ){
+
+      ctx.beginPath();
+      ctx.moveTo(0,py);
+      ctx.lineTo(W,py);
+      ctx.stroke();
+
+    }
+
+  }
+
+  /* AXES */
+
+  ctx.strokeStyle="#102f46";
+  ctx.lineWidth=2;
+
+  ctx.beginPath();
+  ctx.moveTo(0,originY);
+  ctx.lineTo(W,originY);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(originX,0);
+  ctx.lineTo(originX,H);
+  ctx.stroke();
+
+  /* GRADUATIONS */
+
+  ctx.font="12px Arial";
+  ctx.fillStyle="#173246";
+  ctx.lineWidth=1;
+
+  const maxX=
+    Math.ceil(
+      W/(2*unit)
+    )+1;
+
+  const maxY=
+    Math.ceil(
+      H/(2*unit)
+    )+1;
+
+  for(
+    let i=-maxX;
+    i<=maxX;
+    i++
+  ){
+
+    const px=
+      originX+i*unit;
+
+    if(
+      px<0 ||
+      px>W
+    ){
+      continue;
+    }
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      px,
+      originY-5
+    );
+
+    ctx.lineTo(
+      px,
+      originY+5
+    );
+
+    ctx.stroke();
+
+    if(
+      showLabels &&
+      i!==0
+    ){
+
+      ctx.textAlign="center";
+      ctx.textBaseline="top";
+
+      ctx.fillText(
+        String(i),
+        px,
+        originY+8
+      );
+
+    }
+
+  }
+
+  for(
+    let j=-maxY;
+    j<=maxY;
+    j++
+  ){
+
+    const py=
+      originY-j*unit;
+
+    if(
+      py<0 ||
+      py>H
+    ){
+      continue;
+    }
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      originX-5,
+      py
+    );
+
+    ctx.lineTo(
+      originX+5,
+      py
+    );
+
+    ctx.stroke();
+
+    if(
+      showLabels &&
+      j!==0
+    ){
+
+      ctx.textAlign="left";
+      ctx.textBaseline="middle";
+
+      ctx.fillText(
+        String(j),
+        originX+8,
+        py
+      );
+
+    }
+
+  }
+
+  if(showLabels){
+
+    ctx.font="bold 14px Arial";
+
+    ctx.fillText(
+      "x",
+      W-20,
+      originY-15
+    );
+
+    ctx.fillText(
+      "y",
+      originX+10,
+      17
+    );
+
+    ctx.font="12px Arial";
+
+    ctx.fillText(
+      "0",
+      originX+8,
+      originY+14
+    );
+
+  }
+
+  /* AXE DE SYMETRIE */
+
+  const axisPX=
+    originX+
+    xs*unit;
+
+  if(
+    axisPX>=0 &&
+    axisPX<=W
+  ){
+
+    ctx.save();
+
+    ctx.strokeStyle="#8062bb";
+    ctx.setLineDash([6,5]);
+
+    ctx.beginPath();
+
+    ctx.moveTo(
+      axisPX,
+      0
+    );
+
+    ctx.lineTo(
+      axisPX,
+      H
+    );
+
+    ctx.stroke();
+
+    ctx.restore();
+
+  }
+
+  /* PARABOLE */
+
+  ctx.strokeStyle="#287fc1";
+  ctx.lineWidth=3.5;
+
+  ctx.beginPath();
+
+  let started=false;
+
+  for(
+    let px=0;
+    px<=W;
+    px++
+  ){
+
+    const x=
+      (px-originX)/
+      unit;
+
+    const y=
+      functionValue(
+        x,a,b,c
+      );
+
+    const py=
+      originY-
+      y*unit;
+
+    if(
+      Number.isFinite(py) &&
+      py>-1000 &&
+      py<H+1000
+    ){
+
+      if(!started){
+
+        ctx.moveTo(
+          px,py
+        );
+
+        started=true;
+
+      }else{
+
+        ctx.lineTo(
+          px,py
+        );
+
+      }
+
+    }else{
+
+      started=false;
+
+    }
+
+  }
+
+  ctx.stroke();
+
+  drawPoint(
+    ctx,
+    originX+xs*unit,
+    originY-ys*unit,
+    "#20864e",
+    `S(${formatNumber(xs)} ; ${formatNumber(ys)})`,
+    showLabels
+  );
+
+  roots.forEach(
+    (root,index)=>{
+
+      drawPoint(
+        ctx,
+        originX+root*unit,
+        originY,
+        "#c63838",
+        `Z${index+1}(${formatNumber(root)} ; 0)`,
+        showLabels
+      );
+
+    }
+  );
+
+  drawPoint(
+    ctx,
+    originX,
+    originY-c*unit,
+    "#e98916",
+    `A(0 ; ${formatNumber(c)})`,
+    showLabels
+  );
+
+  if(
+    pointerGraphPosition &&
+    document
+    .getElementById(
+      "preciseMode"
+    )
+    .checked
+  ){
+
+    const px=
+      originX+
+      pointerGraphPosition.x*
+      unit;
+
+    const py=
+      originY-
+      pointerGraphPosition.y*
+      unit;
+
+    ctx.save();
+
+    ctx.strokeStyle="#666";
+    ctx.setLineDash([3,3]);
+
+    ctx.beginPath();
+
+    ctx.moveTo(px,0);
+    ctx.lineTo(px,H);
+    ctx.stroke();
+
+    ctx.beginPath();
+
+    ctx.moveTo(0,py);
+    ctx.lineTo(W,py);
+    ctx.stroke();
+
+    ctx.restore();
+
+  }
+}
+
+function drawPoint(
+  ctx,
+  px,
+  py,
+  color,
+  label,
+  showLabel
+){
+
+  if(
+    px<0 ||
+    px>ctx.canvas.width ||
+    py<0 ||
+    py>ctx.canvas.height
+  ){
+    return;
+  }
+
+  ctx.fillStyle=color;
+
+  ctx.beginPath();
+
+  ctx.arc(
+    px,py,6,
+    0,
+    2*Math.PI
+  );
+
+  ctx.fill();
+
+  if(showLabel){
+
+    ctx.font="bold 12px Arial";
+
+    ctx.textAlign="left";
+
+    ctx.fillText(
+      label,
+      Math.min(
+        px+8,
+        ctx.canvas.width-
+        ctx.measureText(label).width-
+        5
+      ),
+      Math.max(
+        15,
+        py-8
+      )
+    );
+
+  }
+}
+
+function zoomGraph(factor){
+
+  graphZoom*=factor;
+
+  graphZoom=
+    Math.max(
+      .65,
+      Math.min(
+        2.2,
+        graphZoom
+      )
+    );
+
+  drawGraph();
+}
+
+function resetGraph(){
+
+  sliderA.value="1";
+  sliderB.value="0";
+  sliderC.value="0";
+
+  graphZoom=1;
+  pointerGraphPosition=null;
+
+  drawGraph();
+}
+
+function randomFunction(){
+
+  sliderA.value=
+    String(
+      pick([
+        -3,-2,-1.5,-1,-.5,
+        .5,1,1.5,2,3
+      ])
+    );
+
+  sliderB.value=
+    String(
+      randInt(-16,16)/2
+    );
+
+  sliderC.value=
+    String(
+      randInt(-16,16)/2
+    );
+
+  drawGraph();
+}
+
+function graphHint(){
+
+  alert(
+    "À observer :\n\n"+
+    "• signe de a : ouverture ;\n"+
+    "• sommet : xS=−b/(2a) ;\n"+
+    "• c=f(0) ;\n"+
+    "• les zéros sont les intersections avec l'axe x."
+  );
+}
+
+const graphCanvas=
+  document.getElementById(
+    "graphCanvas"
+  );
+
+graphCanvas
+.addEventListener(
+  "pointermove",
+  event=>{
+
+    if(
+      !document
+      .getElementById(
+        "preciseMode"
+      )
+      .checked
+    ){
+      return;
+    }
+
+    const rect=
+      graphCanvas
+      .getBoundingClientRect();
+
+    const scaleX=
+      graphCanvas.width/
+      rect.width;
+
+    const scaleY=
+      graphCanvas.height/
+      rect.height;
+
+    const px=
+      (
+        event.clientX-
+        rect.left
+      )*
+      scaleX;
+
+    const py=
+      (
+        event.clientY-
+        rect.top
+      )*
+      scaleY;
+
+    const unit=
+      45*graphZoom;
+
+    let x=
+      (
+        px-
+        graphCanvas.width/2
+      )/
+      unit;
+
+    let y=
+      (
+        graphCanvas.height/2-
+        py
+      )/
+      unit;
+
+    x=
+      Math.round(x*10)/10;
+
+    y=
+      Math.round(y*10)/10;
+
+    pointerGraphPosition=
+      {x,y};
+
+    document
+    .getElementById(
+      "pointerCoordinates"
+    )
+    .textContent=
+      `x≈${formatNumber(x)} ; y≈${formatNumber(y)}`;
+
+    drawGraph();
+
+  }
+);
+
+graphCanvas
+.addEventListener(
+  "pointerleave",
+  ()=>{
+
+    pointerGraphPosition=null;
+
+    document
+    .getElementById(
+      "pointerCoordinates"
+    )
+    .textContent=
+      "déplace le pointeur dans le repère";
+
+    drawGraph();
+
+  }
+);
+
+/* =========================================================
+   EXERCICES PROGRESSIFS
+   ========================================================= */
+
+function selectExerciseLevel(
+  level,
+  button
+){
+
+  currentExerciseLevel=
+    level;
+
+  document
+  .querySelectorAll(
+    ".level-card"
+  )
+  .forEach(card=>{
+    card.classList.remove(
+      "active"
+    );
+  });
+
+  button.classList.add(
+    "active"
+  );
+
+  generateExercise();
+}
+
+function generateExercise(){
+
+  const difficulty=
+    document
+    .getElementById(
+      "exerciseDifficulty"
+    )
+    .value;
+
+  if(
+    currentExerciseLevel===1
+  ){
+
+    currentExercise=
+      makeLevel1Exercise(
+        difficulty
+      );
+
+  }else if(
+    currentExerciseLevel===2
+  ){
+
+    currentExercise=
+      makeLevel2Exercise(
+        difficulty
+      );
+
+  }else if(
+    currentExerciseLevel===3
+  ){
+
+    currentExercise=
+      makeLevel3Exercise(
+        difficulty
+      );
+
+  }else{
+
+    currentExercise=
+      makeLevel4Exercise(
+        difficulty
+      );
+
+  }
+
+  exerciseAttempts=0;
+
+  renderExercise();
+  renderLevelStatus();
+}
+
+function makeLevel1Exercise(
+  difficulty
+){
+
+  const type=
+    randInt(1,4);
+
+  if(type===1){
+
+    const a=
+      pick([
+        -4,-3,-2,-1,
+        1,2,3,4
+      ]);
+
+    return{
+      level:1,
+      skill:"Lecture",
+      label:"Sens d'ouverture",
+      difficulty,
+      kind:"choice",
+      question:
+        `Une fonction du second degré a pour coefficient a=${a}. Dans quel sens la parabole est-elle ouverte ?`,
+      choices:[
+        "vers le haut",
+        "vers le bas"
+      ],
+      answer:
+        a>0
+          ?"vers le haut"
+          :"vers le bas",
+      hint1:
+        "Observe le signe de a.",
+      hint2:
+        a>0
+          ?"a est positif."
+          :"a est négatif.",
+      correction:
+        a>0
+          ?"Comme a>0, la parabole est ouverte vers le haut."
+          :"Comme a<0, la parabole est ouverte vers le bas."
+    };
+
+  }
+
+  if(type===2){
+
+    const xs=
+      randInt(-5,5);
+
+    const ys=
+      randInt(-5,5);
+
+    return{
+      level:1,
+      skill:"Lecture",
+      label:"Axe de symétrie",
+      difficulty,
+      kind:"number",
+      question:
+        `Une parabole a pour sommet S(${xs} ; ${ys}). Donne la valeur de x de son axe de symétrie.`,
+      answer:xs,
+      hint1:
+        "L'axe vertical passe par le sommet.",
+      hint2:
+        `L'abscisse du sommet vaut ${xs}.`,
+      correction:
+        `L'axe de symétrie est x=${xs}.`
+    };
+
+  }
+
+  if(type===3){
+
+    const c=
+      randInt(-9,9);
+
+    return{
+      level:1,
+      skill:"Lecture",
+      label:"Ordonnée à l'origine",
+      difficulty,
+      kind:"number",
+      question:
+        `Quelle est l'ordonnée à l'origine de f(x)=2x²−5x${c>=0?"+":""}${c} ?`,
+      answer:c,
+      hint1:
+        "Calcule f(0).",
+      hint2:
+        "Dans ax²+bx+c, f(0)=c.",
+      correction:
+        `L'ordonnée à l'origine est ${c}.`
+    };
+
+  }
+
+  const delta=
+    pick([-5,0,4]);
+
+  return{
+    level:1,
+    skill:"Zeros",
+    label:"Lecture du discriminant",
+    difficulty,
+    kind:"choice",
+    question:
+      `Une équation du second degré a pour discriminant Δ=${delta}. Combien possède-t-elle de solutions réelles ?`,
+    choices:["0","1","2"],
+    answer:
+      delta<0
+        ?"0"
+        :delta===0
+          ?"1"
+          :"2",
+    hint1:
+      "Le signe de Δ détermine le nombre de solutions.",
+    hint2:
+      "Δ<0 : 0 ; Δ=0 : 1 ; Δ>0 : 2.",
+    correction:
+      delta<0
+        ?"Comme Δ<0, il n'y a aucune solution réelle."
+        :delta===0
+          ?"Comme Δ=0, il y a une solution réelle double."
+          :"Comme Δ>0, il y a deux solutions réelles."
+  };
+}
+
+function makeLevel2Exercise(
+  difficulty
+){
+
+  const type=
+    randInt(1,5);
+
+  const a=
+    difficulty==="Facile"
+      ?pick([1,2])
+      :pick([
+          1,2,3,
+          -1,-2
+        ]);
+
+  const xs=
+    randInt(-4,4);
+
+  const ys=
+    randInt(-5,5);
+
+  const b=
+    -2*a*xs;
+
+  const c=
+    ys+
+    a*xs*xs;
+
+  if(type===1){
+
+    return{
+      level:2,
+      skill:"Calcul",
+      label:"Abscisse du sommet",
+      difficulty,
+      kind:"number",
+      question:
+        `Soit f(x)=${formatStandard(a,b,c)}. Calcule l'abscisse du sommet.`,
+      answer:xs,
+      hint1:
+        "Utilise xS=−b/(2a).",
+      hint2:
+        `Ici a=${a} et b=${b}.`,
+      correction:
+        `xS=−(${b})/(2×${a})=${xs}.`
+    };
+
+  }
+
+  if(type===2){
+
+    const x=
+      randInt(-4,4);
+
+    const value=
+      a*x*x+
+      b*x+
+      c;
+
+    return{
+      level:2,
+      skill:"Calcul",
+      label:"Calcul d'image",
+      difficulty,
+      kind:"number",
+      question:
+        `Pour f(x)=${formatStandard(a,b,c)}, calcule f(${x}).`,
+      answer:value,
+      hint1:
+        `Remplace x par ${x}.`,
+      hint2:
+        "Calcule d'abord le carré, puis les produits.",
+      correction:
+        `f(${x})=${a}×(${x})²+(${b})×(${x})+(${c})=${value}.`
+    };
+
+  }
+
+  if(type===3){
+
+    const delta=
+      b*b-
+      4*a*c;
+
+    return{
+      level:2,
+      skill:"Zeros",
+      label:"Calcul du discriminant",
+      difficulty,
+      kind:"number",
+      question:
+        `Calcule le discriminant de ${formatStandard(a,b,c)}=0.`,
+      answer:delta,
+      hint1:
+        "Δ=b²−4ac.",
+      hint2:
+        `a=${a}, b=${b}, c=${c}.`,
+      correction:
+        `Δ=(${b})²−4×${a}×${c}=${delta}.`
+    };
+
+  }
+
+  if(type===4){
+
+    let r1=
+      randInt(-4,1);
+
+    let r2=
+      randInt(r1+1,5);
+
+    const aa=
+      difficulty==="Avancée"
+        ?pick([1,2,-1])
+        :1;
+
+    const bb=
+      -aa*(r1+r2);
+
+    const cc=
+      aa*r1*r2;
+
+    return{
+      level:2,
+      skill:"Zeros",
+      label:"Calcul des zéros",
+      difficulty,
+      kind:"set",
+      question:
+        `Détermine les deux zéros de f(x)=${formatStandard(aa,bb,cc)}. Sépare les réponses par un point-virgule.`,
+      answer:[r1,r2],
+      hint1:
+        "Résous f(x)=0.",
+      hint2:
+        "Tu peux factoriser ou calculer Δ.",
+      correction:
+        `Les zéros sont x=${r1} et x=${r2}.`
+    };
+
+  }
+
+  return{
+    level:2,
+    skill:"Calcul",
+    label:"Sommet complet",
+    difficulty,
+    kind:"pair",
+    question:
+      `Détermine les coordonnées du sommet de f(x)=${formatStandard(a,b,c)}. Écris xS ; yS.`,
+    answer:[xs,ys],
+    hint1:
+      "Commence par xS=−b/(2a).",
+    hint2:
+      "Ensuite calcule yS=f(xS).",
+    correction:
+      `xS=${xs} et yS=${ys}. Le sommet est S(${xs} ; ${ys}).`
+  };
+}
+
+function makeLevel3Exercise(
+  difficulty
+){
+
+  const type=
+    randInt(1,4);
+
+  if(type===1){
+
+    const xs=
+      randInt(-3,3);
+
+    const d=
+      randInt(1,4);
+
+    const y=
+      randInt(-5,8);
+
+    return{
+      level:3,
+      skill:"Raisonnement",
+      label:"Symétrie",
+      difficulty,
+      kind:"number",
+      question:
+        `L'axe de symétrie d'une parabole est x=${xs}. On sait que f(${xs-d})=${y}. Sans recalculer la fonction, détermine f(${xs+d}).`,
+      answer:y,
+      hint1:
+        "Compare les distances des deux abscisses à l'axe.",
+      hint2:
+        "Deux points symétriques ont la même ordonnée.",
+      correction:
+        `Les abscisses ${xs-d} et ${xs+d} sont à la même distance de x=${xs}. Donc f(${xs+d})=${y}.`
+    };
+
+  }
+
+  if(type===2){
+
+    const a=
+      pick([-3,-2,-1]);
+
+    const b=
+      randInt(-8,8);
+
+    return{
+      level:3,
+      skill:"Raisonnement",
+      label:"Maximum ou minimum",
+      difficulty,
+      kind:"choice",
+      question:
+        `Une fonction du second degré a pour coefficient a=${a}. Son sommet correspond-il à un maximum ou à un minimum ?`,
+      choices:[
+        "maximum",
+        "minimum"
+      ],
+      answer:"maximum",
+      hint1:
+        "Observe le sens d'ouverture.",
+      hint2:
+        "a<0 signifie une ouverture vers le bas.",
+      correction:
+        "La parabole est ouverte vers le bas. Le sommet correspond donc à un maximum."
+    };
+
+  }
+
+  if(type===3){
+
+    const delta=
+      pick([-8,0,9]);
+
+    return{
+      level:3,
+      skill:"Raisonnement",
+      label:"Interprétation du discriminant",
+      difficulty,
+      kind:"choice",
+      question:
+        `Une fonction a pour discriminant Δ=${delta}. Quelle affirmation graphique est correcte ?`,
+      choices:
+        delta<0
+        ?[
+          "La parabole coupe l'axe x deux fois.",
+          "La parabole ne coupe pas l'axe x.",
+          "Le sommet est nécessairement l'origine."
+        ]
+        :delta===0
+        ?[
+          "La parabole touche l'axe x en un point.",
+          "La parabole ne rencontre pas l'axe x.",
+          "Il existe deux intersections distinctes."
+        ]
+        :[
+          "La parabole coupe l'axe x en deux points.",
+          "La parabole ne coupe pas l'axe x.",
+          "La parabole touche seulement l'axe y."
+        ],
+      answer:
+        delta<0
+          ?"La parabole ne coupe pas l'axe x."
+          :delta===0
+            ?"La parabole touche l'axe x en un point."
+            :"La parabole coupe l'axe x en deux points.",
+      hint1:
+        "Relie le nombre de solutions à l'intersection avec l'axe x.",
+      hint2:
+        "Les solutions de f(x)=0 sont les abscisses des intersections avec l'axe x.",
+      correction:
+        delta<0
+          ?"Δ<0 : aucune solution réelle, donc aucune intersection avec l'axe x."
+          :delta===0
+            ?"Δ=0 : une solution double, donc la parabole touche l'axe x."
+            :"Δ>0 : deux solutions réelles, donc deux intersections avec l'axe x."
+    };
+
+  }
+
+  const xs=
+    randInt(-3,3);
+
+  const ys=
+    randInt(-4,4);
+
+  return{
+    level:3,
+    skill:"Raisonnement",
+    label:"Reconstruction graphique",
+    difficulty,
+    kind:"number",
+    question:
+      `Une parabole a pour sommet S(${xs} ; ${ys}) et passe par un point d'abscisse ${xs-2}. À quelle abscisse se trouve le point symétrique correspondant ?`,
+    answer:xs+2,
+    hint1:
+      `L'axe de symétrie est x=${xs}.`,
+    hint2:
+      "Le point symétrique est à la même distance de l'autre côté de l'axe.",
+    correction:
+      `La distance à l'axe vaut 2. Le point symétrique a donc pour abscisse ${xs+2}.`
+  };
+}
+
+function makeLevel4Exercise(
+  difficulty
+){
+
+  const context=
+    randInt(1,4);
+
+  if(context===1){
+
+    const tMax=
+      randInt(2,5);
+
+    const a=
+      pick([-3,-4,-5]);
+
+    const b=
+      -2*a*tMax;
+
+    const c=
+      randInt(0,3);
+
+    const hMax=
+      a*tMax*tMax+
+      b*tMax+
+      c;
+
+    return{
+      level:4,
+      skill:"Transfert",
+      label:"Trajectoire",
+      difficulty,
+      kind:"number",
+      question:
+        `La hauteur d'un ballon est h(t)=${formatStandard(a,b,c)}, en mètres. À quel instant la hauteur est-elle maximale ?`,
+      answer:tMax,
+      hint1:
+        "Le coefficient de t² est négatif.",
+      hint2:
+        "Le maximum correspond à l'abscisse du sommet.",
+      correction:
+        `tS=−${b}/(2×${a})=${tMax}. La hauteur maximale ${formatNumber(hMax)} m est atteinte après ${tMax} s.`
+    };
+
+  }
+
+  if(context===2){
+
+    const xMax=
+      randInt(3,7);
+
+    const a=
+      pick([-1,-2]);
+
+    const b=
+      -2*a*xMax;
+
+    const c=
+      randInt(-15,5);
+
+    const profit=
+      a*xMax*xMax+
+      b*xMax+
+      c;
+
+    return{
+      level:4,
+      skill:"Transfert",
+      label:"Bénéfice",
+      difficulty,
+      kind:"number",
+      question:
+        `Le bénéfice d'une entreprise est B(x)=${formatStandard(a,b,c)}, où x représente des centaines d'objets. Pour quelle valeur de x le bénéfice est-il maximal ?`,
+      answer:xMax,
+      hint1:
+        "Le coefficient de x² est négatif.",
+      hint2:
+        "Calcule l'abscisse du sommet.",
+      correction:
+        `xS=${xMax}. Le bénéfice maximal vaut ${profit} unités du modèle et est atteint pour ${xMax} centaines d'objets.`
+    };
+
+  }
+
+  if(context===3){
+
+    const width=
+      randInt(10,20);
+
+    const xMax=
+      width/2;
+
+    return{
+      level:4,
+      skill:"Transfert",
+      label:"Aire maximale",
+      difficulty,
+      kind:"number",
+      question:
+        `Une aire rectangulaire est modélisée par A(x)=−x²+${width}x. Pour quelle valeur de x l'aire est-elle maximale ?`,
+      answer:xMax,
+      hint1:
+        "La fonction est une parabole ouverte vers le bas.",
+      hint2:
+        "Utilise xS=−b/(2a).",
+      correction:
+        `xS=−${width}/(2×−1)=${formatNumber(xMax)}. L'aire est maximale pour x=${formatNumber(xMax)}.`
+    };
+
+  }
+
+  const tMax=
+    randInt(2,5);
+
+  return{
+    level:4,
+    skill:"Transfert",
+    label:"Interprétation",
+    difficulty,
+    kind:"choice",
+    question:
+      `Dans un modèle de trajectoire, le sommet est S(${tMax} ; 18) et la parabole est ouverte vers le bas. Que signifie ce sommet ?`,
+    choices:[
+      `La hauteur maximale est 18 m, atteinte après ${tMax} s.`,
+      `La hauteur minimale est ${tMax} m.`,
+      `L'objet touche le sol après 18 s.`
+    ],
+    answer:
+      `La hauteur maximale est 18 m, atteinte après ${tMax} s.`,
+    hint1:
+      "Une parabole ouverte vers le bas possède un maximum.",
+    hint2:
+      "L'abscisse représente le temps et l'ordonnée la hauteur.",
+    correction:
+      `Le sommet représente une hauteur maximale de 18 m atteinte après ${tMax} secondes.`
+  };
 }
 
 function renderExercise(){
-  const exercise=currentExercise;
+
+  const exercise=
+    currentExercise;
 
   let field="";
 
-  if(exercise.kind==="choice"){
+  if(
+    exercise.kind==="choice"
+  ){
+
     field=`
       <select id="exerciseAnswer">
         <option value="">Choisir…</option>
-        ${exercise.choices.map(
-          choice=>`<option value="${choice}">${choice}</option>`
-        ).join("")}
+        ${exercise.choices
+          .map(
+            choice=>
+              `<option value="${escapeHTML(choice)}">${escapeHTML(choice)}</option>`
+          )
+          .join("")}
       </select>
     `;
+
   }else{
+
     field=`
       <input id="exerciseAnswer"
              type="text"
-             inputmode="decimal"
              placeholder="${
-               exercise.kind==="set"
-                 ? "Ex. -2 ; 4"
-                 : "Ta réponse"
+               exercise.kind==="set" ||
+               exercise.kind==="pair"
+                 ?"Ex. -2 ; 3"
+                 :"Ta réponse"
              }">
     `;
+
   }
 
-  document.getElementById(
+  document
+  .getElementById(
     "exerciseArea"
-  ).innerHTML=`
+  )
+  .innerHTML=`
+
     <div class="chips">
-      <span class="badge badge-blue">${exercise.skill}</span>
-      <span class="badge badge-orange">${exercise.difficulty}</span>
+
+      <span class="badge badge-blue">
+        Niveau ${exercise.level}
+      </span>
+
+      <span class="badge badge-purple">
+        ${exercise.skill}
+      </span>
+
+      <span class="badge badge-orange">
+        ${exercise.difficulty}
+      </span>
+
     </div>
 
-    <h3>${exercise.question}</h3>
+    <h3>
+      ${exercise.question}
+    </h3>
 
     <div class="answer-row">
+
       <div>
-        <label for="exerciseAnswer">Réponse</label>
+
+        <label for="exerciseAnswer">
+          Réponse
+        </label>
+
         ${field}
+
       </div>
 
       <button class="btn btn-primary"
               onclick="checkExercise()">
         Vérifier
       </button>
+
     </div>
 
     <div class="actions">
+
       <button class="btn btn-warning"
-              onclick="showExerciseHint(1)">
+              onclick="exerciseHint(1)">
         Indice 1
       </button>
 
       <button class="btn btn-warning"
-              onclick="showExerciseHint(2)">
+              onclick="exerciseHint(2)">
         Indice 2
       </button>
 
       <button class="btn btn-secondary"
-              onclick="showExerciseCorrection()">
-        Voir la correction
+              onclick="exerciseCorrection()">
+        Correction détaillée
       </button>
+
     </div>
 
     <div id="exerciseFeedback"
-         aria-live="polite"></div>
+         aria-live="polite">
+    </div>
   `;
 }
 
 function checkExercise(){
+
   exerciseAttempts++;
 
-  const value =
-    document.getElementById("exerciseAnswer")
-      .value;
+  const value=
+    document
+    .getElementById(
+      "exerciseAnswer"
+    )
+    .value;
 
   let correct=false;
 
-  if(currentExercise.kind==="number"){
-    correct=numericCorrect(
-      value,
-      currentExercise.answer
-    );
-  }
+  if(
+    currentExercise.kind==="number"
+  ){
 
-  if(currentExercise.kind==="choice"){
     correct=
-      value===currentExercise.answer;
-  }
+      numericCorrect(
+        value,
+        currentExercise.answer
+      );
 
-  if(currentExercise.kind==="set"){
+  }else if(
+    currentExercise.kind==="choice"
+  ){
+
+    correct=
+      value===
+      currentExercise.answer;
+
+  }else{
+
     correct=
       setCorrect(
         value,
         currentExercise.answer
       );
+
   }
 
   recordResult(
     currentExercise.skill,
     correct,
-    currentExercise.label
+    currentExercise.label,
+    currentExercise.level
   );
 
-  document.getElementById(
+  document
+  .getElementById(
     "exerciseFeedback"
-  ).innerHTML=
+  )
+  .innerHTML=
     correct
-      ?`
-        <div class="notice ok">
-          ✅ Correct. La méthode et le résultat sont cohérents.
-        </div>
-       `
-      :`
-        <div class="notice warn">
-          Ce n'est pas encore correct.
-          ${
-            exerciseAttempts>=2
-              ?" La correction détaillée est maintenant affichée."
-              :" Relis l'énoncé et utilise un indice."
-          }
-        </div>
-       `;
+    ?`
+      <div class="notice ok">
+        ✅ Correct !
+        ${
+          exerciseAttempts===1
+            ?" Réussite au premier essai."
+            :" Bonne correction de ta démarche."
+        }
+      </div>
+    `
+    :`
+      <div class="notice warn">
+        Ce n'est pas encore correct.
+        ${
+          exerciseAttempts>=2
+            ?" Consulte la correction détaillée."
+            :" Utilise un indice puis essaie encore."
+        }
+      </div>
+    `;
 
-  if(!correct && exerciseAttempts>=2){
-    showExerciseCorrection();
+  if(
+    !correct &&
+    exerciseAttempts>=2
+  ){
+    exerciseCorrection();
   }
+
+  renderLevelStatus();
 }
 
-function showExerciseHint(level){
-  document.getElementById(
+function exerciseHint(level){
+
+  document
+  .getElementById(
     "exerciseFeedback"
-  ).innerHTML=`
+  )
+  .innerHTML=`
     <div class="notice warn">
       <strong>Indice ${level} :</strong>
       ${
@@ -2484,13 +4383,52 @@ function showExerciseHint(level){
   `;
 }
 
-function showExerciseCorrection(){
-  document.getElementById(
+function exerciseCorrection(){
+
+  document
+  .getElementById(
     "exerciseFeedback"
-  ).innerHTML+=`
+  )
+  .innerHTML+=`
     <div class="notice ok">
       <strong>Correction détaillée :</strong><br>
       ${currentExercise.correction}
+    </div>
+  `;
+}
+
+function renderLevelStatus(){
+
+  const success=
+    state.levelSuccess[
+      currentExerciseLevel
+    ]||0;
+
+  const target=5;
+
+  const pct=
+    Math.min(
+      100,
+      success/target*100
+    );
+
+  document
+  .getElementById(
+    "levelStatus"
+  )
+  .innerHTML=`
+    <div class="small">
+      Réussites au niveau ${currentExerciseLevel} :
+      ${success}
+      ${
+        success>=target
+          ?" — Niveau bien travaillé ✅"
+          :" — objectif conseillé : 5 réussites"
+      }
+    </div>
+
+    <div class="level-progress">
+      <div style="width:${pct}%"></div>
     </div>
   `;
 }
@@ -2500,108 +4438,119 @@ function showExerciseCorrection(){
    ========================================================= */
 
 function saveReasoning(){
-  state.reasonText =
-    document.getElementById("reasonText")
-      .value;
 
-  state.completed.reason=true;
+  state.reasonText=
+    document
+    .getElementById(
+      "reasonText"
+    )
+    .value;
+
   saveState();
 
-  document.getElementById(
+  document
+  .getElementById(
     "reasonFeedback"
-  ).innerHTML=`
+  )
+  .innerHTML=`
     <div class="notice ok">
-      Ta démarche a été enregistrée sur cet appareil.
+      Ta démarche est enregistrée.
     </div>
   `;
 }
 
 function showReasonHint(){
-  document.getElementById(
+
+  document
+  .getElementById(
     "reasonFeedback"
-  ).innerHTML=`
+  )
+  .innerHTML=`
     <div class="notice warn">
-      Dans xS=−b/(2a), le signe « − » devant b fait partie de la formule.
-      Ici b vaut −8.
+      Attention : b vaut −8. Dans −b, on obtient donc −(−8).
     </div>
   `;
 }
 
 function showReasonCorrection(){
-  document.getElementById(
+
+  document
+  .getElementById(
     "reasonFeedback"
-  ).innerHTML=`
+  )
+  .innerHTML=`
     <div class="notice ok">
-      <strong>Correction :</strong><br><br>
 
-      Dans f(x)=2x²−8x+5, on a a=2 et b=−8.<br><br>
+      <strong>Correction détaillée :</strong><br><br>
 
-      Lina a remplacé −b par b.
-      Or la formule est :<br>
+      f(x)=2x²−8x+5.<br>
 
-      xS=−b/(2a).<br><br>
+      a=2 et b=−8.<br><br>
 
-      Donc :<br>
+      xS=−b/(2a)<br>
 
-      xS=−(−8)/(2×2)=8/4=2.<br><br>
+      =−(−8)/(2×2)<br>
 
-      On calcule ensuite :<br>
+      =8/4<br>
 
-      yS=f(2)=2×2²−8×2+5
-      =8−16+5=−3.<br><br>
+      =2.<br><br>
 
-      <strong>Le sommet est S(2 ; −3).</strong>
+      yS=f(2)<br>
+
+      =2×4−8×2+5<br>
+
+      =8−16+5<br>
+
+      =−3.<br><br>
+
+      <strong>S(2 ; −3)</strong>.<br><br>
+
+      L'erreur de Lina consiste à oublier que b est déjà négatif.
+
     </div>
   `;
-
-  recordResult(
-    "Raisonnement",
-    true,
-    "Correction d'une erreur sur le sommet"
-  );
 }
 
 function showBallHint(){
-  document.getElementById(
+
+  document
+  .getElementById(
     "ballFeedback"
-  ).innerHTML=`
+  )
+  .innerHTML=`
     <div class="notice warn">
-      Comme le coefficient de t² vaut −5, la parabole est ouverte vers le bas.
-      Le sommet correspond donc à la hauteur maximale.
+      a=−5&lt;0. La parabole est donc ouverte vers le bas et le sommet représente le maximum.
     </div>
   `;
 }
 
 function showBallCorrection(){
-  document.getElementById(
+
+  document
+  .getElementById(
     "ballFeedback"
-  ).innerHTML=`
+  )
+  .innerHTML=`
     <div class="notice ok">
-      <strong>Correction détaillée :</strong><br><br>
+
+      <strong>Correction :</strong><br><br>
 
       h(t)=−5t²+20t+1.<br><br>
 
-      a=−5 et b=20.<br><br>
+      tS=−20/(2×−5)=2 secondes.<br><br>
 
-      tS=−b/(2a)
-      =−20/(2×−5)
-      =2 secondes.<br><br>
+      h(2)=−5×4+40+1=21 m.<br><br>
 
-      h(2)=−5×2²+20×2+1
-      =−20+40+1
-      =21 mètres.<br><br>
+      Comme a&lt;0, la parabole est ouverte vers le bas :
+      le sommet correspond donc à un maximum.<br><br>
 
-      <strong>Interprétation :</strong>
-      le ballon atteint une hauteur maximale de 21 m,
-      2 secondes après le début du mouvement.
+      <strong>
+      Le ballon atteint une hauteur maximale de 21 m,
+      deux secondes après le début du mouvement.
+      </strong>
+
     </div>
   `;
-
-  recordResult(
-    "Transfert",
-    true,
-    "Trajectoire d'un ballon"
-  );
 }
 
 /* =========================================================
@@ -2610,448 +4559,630 @@ function showBallCorrection(){
 
 const quizBank=[
 {
-  q:"Une fonction du second degré s'écrit…",
-  choices:[
-    "f(x)=ax+b",
-    "f(x)=ax²+bx+c avec a≠0",
-    "f(x)=a/x"
-  ],
-  answer:1,
-  skill:"Lecture"
+q:"Quelle est la forme générale d'une fonction du second degré ?",
+choices:["ax+b","ax²+bx+c avec a≠0","a/x"],
+answer:1,
+skill:"Lecture"
 },
 {
-  q:"Si a<0, la parabole est…",
-  choices:[
-    "ouverte vers le haut",
-    "ouverte vers le bas",
-    "une droite"
-  ],
-  answer:1,
-  skill:"Lecture"
+q:"Si a>0, la parabole est…",
+choices:["ouverte vers le haut","ouverte vers le bas","une droite"],
+answer:0,
+skill:"Lecture"
 },
 {
-  q:"Quelle est l'ordonnée à l'origine de f(x)=3x²−2x+7 ?",
-  choices:["3","−2","7"],
-  answer:2,
-  skill:"Lecture"
+q:"Dans f(x)=3x²−2x+7, l'ordonnée à l'origine vaut…",
+choices:["3","−2","7"],
+answer:2,
+skill:"Lecture"
 },
 {
-  q:"L'abscisse du sommet de f(x)=2x²−8x+1 vaut…",
-  choices:["−2","2","4"],
-  answer:1,
-  skill:"Calcul"
+q:"L'abscisse du sommet de 2x²−8x+1 vaut…",
+choices:["−2","2","4"],
+answer:1,
+skill:"Calcul"
 },
 {
-  q:"Pour f(x)=x²−6x+9, Δ vaut…",
-  choices:["0","9","−9"],
-  answer:0,
-  skill:"Zeros"
+q:"Le discriminant de x²−6x+9 vaut…",
+choices:["0","9","−9"],
+answer:0,
+skill:"Zeros"
 },
 {
-  q:"Si Δ<0, une équation du second degré possède…",
-  choices:[
-    "deux solutions réelles",
-    "une solution réelle",
-    "aucune solution réelle"
-  ],
-  answer:2,
-  skill:"Zeros"
+q:"Si Δ<0, il y a…",
+choices:["0 solution réelle","1 solution réelle","2 solutions réelles"],
+answer:0,
+skill:"Zeros"
 },
 {
-  q:"Les zéros de x²−9 sont…",
-  choices:[
-    "−3 et 3",
-    "−9 et 9",
-    "3 uniquement"
-  ],
-  answer:0,
-  skill:"Zeros"
+q:"Les zéros de x²−9 sont…",
+choices:["−3 et 3","−9 et 9","3 uniquement"],
+answer:0,
+skill:"Zeros"
 },
 {
-  q:"Une parabole a pour sommet S(4;−2). Son axe de symétrie est…",
-  choices:["x=4","y=4","x=−2"],
-  answer:0,
-  skill:"Lecture"
+q:"Le sommet est S(4;−2). L'axe est…",
+choices:["x=4","y=4","x=−2"],
+answer:0,
+skill:"Lecture"
 },
 {
-  q:"Si f(1)=5 et l'axe de symétrie est x=3, alors f(5)…",
-  choices:["vaut 5","vaut 3","est impossible à connaître"],
-  answer:0,
-  skill:"Raisonnement"
+q:"Si l'axe est x=3 et f(1)=5, alors f(5)…",
+choices:["vaut 5","vaut 3","est impossible à connaître"],
+answer:0,
+skill:"Raisonnement"
 },
 {
-  q:"Pour h(t)=−5t²+20t, le maximum est atteint pour…",
-  choices:["t=1","t=2","t=4"],
-  answer:1,
-  skill:"Transfert"
+q:"Pour h(t)=−5t²+20t, le maximum est atteint pour…",
+choices:["t=1","t=2","t=4"],
+answer:1,
+skill:"Transfert"
 },
 {
-  q:"Dans f(x)=ax²+bx+c, f(0) vaut…",
-  choices:["a","b","c"],
-  answer:2,
-  skill:"Lecture"
+q:"Si Δ=0, la parabole…",
+choices:["touche l'axe x en un point","ne rencontre pas l'axe x","coupe l'axe x en deux points"],
+answer:0,
+skill:"Zeros"
 },
 {
-  q:"Si Δ=0, la parabole…",
-  choices:[
-    "ne rencontre pas l'axe des x",
-    "touche l'axe des x en un point",
-    "coupe l'axe des x en deux points distincts"
-  ],
-  answer:1,
-  skill:"Zeros"
+q:"Les zéros de x²−5x+6 sont…",
+choices:["2 et 3","−2 et −3","1 et 6"],
+answer:0,
+skill:"Zeros"
 },
 {
-  q:"Pour f(x)=x²−4x+3, les zéros sont…",
-  choices:[
-    "1 et 3",
-    "−1 et −3",
-    "2 et 3"
-  ],
-  answer:0,
-  skill:"Zeros"
+q:"Si a>0, le sommet représente…",
+choices:["un minimum","un maximum","toujours un zéro"],
+answer:0,
+skill:"Raisonnement"
 },
 {
-  q:"Le sommet d'une parabole ouverte vers le haut correspond à…",
-  choices:[
-    "un maximum",
-    "un minimum",
-    "toujours un zéro"
-  ],
-  answer:1,
-  skill:"Raisonnement"
+q:"Plus |a| est grand, plus la parabole est…",
+choices:["resserrée","large","horizontale"],
+answer:0,
+skill:"Lecture"
 },
 {
-  q:"Plus |a| est grand, plus la parabole est généralement…",
-  choices:[
-    "resserrée",
-    "large",
-    "horizontale"
-  ],
-  answer:0,
-  skill:"Lecture"
+q:"L'abscisse du sommet de −x²+6x−2 vaut…",
+choices:["−3","3","6"],
+answer:1,
+skill:"Calcul"
 },
 {
-  q:"L'abscisse du sommet de f(x)=−x²+6x−2 vaut…",
-  choices:["−3","3","6"],
-  answer:1,
-  skill:"Calcul"
+q:"Le discriminant de x²−5x+6 est…",
+choices:["1","−1","25"],
+answer:0,
+skill:"Zeros"
 },
 {
-  q:"Le discriminant de x²−5x+6 est…",
-  choices:["1","−1","25"],
-  answer:0,
-  skill:"Zeros"
+q:"Si a<0, le sommet représente…",
+choices:["un maximum","un minimum","une racine obligatoire"],
+answer:0,
+skill:"Raisonnement"
 },
 {
-  q:"Une parabole ouverte vers le bas a son sommet comme…",
-  choices:["minimum","maximum","zéro obligatoire"],
-  answer:1,
-  skill:"Raisonnement"
+q:"Graphiquement, les zéros sont…",
+choices:["les intersections avec l'axe x","les intersections avec l'axe y","les sommets"],
+answer:0,
+skill:"Lecture"
+},
+{
+q:"Dans f(x)=ax²+bx+c, f(0)=…",
+choices:["a","b","c"],
+answer:2,
+skill:"Lecture"
+},
+{
+q:"La formule de l'abscisse du sommet est…",
+choices:["−b/(2a)","b/(2a)","−c/a"],
+answer:0,
+skill:"Calcul"
 }
 ];
 
 function startQuiz(){
-  currentQuiz =
-    [...quizBank]
-      .sort(()=>Math.random()-.5)
-      .slice(0,15);
 
-  quizAnswers =
-    new Array(currentQuiz.length)
-      .fill(null);
+  currentQuiz=
+    [...quizBank]
+    .sort(
+      ()=>Math.random()-.5
+    )
+    .slice(0,15);
+
+  quizAnswers=
+    new Array(
+      currentQuiz.length
+    )
+    .fill(null);
 
   renderQuiz();
 }
 
 function renderQuiz(){
-  document.getElementById(
+
+  document
+  .getElementById(
     "quizArea"
-  ).innerHTML=
-    currentQuiz.map((item,index)=>`
+  )
+  .innerHTML=
+
+    currentQuiz
+    .map(
+      (item,index)=>`
+
       <div class="quiz-question">
-        <span class="badge badge-blue">${item.skill}</span>
+
+        <span class="badge badge-blue">
+          ${item.skill}
+        </span>
 
         <p>
-          <strong>${index+1}. ${item.q}</strong>
+          <strong>
+            ${index+1}. ${item.q}
+          </strong>
         </p>
 
-        ${item.choices.map((choice,choiceIndex)=>`
-          <button type="button"
-                  id="quiz_${index}_${choiceIndex}"
-                  class="quiz-option"
-                  onclick="selectQuizAnswer(${index},${choiceIndex})">
-            ${choice}
-          </button>
-        `).join("")}
-      </div>
-    `).join("")+
-    `
-      <button class="btn btn-success"
-              onclick="finishQuiz()">
-        Corriger mon quiz
-      </button>
+        ${item.choices
+          .map(
+            (choice,choiceIndex)=>`
 
-      <div id="quizResult"></div>
+            <button
+              type="button"
+              id="quiz_${index}_${choiceIndex}"
+              class="quiz-option"
+              onclick="selectQuizAnswer(${index},${choiceIndex})">
+
+              ${choice}
+
+            </button>
+
+          `
+          )
+          .join("")}
+
+      </div>
+
+      `
+    )
+    .join("")+
+
+    `
+    <button class="btn btn-success"
+            onclick="finishQuiz()">
+      Corriger le quiz
+    </button>
+
+    <div id="quizResult"></div>
     `;
 }
 
-function selectQuizAnswer(questionIndex,answerIndex){
-  quizAnswers[questionIndex]=answerIndex;
+function selectQuizAnswer(
+  questionIndex,
+  answerIndex
+){
 
-  currentQuiz[questionIndex].choices.forEach(
-    (_,choiceIndex)=>{
-      document.getElementById(
-        `quiz_${questionIndex}_${choiceIndex}`
-      ).classList.toggle(
+  quizAnswers[
+    questionIndex
+  ]=
+    answerIndex;
+
+  currentQuiz[
+    questionIndex
+  ]
+  .choices
+  .forEach(
+    (_,index)=>{
+
+      document
+      .getElementById(
+        `quiz_${questionIndex}_${index}`
+      )
+      .classList
+      .toggle(
         "selected",
-        choiceIndex===answerIndex
+        index===answerIndex
       );
+
     }
   );
 }
 
 function finishQuiz(){
-  if(currentQuiz.length===0){
+
+  if(
+    currentQuiz.length===0
+  ){
     return;
   }
 
   let score=0;
 
-  const skillResults={};
+  const results={};
 
-  currentQuiz.forEach((item,index)=>{
-    const correct =
-      quizAnswers[index]===item.answer;
+  currentQuiz.forEach(
+    (item,index)=>{
 
-    if(correct){
-      score++;
+      const correct=
+        quizAnswers[index]===
+        item.answer;
+
+      if(correct){
+        score++;
+      }
+
+      if(!results[item.skill]){
+        results[item.skill]=[0,0];
+      }
+
+      results[item.skill][1]++;
+
+      if(correct){
+        results[item.skill][0]++;
+      }
+
     }
+  );
 
-    if(!skillResults[item.skill]){
-      skillResults[item.skill]=[0,0];
-    }
-
-    skillResults[item.skill][1]++;
-
-    if(correct){
-      skillResults[item.skill][0]++;
-    }
-  });
-
-  const note =
+  const note=
     Math.round(
-      score/currentQuiz.length*20*10
+      score/
+      currentQuiz.length*
+      20*
+      10
     )/10;
 
-  state.quizBest =
-    Math.max(state.quizBest,note);
+  state.quizBest=
+    Math.max(
+      state.quizBest,
+      note
+    );
 
   state.completed.quiz=true;
 
-  Object.entries(skillResults)
-    .forEach(([skill,result])=>{
-      if(!state.skills[skill]){
+  Object.entries(
+    results
+  )
+  .forEach(
+    ([skill,value])=>{
+
+      if(
+        !state.skills[skill]
+      ){
         state.skills[skill]=[0,0];
       }
 
-      state.skills[skill][0]+=result[0];
-      state.skills[skill][1]+=result[1];
-    });
+      state.skills[skill][0]+=
+        value[0];
+
+      state.skills[skill][1]+=
+        value[1];
+
+    }
+  );
 
   state.history.unshift({
     date:new Date().toLocaleString("fr-BE"),
     skill:"Quiz",
     success:note>=10,
-    label:`Quiz final : ${formatNumber(note)}/20`
+    label:`Quiz : ${formatNumber(note)}/20`
   });
 
   saveState();
 
-  const weakest =
-    Object.entries(skillResults)
-      .sort(
-        (a,b)=>
-          a[1][0]/a[1][1] -
-          b[1][0]/b[1][1]
-      )[0];
+  const weakest=
+    Object.entries(
+      results
+    )
+    .sort(
+      (a,b)=>
+        a[1][0]/a[1][1]-
+        b[1][0]/b[1][1]
+    )[0];
 
-  document.getElementById(
+  document
+  .getElementById(
     "quizResult"
-  ).innerHTML=`
-    <div class="panel" style="margin-top:18px">
-      <h3>Résultat : ${formatNumber(note)}/20</h3>
+  )
+  .innerHTML=`
+
+    <div class="panel"
+         style="margin-top:18px">
+
+      <h3>
+        Note :
+        ${formatNumber(note)}/20
+      </h3>
 
       <table>
+
       <thead>
       <tr>
-        <th>Compétence</th>
-        <th>Résultat</th>
+      <th>Compétence</th>
+      <th>Résultat</th>
       </tr>
       </thead>
 
       <tbody>
-      ${Object.entries(skillResults)
-        .map(([skill,result])=>`
+
+      ${Object.entries(results)
+        .map(
+          ([skill,result])=>`
           <tr>
-            <td>${skill}</td>
-            <td>${result[0]}/${result[1]}</td>
+          <td>${skill}</td>
+          <td>${result[0]}/${result[1]}</td>
           </tr>
-        `).join("")}
+          `
+        )
+        .join("")}
+
       </tbody>
+
       </table>
 
       <div class="notice ${note>=10?"ok":"warn"}">
+
         ${
           note>=16
-            ?"Très bonne maîtrise globale."
-            :note>=12
-              ?"Bonne maîtrise. Quelques points peuvent encore être consolidés."
-              :note>=10
-                ?"Les bases sont acquises, mais certaines notions doivent être retravaillées."
-                :"Reprends les modules ciblés et les exercices avant une nouvelle tentative."
+          ?"Très bonne maîtrise globale."
+          :note>=12
+          ?"Bonne maîtrise. Quelques points restent à consolider."
+          :note>=10
+          ?"Les bases sont acquises. Reprends les notions les moins réussies."
+          :"Revois le cours vidéo et les exercices progressifs avant de recommencer."
         }
 
         <br>
-        Priorité de révision :
-        <strong>${weakest[0]}</strong>.
+
+        Priorité :
+        <strong>
+          ${weakest[0]}
+        </strong>.
+
       </div>
+
     </div>
   `;
 }
 
 /* =========================================================
-   PROGRÈS
+   PROGRES
    ========================================================= */
 
 function renderProgress(){
-  const successRate =
+
+  const rate=
     state.attempts
-      ? Math.round(
-          state.successes/
-          state.attempts*100
-        )
-      : 0;
+    ?Math.round(
+      state.successes/
+      state.attempts*
+      100
+    )
+    :0;
 
-  document.getElementById(
+  document
+  .getElementById(
     "stats"
-  ).innerHTML=`
+  )
+  .innerHTML=`
+
     <div class="card stat">
+
       Exercices tentés
-      <strong>${state.attempts}</strong>
+
+      <strong>
+        ${state.attempts}
+      </strong>
+
     </div>
 
     <div class="card stat">
+
       Réussites
-      <strong>${state.successes}</strong>
+
+      <strong>
+        ${state.successes}
+      </strong>
+
     </div>
 
     <div class="card stat">
+
       Taux de réussite
-      <strong>${successRate}%</strong>
+
+      <strong>
+        ${rate}%
+      </strong>
+
     </div>
 
     <div class="card stat">
+
       Meilleur quiz
-      <strong>${formatNumber(state.quizBest)}/20</strong>
+
+      <strong>
+        ${formatNumber(state.quizBest)}/20
+      </strong>
+
     </div>
   `;
 
-  document.getElementById(
+  document
+  .getElementById(
     "skillsProgress"
-  ).innerHTML=
-    Object.entries(state.skills)
-      .map(([skill,result])=>{
-        const pct =
+  )
+  .innerHTML=
+
+    Object.entries(
+      state.skills
+    )
+    .map(
+      ([skill,result])=>{
+
+        const pct=
           result[1]
-            ? Math.round(
-                result[0]/result[1]*100
-              )
-            : 0;
+          ?Math.round(
+            result[0]/
+            result[1]*
+            100
+          )
+          :0;
 
         return`
-          <p>
-            <strong>${skill}</strong>
-            — ${pct}%
-          </p>
 
-          <div class="bar">
-            <div style="width:${pct}%"></div>
-          </div>
+        <p>
+          <strong>${skill}</strong>
+          — ${pct}%
+        </p>
+
+        <div class="bar">
+          <div style="width:${pct}%"></div>
+        </div>
+
         `;
-      }).join("");
 
-  const attempted =
-    Object.entries(state.skills)
-      .filter(([,result])=>result[1]>0)
-      .map(([skill,result])=>({
+      }
+    )
+    .join("");
+
+  const attempted=
+    Object.entries(
+      state.skills
+    )
+    .filter(
+      ([,result])=>
+        result[1]>0
+    )
+    .map(
+      ([skill,result])=>({
         skill,
-        rate:result[0]/result[1]
-      }))
-      .sort((a,b)=>a.rate-b.rate);
+        rate:
+          result[0]/
+          result[1]
+      })
+    )
+    .sort(
+      (a,b)=>
+        a.rate-b.rate
+    );
 
-  if(attempted.length===0){
-    document.getElementById(
+  if(
+    attempted.length===0
+  ){
+
+    document
+    .getElementById(
       "recommendations"
-    ).innerHTML=`
+    )
+    .innerHTML=`
+
       <div class="notice info">
-        Fais quelques exercices pour obtenir des recommandations personnalisées.
+        Commence les exercices pour obtenir des conseils personnalisés.
       </div>
+
     `;
+
   }else{
-    const weakest=attempted[0].skill;
+
+    const weak=
+      attempted[0].skill;
 
     const advice={
+
       Lecture:
-        "Travaille la lecture du sommet, de l'axe de symétrie, du signe de a et de l'ordonnée à l'origine.",
+      "Travaille la lecture du graphique, l'axe, le sommet et le rôle des coefficients.",
+
       Calcul:
-        "Revois la formule xS=−b/(2a) et le calcul d'une image.",
+      "Revois xS=−b/(2a), le calcul d'images et les signes.",
+
       Zeros:
-        "Revois le discriminant et le lien entre Δ et le nombre de zéros.",
+      "Travaille Δ et les formules permettant de déterminer les racines.",
+
       Raisonnement:
-        "Travaille la symétrie de la parabole et la justification des étapes.",
+      "Entraîne-toi à utiliser la symétrie et à justifier pourquoi un sommet est un maximum ou un minimum.",
+
       Transfert:
-        "Entraîne-toi à interpréter le sommet comme un maximum ou un minimum dans un problème."
+      "Travaille l'interprétation du sommet dans les situations réelles."
+
     };
 
-    document.getElementById(
+    document
+    .getElementById(
       "recommendations"
-    ).innerHTML=`
+    )
+    .innerHTML=`
+
       <div class="notice info">
-        À retravailler en priorité :
-        <strong>${weakest}</strong>.<br>
-        ${advice[weakest]}
+
+        À retravailler :
+        <strong>${weak}</strong>.
+
+        <br>
+
+        ${advice[weak]}
+
       </div>
+
     `;
   }
 
-  document.getElementById(
+  document
+  .getElementById(
     "history"
-  ).innerHTML=
-    state.history.length
-      ?`
-        <table>
-        <thead>
-        <tr>
-          <th>Date</th>
-          <th>Activité</th>
-          <th>Résultat</th>
-        </tr>
-        </thead>
+  )
+  .innerHTML=
 
-        <tbody>
-        ${state.history.slice(0,15)
-          .map(item=>`
-            <tr>
-              <td>${item.date}</td>
-              <td>${item.label}</td>
-              <td>${item.success?"✅":"🔄"}</td>
-            </tr>
-          `).join("")}
-        </tbody>
-        </table>
-       `
-      :"<p>Aucune activité enregistrée.</p>";
+    state.history.length
+    ?`
+
+      <table>
+
+      <thead>
+
+      <tr>
+      <th>Date</th>
+      <th>Activité</th>
+      <th>Résultat</th>
+      </tr>
+
+      </thead>
+
+      <tbody>
+
+      ${state.history
+        .slice(0,15)
+        .map(
+          item=>`
+
+          <tr>
+
+          <td>
+            ${item.date}
+          </td>
+
+          <td>
+            ${item.label}
+          </td>
+
+          <td>
+            ${item.success?"✅":"🔄"}
+          </td>
+
+          </tr>
+
+          `
+        )
+        .join("")}
+
+      </tbody>
+
+      </table>
+
+    `
+    :`
+      <p>
+        Aucune activité enregistrée.
+      </p>
+    `;
 }
 
 /* =========================================================
@@ -3059,14 +5190,33 @@ function renderProgress(){
    ========================================================= */
 
 function init(){
+
   updateGlobalProgress();
+
+  renderVideo();
+
+  loadVoices();
+
+  if(
+    "speechSynthesis" in window
+  ){
+
+    speechSynthesis.onvoiceschanged=
+      loadVoices;
+
+  }
+
   drawGraph();
+
   generateExercise();
 
-  document.getElementById(
+  document
+  .getElementById(
     "reasonText"
-  ).value=
-    state.reasonText || "";
+  )
+  .value=
+    state.reasonText||"";
+
 }
 
 init();
