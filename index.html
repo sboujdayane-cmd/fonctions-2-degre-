@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fonctions du 2e degré - 4e secondaire</title>
+
     <style>
         :root {
             --bleu-nuit: #1a3a52;
@@ -23,12 +24,29 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #e8f4fc 0%, #ffffff 100%);
             color: #1a3a52;
             line-height: 1.6;
             min-height: 100vh;
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible {
+            outline: 3px solid #ffbf47;
+            outline-offset: 3px;
         }
 
         .container {
@@ -62,7 +80,7 @@
 
         nav {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
@@ -70,14 +88,16 @@
             background: rgba(255,255,255,0.1);
             border: 2px solid rgba(255,255,255,0.3);
             color: #ffffff;
-            padding: 8px 16px;
+            padding: 8px 14px;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.25s;
             font-size: 0.9em;
+            min-height: 42px;
         }
 
-        nav button:hover, nav button.active {
+        nav button:hover,
+        nav button.active {
             background: #4a90d9;
             border-color: #4a90d9;
         }
@@ -109,6 +129,14 @@
             font-size: 1.8em;
         }
 
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
         .btn {
             background: #4a90d9;
             color: #ffffff;
@@ -119,10 +147,16 @@
             font-size: 1em;
             margin: 5px;
             display: inline-block;
+            min-height: 44px;
         }
 
         .btn:hover {
             background: #1a3a52;
+        }
+
+        .btn:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
         }
 
         .btn-success {
@@ -134,7 +168,7 @@
         }
 
         .progress-bar {
-            background: #f8f9fa;
+            background: #e6e9ec;
             border-radius: 10px;
             height: 20px;
             overflow: hidden;
@@ -148,7 +182,7 @@
         }
 
         .formule {
-            font-family: 'Courier New', monospace;
+            font-family: "Courier New", monospace;
             background: #f8f9fa;
             padding: 10px 15px;
             border-radius: 8px;
@@ -181,14 +215,20 @@
             margin: 20px 0;
         }
 
+        .slider-container label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
         .slider-container input[type="range"] {
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin: 20px 0;
         }
@@ -199,20 +239,21 @@
             border-radius: 12px;
             padding: 20px;
             cursor: pointer;
-            min-height: 150px;
+            min-height: 170px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            transition: transform .2s, box-shadow .2s;
         }
 
         .flashcard:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.12);
         }
 
         .hidden {
-            display: none;
+            display: none !important;
         }
 
         .badge {
@@ -224,27 +265,52 @@
             margin: 3px;
         }
 
-        .badge-comprendre { background: #17a2b8; color: white; }
-        .badge-appliquer { background: #28a745; color: white; }
-        .badge-raisonner { background: #fd7e14; color: white; }
-        .badge-transferer { background: #1a3a52; color: white; }
+        .badge-comprendre {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .badge-appliquer {
+            background: #28a745;
+            color: white;
+        }
+
+        .badge-raisonner {
+            background: #fd7e14;
+            color: white;
+        }
+
+        .badge-transferer {
+            background: #1a3a52;
+            color: white;
+        }
 
         .exercice-card {
             background: #f8f9fa;
             border-radius: 12px;
             padding: 20px;
             margin: 15px 0;
+            border: 2px solid transparent;
         }
 
         .input-group {
             margin: 15px 0;
         }
 
-        .input-group input, .input-group select {
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .input-group input,
+        .input-group select {
             padding: 10px;
             border: 2px solid #4a90d9;
             border-radius: 8px;
             font-size: 1em;
+            min-height: 44px;
+            max-width: 100%;
         }
 
         .stats-grid {
@@ -268,6 +334,31 @@
             color: #4a90d9;
         }
 
+        canvas {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .quiz-option {
+            cursor: pointer;
+            transition: background .2s, border-color .2s;
+        }
+
+        .quiz-option:hover {
+            border-color: #4a90d9;
+        }
+
+        .observation {
+            background: #e8f4fc;
+            border-left: 5px solid #4a90d9;
+        }
+
         footer {
             background: #1a3a52;
             color: #ffffff;
@@ -276,735 +367,1792 @@
             margin-top: 40px;
         }
 
-        canvas {
-            max-width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
+        @media (max-width: 700px) {
+            .container {
+                padding: 14px;
+            }
+
+            header {
+                position: static;
+            }
+
+            .header-content {
+                display: block;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav button {
+                flex: 1 1 140px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .card h2 {
+                font-size: 1.45em;
+            }
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container header-content">
-            <div class="logo">📐 Fonctions du 2e degré</div>
-            <nav>
-                <button id="btn-accueil" onclick="allerPage('accueil')">🏠 Accueil</button>
-                <button id="btn-decouvrir" onclick="allerPage('decouvrir')">🔍 Explorer</button>
-                <button id="btn-comprendre" onclick="allerPage('comprendre')">📖 Comprendre</button>
-                <button id="btn-entrainer" onclick="allerPage('entrainer')">💪 S'entraider</button>
-                <button id="btn-raisonner" onclick="allerPage('raisonner')">🧠 Raisonner</button>
-                <button id="btn-transfert" onclick="allerPage('transfert')">🌍 Transferts</button>
-                <button id="btn-quiz" onclick="allerPage('quiz')">📝 Quiz</button>
-                <button id="btn-progres" onclick="allerPage('progres')">📊 Progrè··s</button>
-            </nav>
-        </div>
-    </header>
 
-    <main class="container">
-        <!-- ACCUEIL -->
-        <div id="page-accueil" class="page active">
-            <div class="card">
-                <h2>🎯 Fonctions du 2e degré – 4e secondaire</h2>
-                <p>Bienvenue ! Une fonction du 2e degré est de la forme :</p>
-                <p class="formule">f(x) = ax<sup>2</sup> + bx + c</p>
-                <p>sa graphique est une <strong>parabole</strong>.</p>
-                
-                <div class="grid-container">
-                    <div>
-                        <h3>✅ Objectifs</h3>
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">📐 Fonctions du 2e degré</div>
+
+        <nav aria-label="Navigation principale">
+            <button id="btn-accueil" class="active" onclick="allerPage('accueil')">🏠 Accueil</button>
+            <button id="btn-decouvrir" onclick="allerPage('decouvrir')">🔍 Explorer</button>
+            <button id="btn-comprendre" onclick="allerPage('comprendre')">📖 Comprendre</button>
+            <button id="btn-entrainer" onclick="allerPage('entrainer')">💪 S'entraîner</button>
+            <button id="btn-raisonner" onclick="allerPage('raisonner')">🧠 Raisonner</button>
+            <button id="btn-transfert" onclick="allerPage('transfert')">🌍 Transférer</button>
+            <button id="btn-quiz" onclick="allerPage('quiz')">📝 Quiz</button>
+            <button id="btn-progres" onclick="allerPage('progres')">📊 Progrès</button>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- ACCUEIL -->
+    <section id="page-accueil" class="page active">
+        <div class="card">
+            <h2>🎯 Fonctions du 2e degré – 4e secondaire</h2>
+
+            <p>Bienvenue ! Une fonction du 2e degré est de la forme :</p>
+
+            <p class="formule">
+                f(x) = ax<sup>2</sup> + bx + c, avec a ≠ 0
+            </p>
+
+            <p>Sa représentation graphique est une <strong>parabole</strong>.</p>
+
+            <div class="grid-container">
+                <div>
+                    <h3>✅ Objectifs</h3>
+                    <ul>
+                        <li>Associer une expression et un graphique</li>
+                        <li>Déterminer le sommet et les zéros</li>
+                        <li>Résoudre des équations du 2e degré</li>
+                        <li>Interpréter une fonction quadratique</li>
+                        <li>Modéliser des problèmes simples</li>
+                    </ul>
+                </div>
+
+                <div style="text-align:center;">
+                    <svg width="250" height="200"
+                         viewBox="-100 -30 200 200"
+                         role="img"
+                         aria-label="Parabole ouverte vers le haut avec son sommet">
+
+                        <rect x="-100" y="-30" width="200" height="200" fill="#fff"/>
+
+                        <line x1="-90" y1="80" x2="90" y2="80"
+                              stroke="#1a3a52" stroke-width="2"/>
+
+                        <line x1="0" y1="-20" x2="0" y2="150"
+                              stroke="#1a3a52" stroke-width="2"/>
+
+                        <path d="M -80 120 Q -40 40 0 20 Q 40 40 80 120"
+                              stroke="#4a90d9"
+                              stroke-width="3"
+                              fill="none"/>
+
+                        <circle cx="0" cy="20" r="5" fill="#fd7e14"/>
+
+                        <text x="10" y="25"
+                              fill="#fd7e14"
+                              font-size="12">
+                            Sommet
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin:30px 0;">
+                <button class="btn btn-success"
+                        onclick="allerPage('decouvrir')"
+                        style="font-size:1.2em; padding:15px 40px;">
+                    🚀 Commencer
+                </button>
+            </div>
+
+            <div class="progress-bar"
+                 role="progressbar"
+                 aria-label="Progression dans les exercices"
+                 aria-valuemin="0"
+                 aria-valuemax="100">
+                <div class="progress-fill"
+                     id="progress-bar"
+                     style="width:0%;">
+                </div>
+            </div>
+
+            <p>
+                Progression :
+                <strong><span id="progress-text">0</span>%</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- DÉCOUVRIR -->
+    <section id="page-decouvrir" class="page">
+        <div class="card">
+
+            <h2>🔍 Explorer les fonctions quadratiques</h2>
+
+            <p>
+                Modifie les coefficients <strong>a</strong>,
+                <strong>b</strong> et <strong>c</strong>
+                pour observer la parabole.
+            </p>
+
+            <div style="text-align:center; margin:20px 0;">
+                <canvas id="canvas"
+                        width="700"
+                        height="450"
+                        aria-label="Graphique dynamique d'une fonction quadratique">
+                </canvas>
+            </div>
+
+            <div class="slider-container">
+                <label for="slide-a">
+                    a — concavité et ouverture :
+                    <span id="val-a">1</span>
+                </label>
+
+                <input type="range"
+                       id="slide-a"
+                       min="-5"
+                       max="5"
+                       step="0.5"
+                       value="1"
+                       oninput="majGraphique()">
+            </div>
+
+            <div class="slider-container">
+                <label for="slide-b">
+                    b :
+                    <span id="val-b">0</span>
+                </label>
+
+                <input type="range"
+                       id="slide-b"
+                       min="-10"
+                       max="10"
+                       step="0.5"
+                       value="0"
+                       oninput="majGraphique()">
+            </div>
+
+            <div class="slider-container">
+                <label for="slide-c">
+                    c — ordonnée à l'origine :
+                    <span id="val-c">0</span>
+                </label>
+
+                <input type="range"
+                       id="slide-c"
+                       min="-10"
+                       max="10"
+                       step="0.5"
+                       value="0"
+                       oninput="majGraphique()">
+            </div>
+
+            <div class="card observation">
+                <h3>📝 J'observe</h3>
+
+                <p>
+                    <strong>Fonction :</strong>
+                    <span id="expr-func">f(x) = x²</span>
+                </p>
+
+                <p>
+                    <strong>Sommet :</strong>
+                    <span id="sommet">S(0 ; 0)</span>
+                </p>
+
+                <p>
+                    <strong>Axe de symétrie :</strong>
+                    <span id="axe-symetrie">x = 0</span>
+                </p>
+
+                <p>
+                    <strong>Concavité :</strong>
+                    <span id="concavite">vers le haut</span>
+                </p>
+
+                <p>
+                    <strong>Ordonnée à l'origine :</strong>
+                    <span id="ordonnee-origine">0</span>
+                </p>
+            </div>
+
+            <div style="text-align:center;">
+                <button class="btn" onclick="resetSlides()">🔄 Réinitialiser</button>
+                <button class="btn" onclick="randomFunc()">🎲 Nouvel exemple</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMPRENDRE -->
+    <section id="page-comprendre" class="page">
+        <div class="card">
+
+            <h2>📖 Comprendre les notions</h2>
+
+            <p>Clique sur chaque carte pour afficher son explication.</p>
+
+            <div class="grid-container">
+
+                <div class="flashcard"
+                     tabindex="0"
+                     role="button"
+                     onclick="flip(this)"
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flip(this)}">
+
+                    <div class="front">
+                        <h3>📐 Fonction du 2e degré</h3>
+                        <p>Clique pour voir…</p>
+                    </div>
+
+                    <div class="back hidden">
+                        <p>
+                            <strong>
+                                f(x) = ax<sup>2</sup> + bx + c
+                            </strong>
+                        </p>
+                        <p>avec a ≠ 0</p>
+                        <p>
+                            Exemple :
+                            f(x) = 2x<sup>2</sup> − 3x + 1
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flashcard"
+                     tabindex="0"
+                     role="button"
+                     onclick="flip(this)"
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flip(this)}">
+
+                    <div class="front">
+                        <h3>🎯 Sommet</h3>
+                        <p>Clique pour voir…</p>
+                    </div>
+
+                    <div class="back hidden">
+                        <p>
+                            <strong>
+                                x<sub>S</sub> = −b / (2a)
+                            </strong>
+                        </p>
+                        <p>
+                            <strong>
+                                y<sub>S</sub> = f(x<sub>S</sub>)
+                            </strong>
+                        </p>
+                        <p>
+                            Le sommet est
+                            S(x<sub>S</sub> ; y<sub>S</sub>).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flashcard"
+                     tabindex="0"
+                     role="button"
+                     onclick="flip(this)"
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flip(this)}">
+
+                    <div class="front">
+                        <h3>⚫ Zéros</h3>
+                        <p>Clique pour voir…</p>
+                    </div>
+
+                    <div class="back hidden">
+                        <p>
+                            Les zéros sont les solutions de
+                            ax<sup>2</sup> + bx + c = 0.
+                        </p>
+
+                        <p>
+                            <strong>
+                                Δ = b<sup>2</sup> − 4ac
+                            </strong>
+                        </p>
+
                         <ul>
-                            <li>Associer expression et graphique</li>
-                            <li>Trouver sommet et zé··ros</li>
-                            <li>Ré··soudre é•quations du 2e degré</li>
-                            <li>Modé··liser des problèmes</li>
+                            <li>Δ &gt; 0 : deux solutions réelles</li>
+                            <li>Δ = 0 : une solution réelle double</li>
+                            <li>Δ &lt; 0 : aucune solution réelle</li>
                         </ul>
                     </div>
-                    <div style="text-align:center;">
-                        <svg width="250" height="200" viewBox="-100 -30 200 200" style="background:#fff; border-radius:8px;">
-                            <line x1="-90" y1="80" x2="90" y2="80" stroke="#1a3a52" stroke-width="2"/>
-                            <line x1="5" y1="-20" x2="5" y2="150" stroke="#1a3a52" stroke-width="2"/>
-                            <path d="M -80 120 Q -40 40 0 20 Q 40 40 80 120" stroke="#4a90d9" stroke-width="3" fill="none"/>
-                            <circle cx="0" cy="20" r="5" fill="#fd7e14"/>
-                            <text x="10" y="25" fill="#fd7e14" font-size="12">Sommet</text>
-                        </svg>
-                    </div>
                 </div>
 
-                <div style="text-align:center; margin:30px 0;">
-                    <button class="btn btn-success" onclick="allerPage('decouvrir')" style="font-size:1.2em; padding:15px 40px;">
-                        🚀 Commencer
-                    </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- S'ENTRAÎNER -->
+    <section id="page-entrainer" class="page">
+        <div class="card">
+
+            <h2>💪 S'entraîner</h2>
+
+            <div class="input-group">
+                <label for="niveau">Niveau :</label>
+
+                <select id="niveau" onchange="nouvelExo()">
+                    <option value="1">Niveau 1 — Facile</option>
+                    <option value="2">Niveau 2 — Intermédiaire</option>
+                    <option value="3">Niveau 3 — Raisonner</option>
+                </select>
+            </div>
+
+            <div id="exo-container"></div>
+
+            <div style="text-align:center;">
+                <button class="btn" onclick="nouvelExo()">
+                    🔄 Nouvel exercice
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RAISONNER -->
+    <section id="page-raisonner" class="page">
+        <div class="card">
+
+            <h2>🧠 Raisonner</h2>
+
+            <div class="exercice-card">
+                <h3>🏀 Tir au basket</h3>
+
+                <p>
+                    La hauteur du ballon est modélisée par :
+                </p>
+
+                <p class="formule">
+                    h(t) = −5t<sup>2</sup> + 10t + 2
+                </p>
+
+                <p>h est exprimée en mètres et t en secondes.</p>
+
+                <div class="input-group">
+                    <label for="q1">
+                        Quelle est la hauteur initiale du ballon ?
+                    </label>
+
+                    <input type="number"
+                           id="q1"
+                           step="0.1">
                 </div>
+
+                <button class="btn" onclick="checkQ1()">Vérifier</button>
+                <div id="fb-q1" class="feedback"></div>
+            </div>
+
+            <div class="exercice-card">
+                <h3>💰 Bénéfice</h3>
+
+                <p>
+                    Une entreprise modélise son bénéfice par :
+                </p>
+
+                <p class="formule">
+                    B(x) = −2x<sup>2</sup> + 20x − 30
+                </p>
+
+                <p>
+                    x représente des centaines d'objets.
+                </p>
+
+                <div class="input-group">
+                    <label for="q2">
+                        Pour combien de centaines d'objets le bénéfice est-il maximal ?
+                    </label>
+
+                    <input type="number"
+                           id="q2"
+                           step="1">
+                </div>
+
+                <button class="btn" onclick="checkQ2()">Vérifier</button>
+                <div id="fb-q2" class="feedback"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TRANSFÉRER -->
+    <section id="page-transfert" class="page">
+        <div class="card">
+
+            <h2>🌍 Problèmes concrets</h2>
+
+            <div class="exercice-card">
+                <h3>🚀 Fusée</h3>
+
+                <p>
+                    La hauteur d'une fusée miniature est modélisée par :
+                </p>
+
+                <p class="formule">
+                    h(t) = −5t<sup>2</sup> + 40t
+                </p>
+
+                <div class="input-group">
+                    <label for="q3">
+                        Quelle est sa hauteur maximale en mètres ?
+                    </label>
+
+                    <input type="number"
+                           id="q3"
+                           step="1">
+                </div>
+
+                <button class="btn" onclick="checkQ3()">Vérifier</button>
+                <div id="fb-q3" class="feedback"></div>
+            </div>
+
+            <div class="exercice-card">
+                <h3>📦 Boîte optimale</h3>
+
+                <p>
+                    Le volume d'une boîte est donné par :
+                </p>
+
+                <p class="formule">
+                    V(x) = x(30 − 2x)<sup>2</sup>
+                </p>
+
+                <p>
+                    Dans ce modèle, 0 &lt; x &lt; 15.
+                </p>
+
+                <div class="input-group">
+                    <label for="q4">
+                        Quelle valeur de x donne le volume maximal ?
+                    </label>
+
+                    <input type="number"
+                           id="q4"
+                           step="0.5">
+                </div>
+
+                <button class="btn" onclick="checkQ4()">Vérifier</button>
+                <div id="fb-q4" class="feedback"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="page-quiz" class="page">
+        <div class="card">
+
+            <h2>📝 Quiz final</h2>
+
+            <div id="quiz-intro">
+                <p>
+                    15 questions pour tester tes connaissances sur les fonctions du 2e degré.
+                </p>
+
+                <button class="btn btn-success"
+                        onclick="startQuiz()"
+                        style="font-size:1.2em; padding:15px 40px;">
+                    🚀 Commencer
+                </button>
+            </div>
+
+            <div id="quiz-area" class="hidden">
+
+                <p>
+                    Question
+                    <span id="q-num">1</span>/<span id="q-total">15</span>
+                    |
+                    Bonnes réponses :
+                    <span id="q-score">0</span>
+                </p>
 
                 <div class="progress-bar">
-                    <div class="progress-fill" id="progress-bar" style="width:0%;"></div>
+                    <div class="progress-fill"
+                         id="q-progress"
+                         style="width:0%;">
+                    </div>
                 </div>
-                <p>Progression : <span id="progress-text">0</span>%</p>
+
+                <div id="q-content" class="exercice-card"></div>
+
+                <button class="btn"
+                        id="btn-next"
+                        onclick="nextQ()"
+                        disabled>
+                    Valider la réponse
+                </button>
+            </div>
+
+            <div id="quiz-end" class="hidden">
+
+                <h3>🎉 Quiz terminé !</h3>
+
+                <p>
+                    Ta note :
+                </p>
+
+                <div>
+                    <span class="stat-value"
+                          id="final-score">
+                        0
+                    </span>
+                    <strong>/20</strong>
+                </div>
+
+                <p id="quiz-message"></p>
+
+                <button class="btn"
+                        onclick="restartQuiz()">
+                    🔄 Recommencer
+                </button>
+
             </div>
         </div>
+    </section>
 
-        <!-- DÉCOUVRIR -->
-        <div id="page-decouvrir" class="page">
-            <div class="card">
-                <h2>🔍 Explorer les fonctions quadratiques</h2>
-                <p>Modifie a, b et c pour voir la parabole changer !</p>
+    <!-- PROGRÈS -->
+    <section id="page-progres" class="page">
+        <div class="card">
 
-                <div style="text-align:center; margin:20px 0;">
-                    <canvas id="canvas" width="600" height="400"></canvas>
+            <h2>📊 Tes progrès</h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-value"
+                         id="stat-exo">
+                        0
+                    </div>
+                    <div>Exercices réussis</div>
                 </div>
 
-                <div class="slider-container">
-                    <label>a (concavité··é·») : <span id="val-a">1</span></label>
-                    <input type="range" id="slide-a" min="-5" max="5" step="0.5" value="1" oninput="majGraphique()">
+                <div class="stat-card">
+                    <div class="stat-value"
+                         id="stat-quiz">
+                        0/20
+                    </div>
+                    <div>Meilleur quiz</div>
                 </div>
 
-                <div class="slider-container">
-                    <label>b (dé··calage) : <span id="val-b">0</span></label>
-                    <input type="range" id="slide-b" min="-10" max="10" step="0.5" value="0" oninput="majGraphique()">
-                </div>
-
-                <div class="slider-container">
-                    <label>c (hauteur) : <span id="val-c">0</span></label>
-                    <input type="range" id="slide-c" min="-10" max="10" step="0.5" value="0" oninput="majGraphique()">
-                </div>
-
-                <div class="card" style="background:#e8f4fc;">
-                    <h3>📝 J'observe</h3>
-                    <p><strong>f(x) = </strong><span id="expr-func">1x<sup>2</sup> + 0x + 0</span></p>
-                    <p><strong>Sommet :</strong> <span id="sommet">S(0 ; 0)</span></p>
-                    <p><strong>Concavité··é·» :</strong> <span id="concavite">vers le haut</span></p>
-                </div>
-
-                <div style="text-align:center;">
-                    <button class="btn" onclick="resetSlides()">🔄 Reset</button>
-                    <button class="btn" onclick="randomFunc()">🎲 Alé··atoire</button>
-                </div>
             </div>
+
+            <button class="btn btn-warning"
+                    onclick="clearProgress()">
+                🗑️ Réinitialiser les progrès
+            </button>
+
         </div>
+    </section>
 
-        <!-- COMPRENDRE -->
-        <div id="page-comprendre" class="page">
-            <div class="card">
-                <h2>📖 Comprendre les notions</h2>
-                <p>Clique sur les cartes !</p>
+</main>
 
-                <div class="grid-container">
-                    <div class="flashcard" onclick="flip(this)">
-                        <div class="front">
-                            <h3>📐 Fonction du 2e degré</h3>
-                            <p>Clique pour voir…</p>
-                        </div>
-                        <div class="back hidden">
-                            <p><strong>f(x) = ax<sup>2</sup> + bx + c</strong></p>
-                            <p>avec a ≠ 0</p>
-                            <p>Exemple : f(x) = 2x<sup>2</sup> - 3x + 1</p>
-                        </div>
-                    </div>
+<footer>
+    <p>📐 Fonctions du 2e degré – 4e secondaire</p>
+</footer>
 
-                    <div class="flashcard" onclick="flip(this)">
-                        <div class="front">
-                            <h3>🎯 Sommet</h3>
-                            <p>Clique pour voir…</p>
-                        </div>
-                        <div class="back hidden">
-                            <p><strong>x<sub>S</sub> = -b / (2a)</strong></p>
-                            <p><strong>y<sub>S</sub> = f(x<sub>S</sub>)</strong></p>
-                        </div>
-                    </div>
+<script>
+    "use strict";
 
-                    <div class="flashcard" onclick="flip(this)">
-                        <div class="front">
-                            <h3>⚫ Zé··ros</h3>
-                            <p>Clique pour voir…</p>
-                        </div>
-                        <div class="back hidden">
-                            <p>Solutions de ax<sup>2</sup> + bx + c = 0</p>
-                            <p><strong>Δ = b<sup>2</sup> - 4ac</strong></p>
-                            <ul>
-                                <li>Δ > 0 : 2 zé··ros</li>
-                                <li>Δ = 0 : 1 zé··ro</li>
-                                <li>Δ < 0 : 0 zé··ro</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    /* =========================================================
+       ÉTAT DE L'APPLICATION
+       ========================================================= */
 
-        <!-- S'ENTRAÎ·NER -->
-        <div id="page-entrainer" class="page">
-            <div class="card">
-                <h2>💪 S'entraî··ner</h2>
-                
-                <div class="input-group">
-                    <label>Niveau :</label>
-                    <select id="niveau" onchange="nouvelExo()">
-                        <option value="1">Niveau 1 - Facile</option>
-                        <option value="2">Niveau 2 - Moyen</option>
-                        <option value="3">Niveau 3 - Difficile</option>
-                    </select>
-                </div>
+    var etat = {
+        exosOK: 0,
+        bestQuiz: 0,
+        qActuelle: 0,
+        score: 0,
+        questions: []
+    };
 
-                <div id="exo-container"></div>
+    var exoDejaValide = false;
+    var repChoisie = null;
+    var quizBloque = false;
 
-                <div style="text-align:center;">
-                    <button class="btn" onclick="nouvelExo()">🔄 Nouvel exercice</button>
-                </div>
-            </div>
-        </div>
+    /* =========================================================
+       BANQUE DE QUESTIONS DU QUIZ
+       ========================================================= */
 
-        <!-- RAISONNER -->
-        <div id="page-raisonner" class="page">
-            <div class="card">
-                <h2>🧠 Raisonner</h2>
-                
-                <div class="exercice-card">
-                    <h3>🏀 Tir au basket</h3>
-                    <p>h(t) = -5t<sup>2</sup> + 10t + 2 (hauteur en m, temps en s)</p>
-                    
-                    <div class="input-group">
-                        <label>Hauteur initiale ?</label>
-                        <input type="number" id="q1" step="0.1">
-                    </div>
-                    <button class="btn" onclick="checkQ1()">Vé··rifier</button>
-                    <div id="fb-q1" class="feedback"></div>
-                </div>
+    var questionsDB = [
+        {
+            q: "Quelle est la forme générale d'une fonction du 2e degré ?",
+            r: [
+                "f(x)=ax+b",
+                "f(x)=ax²+bx+c avec a≠0",
+                "f(x)=a/x"
+            ],
+            a: 1,
+            t: "comprendre"
+        },
+        {
+            q: "Si a>0, comment est orientée la parabole ?",
+            r: [
+                "Elle est ouverte vers le haut",
+                "Elle est ouverte vers le bas",
+                "Elle est horizontale"
+            ],
+            a: 0,
+            t: "comprendre"
+        },
+        {
+            q: "Si a<0, que représente le sommet ?",
+            r: [
+                "Un maximum",
+                "Un minimum",
+                "Toujours un zéro"
+            ],
+            a: 0,
+            t: "comprendre"
+        },
+        {
+            q: "Quelle formule donne l'abscisse du sommet ?",
+            r: [
+                "xS = −b/(2a)",
+                "xS = b/(2a)",
+                "xS = −c/a"
+            ],
+            a: 0,
+            t: "comprendre"
+        },
+        {
+            q: "Quelle est l'ordonnée à l'origine de f(x)=2x²−3x+7 ?",
+            r: [
+                "2",
+                "−3",
+                "7"
+            ],
+            a: 2,
+            t: "comprendre"
+        },
+        {
+            q: "Quelle est l'abscisse du sommet de f(x)=2x²−8x+3 ?",
+            r: [
+                "2",
+                "−2",
+                "4"
+            ],
+            a: 0,
+            t: "appliquer"
+        },
+        {
+            q: "Quel est le discriminant de x²−6x+9 ?",
+            r: [
+                "0",
+                "9",
+                "−9"
+            ],
+            a: 0,
+            t: "appliquer"
+        },
+        {
+            q: "Quels sont les zéros de x²−4 ?",
+            r: [
+                "−2 et 2",
+                "−4 et 4",
+                "Aucun"
+            ],
+            a: 0,
+            t: "appliquer"
+        },
+        {
+            q: "Combien de solutions réelles possède une équation du second degré si Δ<0 ?",
+            r: [
+                "0",
+                "1",
+                "2"
+            ],
+            a: 0,
+            t: "appliquer"
+        },
+        {
+            q: "Combien de solutions réelles possède une équation du second degré si Δ>0 ?",
+            r: [
+                "0",
+                "1",
+                "2"
+            ],
+            a: 2,
+            t: "appliquer"
+        },
+        {
+            q: "Quel est l'axe de symétrie d'une parabole dont le sommet est S(3;−2) ?",
+            r: [
+                "x=3",
+                "y=3",
+                "x=−2"
+            ],
+            a: 0,
+            t: "appliquer"
+        },
+        {
+            q: "Pour f(x)=x²−4x+5, combien existe-t-il de zéros réels ?",
+            r: [
+                "0",
+                "1",
+                "2"
+            ],
+            a: 0,
+            t: "raisonner"
+        },
+        {
+            q: "Pour h(t)=−5t²+20t, à quel instant la hauteur est-elle maximale ?",
+            r: [
+                "t=2",
+                "t=4",
+                "t=5"
+            ],
+            a: 0,
+            t: "transferer"
+        },
+        {
+            q: "Pour h(t)=−5t²+40t, quelle est la hauteur maximale ?",
+            r: [
+                "40 m",
+                "80 m",
+                "160 m"
+            ],
+            a: 1,
+            t: "transferer"
+        },
+        {
+            q: "Un rectangle a un périmètre de 40 m. Quelles dimensions donnent l'aire maximale ?",
+            r: [
+                "10 m × 10 m",
+                "15 m × 5 m",
+                "12 m × 8 m"
+            ],
+            a: 0,
+            t: "transferer"
+        }
+    ];
 
-                <div class="exercice-card">
-                    <h3>💰 Bé•né··fice</h3>
-                    <p>B(x) = -2x<sup>2</sup> + 20x - 30 (x en centaines d'objets)</p>
-                    
-                    <div class="input-group">
-                        <label>Nombre d'objets pour max ?</label>
-                        <input type="number" id="q2" step="1">
-                    </div>
-                    <button class="btn" onclick="checkQ2()">Vé··rifier</button>
-                    <div id="fb-q2" class="feedback"></div>
-                </div>
-            </div>
-        </div>
+    /* =========================================================
+       CHARGEMENT
+       ========================================================= */
 
-        <!-- TRANSFERT -->
-        <div id="page-transfert" class="page">
-            <div class="card">
-                <h2>🌍 Problè··mes concrets</h2>
-                
-                <div class="exercice-card">
-                    <h3>🚀 Fusé··e</h3>
-                    <p>h(t) = -5t<sup>2</sup> + 40t</p>
-                    
-                    <div class="input-group">
-                        <label>Hauteur maximale ?</label>
-                        <input type="number" id="q3" step="1">
-                    </div>
-                    <button class="btn" onclick="checkQ3()">Vé··rifier</button>
-                    <div id="fb-q3" class="feedback"></div>
-                </div>
+    window.addEventListener("load", function () {
+        loadProgress();
+        majGraphique();
+        nouvelExo();
+    });
 
-                <div class="exercice-card">
-                    <h3>📦 Boî··te optimale</h3>
-                    <p>V(x) = x(30-2x)<sup>2</sup></p>
-                    
-                    <div class="input-group">
-                        <label>x pour volume max ?</label>
-                        <input type="number" id="q4" step="0.5">
-                    </div>
-                    <button class="btn" onclick="checkQ4()">Vé··rifier</button>
-                    <div id="fb-q4" class="feedback"></div>
-                </div>
-            </div>
-        </div>
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
 
-        <!-- QUIZ -->
-        <div id="page-quiz" class="page">
-            <div class="card">
-                <h2>📝 Quiz</h2>
-                
-                <div id="quiz-intro">
-                    <p>15 questions pour tester tes connaissances !</p>
-                    <button class="btn btn-success" onclick="startQuiz()" style="font-size:1.2em; padding:15px 40px;">
-                        🚀 Commencer
-                    </button>
-                </div>
+    function allerPage(page) {
+        var pageDemandee = document.getElementById("page-" + page);
+        var boutonDemande = document.getElementById("btn-" + page);
 
-                <div id="quiz-area" class="hidden">
-                    <p>Question <span id="q-num">1</span>/15 | Score : <span id="q-score">0</span></p>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="q-progress" style="width:0%;"></div>
-                    </div>
-                    <div id="q-content" class="exercice-card"></div>
-                    <button class="btn" id="btn-next" onclick="nextQ()" disabled>Suivant →</button>
-                </div>
+        if (!pageDemandee || !boutonDemande) {
+            console.error("Page inconnue :", page);
+            return;
+        }
 
-                <div id="quiz-end" class="hidden">
-                    <h3>🎉 Terminé·» !</h3>
-                    <div class="stat-value" id="final-score">0</div>/20
-                    <button class="btn" onclick="restartQuiz()">🔄 Recommencer</button>
-                </div>
-            </div>
-        </div>
+        document.querySelectorAll(".page").forEach(function (p) {
+            p.classList.remove("active");
+        });
 
-        <!-- PROGRÈ·S -->
-        <div id="page-progres" class="page">
-            <div class="card">
-                <h2>📊 Tes progrè··s</h2>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value" id="stat-exo">0</div>
-                        <div>Exercices OK</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" id="stat-quiz">0%</div>
-                        <div>Meilleur quiz</div>
-                    </div>
-                </div>
+        document.querySelectorAll("nav button").forEach(function (b) {
+            b.classList.remove("active");
+        });
 
-                <button class="btn btn-warning" onclick="clearProgress()">🗑️ Reset</button>
-            </div>
-        </div>
-    </main>
+        pageDemandee.classList.add("active");
+        boutonDemande.classList.add("active");
 
-    <footer>
-        <p>📐 Fonctions du 2e degré – 4e secondaire</p>
-    </footer>
+        if (page === "decouvrir") {
+            setTimeout(majGraphique, 50);
+        }
 
-    <script>
-        // ÉTAT
-        var etat = {
-            exosOK: 0,
-            bestQuiz: 0,
-            qActuelle: 0,
-            score: 0,
-            questions: []
-        };
+        if (page === "progres") {
+            majStats();
+        }
 
-        // QUESTIONS QUIZ
-        var questionsDB = [
-            { q: "Forme gé•né··rale ?", r: ["f(x)=ax+b", "f(x)=ax<sup>2</sup>+bx+c", "f(x)=a/x"], a: 1, t: "comprendre" },
-            { q: "Si a>0, concavité··é·» ?", r: ["Haut", "Bas", "Droite"], a: 0, t: "comprendre" },
-            { q: "Sommet de f(x)=2x<sup>2</sup>-8x+3 ?", r: ["x=2", "x=-2", "x=4"], a: 0, t: "appliquer" },
-            { q: "Δ de x<sup>2</sup>-6x+9 ?", r: ["0", "9", "-9"], a: 0, t: "appliquer" },
-            { q: "Zé··ros de x<sup>2</sup>-4 ?", r: ["2 et -2", "4 et -4", "Aucun"], a: 0, t: "appliquer" },
-            { q: "h(t)=-5t<sup>2</sup>+20t, max à ?", r: ["t=2", "t=4", "t=5"], a: 0, t: "transferer" },
-            { q: "Aire max, pé•rimè··tre 40m ?", r: ["10×¬10", "15×¬5", "12×¬8"], a: 0, t: "transferer" }
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    /* =========================================================
+       OUTILS
+       ========================================================= */
+
+    function afficherNombre(n) {
+        if (!Number.isFinite(n)) {
+            return "—";
+        }
+
+        if (Math.abs(n - Math.round(n)) < 0.000001) {
+            return String(Math.round(n));
+        }
+
+        return n.toFixed(2).replace(".", ",");
+    }
+
+    function enregistrerExerciceReussi() {
+        if (!exoDejaValide) {
+            etat.exosOK++;
+            exoDejaValide = true;
+            saveProgress();
+        }
+    }
+
+    function resultatFeedback(id, correct, messageCorrect, messageErreur) {
+        var fb = document.getElementById(id);
+
+        if (!fb) {
+            return;
+        }
+
+        if (correct) {
+            fb.innerHTML = messageCorrect;
+            fb.className = "feedback success";
+        } else {
+            fb.innerHTML = messageErreur;
+            fb.className = "feedback error";
+        }
+    }
+
+    /* =========================================================
+       GRAPHIQUE
+       ========================================================= */
+
+    function majGraphique() {
+        var sliderA = document.getElementById("slide-a");
+        var sliderB = document.getElementById("slide-b");
+        var sliderC = document.getElementById("slide-c");
+
+        if (!sliderA || !sliderB || !sliderC) {
+            return;
+        }
+
+        var a = parseFloat(sliderA.value);
+        var b = parseFloat(sliderB.value);
+        var c = parseFloat(sliderC.value);
+
+        /*
+         * Une fonction du 2e degré exige a ≠ 0.
+         * Le curseur HTML peut malgré tout atteindre 0.
+         * On le replace donc automatiquement sur 0,5.
+         */
+        if (Math.abs(a) < 0.000001) {
+            a = 0.5;
+            sliderA.value = "0.5";
+        }
+
+        document.getElementById("val-a").textContent = afficherNombre(a);
+        document.getElementById("val-b").textContent = afficherNombre(b);
+        document.getElementById("val-c").textContent = afficherNombre(c);
+
+        var expr = "f(x) = ";
+
+        if (a === 1) {
+            expr += "x<sup>2</sup>";
+        } else if (a === -1) {
+            expr += "−x<sup>2</sup>";
+        } else {
+            expr += afficherNombre(a) + "x<sup>2</sup>";
+        }
+
+        if (b !== 0) {
+            expr += b > 0
+                ? " + " + afficherNombre(Math.abs(b)) + "x"
+                : " − " + afficherNombre(Math.abs(b)) + "x";
+        }
+
+        if (c !== 0) {
+            expr += c > 0
+                ? " + " + afficherNombre(Math.abs(c))
+                : " − " + afficherNombre(Math.abs(c));
+        }
+
+        document.getElementById("expr-func").innerHTML = expr;
+
+        var xs = -b / (2 * a);
+        var ys = a * xs * xs + b * xs + c;
+
+        document.getElementById("sommet").textContent =
+            "S(" + afficherNombre(xs) + " ; " + afficherNombre(ys) + ")";
+
+        document.getElementById("axe-symetrie").textContent =
+            "x = " + afficherNombre(xs);
+
+        document.getElementById("concavite").textContent =
+            a > 0
+                ? "vers le haut ∪"
+                : "vers le bas ∩";
+
+        document.getElementById("ordonnee-origine").textContent =
+            afficherNombre(c);
+
+        dessiner(a, b, c);
+    }
+
+    function dessiner(a, b, c) {
+        var canvas = document.getElementById("canvas");
+
+        if (!canvas) {
+            return;
+        }
+
+        var ctx = canvas.getContext("2d");
+
+        if (!ctx) {
+            return;
+        }
+
+        var w = canvas.width;
+        var h = canvas.height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        var cx = w / 2;
+        var cy = h / 2;
+        var scale = 35;
+
+        ctx.font = "12px Segoe UI, Arial";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+
+        /* Grille secondaire */
+        ctx.strokeStyle = "#eef4f8";
+        ctx.lineWidth = 1;
+
+        for (var gx = cx % (scale / 2); gx < w; gx += scale / 2) {
+            ctx.beginPath();
+            ctx.moveTo(gx, 0);
+            ctx.lineTo(gx, h);
+            ctx.stroke();
+        }
+
+        for (var gy = cy % (scale / 2); gy < h; gy += scale / 2) {
+            ctx.beginPath();
+            ctx.moveTo(0, gy);
+            ctx.lineTo(w, gy);
+            ctx.stroke();
+        }
+
+        /* Grille principale */
+        ctx.strokeStyle = "#d7e7f2";
+
+        for (var x = cx % scale; x < w; x += scale) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, h);
+            ctx.stroke();
+        }
+
+        for (var y = cy % scale; y < h; y += scale) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(w, y);
+            ctx.stroke();
+        }
+
+        /* Axes */
+        ctx.strokeStyle = "#1a3a52";
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.moveTo(0, cy);
+        ctx.lineTo(w, cy);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(cx, 0);
+        ctx.lineTo(cx, h);
+        ctx.stroke();
+
+        /* Graduations et nombres */
+        ctx.fillStyle = "#1a3a52";
+
+        for (var i = -9; i <= 9; i++) {
+            var px = cx + i * scale;
+
+            if (px >= 0 && px <= w) {
+                ctx.beginPath();
+                ctx.moveTo(px, cy - 4);
+                ctx.lineTo(px, cy + 4);
+                ctx.stroke();
+
+                if (i !== 0) {
+                    ctx.fillText(String(i), px, cy + 7);
+                }
+            }
+        }
+
+        ctx.textAlign = "left";
+        ctx.textBaseline = "middle";
+
+        for (var j = -6; j <= 6; j++) {
+            var py = cy - j * scale;
+
+            if (py >= 0 && py <= h) {
+                ctx.beginPath();
+                ctx.moveTo(cx - 4, py);
+                ctx.lineTo(cx + 4, py);
+                ctx.stroke();
+
+                if (j !== 0) {
+                    ctx.fillText(String(j), cx + 8, py);
+                }
+            }
+        }
+
+        ctx.fillText("x", w - 16, cy - 14);
+        ctx.fillText("y", cx + 10, 14);
+        ctx.fillText("0", cx + 8, cy + 13);
+
+        /* Parabole */
+        ctx.strokeStyle = "#4a90d9";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+
+        var started = false;
+
+        for (var pixelX = 0; pixelX <= w; pixelX++) {
+            var xGraph = (pixelX - cx) / scale;
+            var yGraph = a * xGraph * xGraph + b * xGraph + c;
+            var pixelY = cy - yGraph * scale;
+
+            if (pixelY >= -500 && pixelY <= h + 500) {
+                if (!started) {
+                    ctx.moveTo(pixelX, pixelY);
+                    started = true;
+                } else {
+                    ctx.lineTo(pixelX, pixelY);
+                }
+            } else {
+                started = false;
+            }
+        }
+
+        ctx.stroke();
+
+        /* Sommet */
+        var xs = -b / (2 * a);
+        var ys = a * xs * xs + b * xs + c;
+        var pxSommet = cx + xs * scale;
+        var pySommet = cy - ys * scale;
+
+        if (
+            pxSommet >= 0 &&
+            pxSommet <= w &&
+            pySommet >= 0 &&
+            pySommet <= h
+        ) {
+            ctx.fillStyle = "#fd7e14";
+
+            ctx.beginPath();
+            ctx.arc(pxSommet, pySommet, 6, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.font = "bold 12px Segoe UI, Arial";
+            ctx.fillText(
+                "S(" + afficherNombre(xs) + " ; " + afficherNombre(ys) + ")",
+                pxSommet + 10,
+                pySommet - 12
+            );
+        }
+    }
+
+    function resetSlides() {
+        document.getElementById("slide-a").value = "1";
+        document.getElementById("slide-b").value = "0";
+        document.getElementById("slide-c").value = "0";
+        majGraphique();
+    }
+
+    function randomFunc() {
+        /*
+         * Valeurs choisies sur la grille de pas 0,5
+         * et a ne peut jamais être égal à zéro.
+         */
+        var valeursA = [
+            -4, -3.5, -3, -2.5, -2, -1.5, -1, -0.5,
+             0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4
         ];
 
-        // CHARGEMENT
-        window.onload = function() {
-            loadProgress();
-            majGraphique();
-            nouvelExo();
-        };
+        var a = valeursA[Math.floor(Math.random() * valeursA.length)];
+        var b = (Math.floor(Math.random() * 33) - 16) / 2;
+        var c = (Math.floor(Math.random() * 33) - 16) / 2;
 
-        // NAVIGATION
-        function allerPage(page) {
-            // Cacher toutes les pages
-            var pages = document.querySelectorAll('.page');
-            for (var i = 0; i < pages.length; i++) {
-                pages[i].classList.remove('active');
-            }
-            
-            // Désactiver tous les boutons
-            var btns = document.querySelectorAll('nav button');
-            for (var j = 0; j < btns.length; j++) {
-                btns[j].classList.remove('active');
-            }
-            
-            // Afficher page demand é•e
-            document.getElementById('page-' + page).classList.add('active');
-            document.getElementById('btn-' + page).classList.add('active');
-            
-            // Actions spé•cifiques
-            if (page === 'decouvrir') {
-                setTimeout(majGraphique, 100);
-            }
-            
-            window.scrollTo(0, 0);
-            console.log('Page : ' + page);
+        document.getElementById("slide-a").value = String(a);
+        document.getElementById("slide-b").value = String(b);
+        document.getElementById("slide-c").value = String(c);
+
+        majGraphique();
+    }
+
+    /* =========================================================
+       FLASHCARDS
+       ========================================================= */
+
+    function flip(card) {
+        var front = card.querySelector(".front");
+        var back = card.querySelector(".back");
+
+        if (!front || !back) {
+            return;
         }
 
-        // GRAPHIQUE
-        function majGraphique() {
-            var a = parseFloat(document.getElementById('slide-a').value);
-            var b = parseFloat(document.getElementById('slide-b').value);
-            var c = parseFloat(document.getElementById('slide-c').value);
-            
-            document.getElementById('val-a').textContent = a;
-            document.getElementById('val-b').textContent = b;
-            document.getElementById('val-c').textContent = c;
-            
-            // Expression
-            var expr = 'f(x) = ' + a + 'x<sup>2</sup>';
-            if (b !== 0) expr += (b > 0 ? ' + ' : ' - ') + Math.abs(b) + 'x';
-            if (c !== 0) expr += (c > 0 ? ' + ' : ' - ') + Math.abs(c);
-            document.getElementById('expr-func').innerHTML = expr;
-            
-            // Sommet
-            var xs = -b / (2 * a);
-            var ys = a * xs * xs + b * xs + c;
-            document.getElementById('sommet').textContent = 'S(' + xs.toFixed(2) + ' ; ' + ys.toFixed(2) + ')';
-            
-            // Concavité··é·»
-            document.getElementById('concavite').textContent = a > 0 ? 'vers le haut ∪' : 'vers le bas ∩';
-            
-            // Dessin
-            dessiner(a, b, c);
+        var versoCache = back.classList.contains("hidden");
+
+        front.classList.toggle("hidden", versoCache);
+        back.classList.toggle("hidden", !versoCache);
+    }
+
+    /* =========================================================
+       EXERCICES
+       ========================================================= */
+
+    function nouvelExo() {
+        exoDejaValide = false;
+
+        var niveauElement = document.getElementById("niveau");
+        var container = document.getElementById("exo-container");
+
+        if (!niveauElement || !container) {
+            return;
         }
 
-        function dessiner(a, b, c) {
-            var canvas = document.getElementById('canvas');
-            if (!canvas) return;
-            var ctx = canvas.getContext('2d');
-            var w = canvas.width;
-            var h = canvas.height;
-            
-            ctx.clearRect(0, 0, w, h);
-            
-            var cx = w / 2;
-            var cy = h / 2 + 50;
-            var scale = 30;
-            
-            // Grille
-            ctx.strokeStyle = '#e8f4fc';
-            ctx.lineWidth = 1;
-            for (var x = 0; x < w; x += scale) {
-                ctx.beginPath();
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, h);
-                ctx.stroke();
-            }
-            for (var y = 0; y < h; y += scale) {
-                ctx.beginPath();
-                ctx.moveTo(0, y);
-                ctx.lineTo(w, y);
-                ctx.stroke();
-            }
-            
-            // Axes
-            ctx.strokeStyle = '#1a3a52';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.moveTo(0, cy);
-            ctx.lineTo(w, cy);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(cx, 0);
-            ctx.lineTo(cx, h);
-            ctx.stroke();
-            
-            // Parabole
-            ctx.strokeStyle = '#4a90d9';
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            
-            var started = false;
-            for (var px = 0; px < w; px++) {
-                var gx = (px - cx) / scale;
-                var gy = a * gx * gx + b * gx + c;
-                var py = cy - gy * scale;
-                
-                if (py >= 0 && py <= h) {
-                    if (!started) {
-                        ctx.moveTo(px, py);
-                        started = true;
-                    } else {
-                        ctx.lineTo(px, py);
-                    }
-                } else {
-                    started = false;
-                }
-            }
-            ctx.stroke();
-            
-            // Sommet
-            if (a !== 0) {
-                var xs = -b / (2 * a);
-                var ys = a * xs * xs + b * xs + c;
-                var pxs = cx + xs * scale;
-                var pys = cy - ys * scale;
-                
-                if (pys >= 0 && pys <= h) {
-                    ctx.fillStyle = '#fd7e14';
-                    ctx.beginPath();
-                    ctx.arc(pxs, pys, 5, 0, 2 * Math.PI);
-                    ctx.fill();
-                }
-            }
-        }
+        var niveau = niveauElement.value;
 
-        function resetSlides() {
-            document.getElementById('slide-a').value = 1;
-            document.getElementById('slide-b').value = 0;
-            document.getElementById('slide-c').value = 0;
-            majGraphique();
-        }
+        if (niveau === "1") {
+            var coefficients = [
+                { a: 3, sens: "haut" },
+                { a: -2, sens: "bas" },
+                { a: 1.5, sens: "haut" },
+                { a: -4, sens: "bas" }
+            ];
 
-        function randomFunc() {
-            document.getElementById('slide-a').value = (Math.random() * 8 - 4).toFixed(1);
-            document.getElementById('slide-b').value = (Math.random() * 16 - 8).toFixed(1);
-            document.getElementById('slide-c').value = (Math.random() * 16 - 8).toFixed(1);
-            majGraphique();
-        }
+            var exo1 = coefficients[
+                Math.floor(Math.random() * coefficients.length)
+            ];
 
-        // FLASHCARDS
-        function flip(card) {
-            var front = card.querySelector('.front');
-            var back = card.querySelector('.back');
-            if (back.classList.contains('hidden')) {
-                front.classList.add('hidden');
-                back.classList.remove('hidden');
-            } else {
-                front.classList.remove('hidden');
-                back.classList.add('hidden');
-            }
-        }
-
-        // EXERCICES
-        function nouvelExo() {
-            var niveau = document.getElementById('niveau').value;
-            var container = document.getElementById('exo-container');
-            
-            if (niveau === '1') {
-                container.innerHTML = '<div class="exercice-card">' +
+            container.innerHTML =
+                '<div class="exercice-card">' +
                     '<h3><span class="badge badge-comprendre">Comprendre</span></h3>' +
-                    '<p>f(x) = 3x<sup>2</sup> - 2x + 1</p>' +
-                    '<p>Concavité··é·» ?</p>' +
-                    '<select id="exo1-r"><option value="">Choisir…</option><option value="haut">Haut</option><option value="bas">Bas</option></select>' +
-                    '<br><button class="btn" onclick="checkExo1()">OK</button>' +
+                    '<p>On considère une fonction du second degré dont le coefficient a vaut <strong>' +
+                    afficherNombre(exo1.a) +
+                    '</strong>.</p>' +
+                    '<p>Dans quel sens la parabole est-elle ouverte ?</p>' +
+                    '<select id="exo1-r">' +
+                        '<option value="">Choisir…</option>' +
+                        '<option value="haut">Vers le haut</option>' +
+                        '<option value="bas">Vers le bas</option>' +
+                    '</select>' +
+                    '<br>' +
+                    '<button class="btn" onclick="checkExo1(\'' +
+                    exo1.sens +
+                    '\',' +
+                    exo1.a +
+                    ')">Vérifier</button>' +
                     '<div id="exo1-fb" class="feedback"></div>' +
-                    '</div>';
-            } else if (niveau === '2') {
-                var a = Math.floor(Math.random() * 3) + 1;
-                var b = -2 * a * 2;
-                container.innerHTML = '<div class="exercice-card">' +
+                '</div>';
+        }
+
+        else if (niveau === "2") {
+            var a = Math.floor(Math.random() * 4) + 1;
+            var sommetX = Math.floor(Math.random() * 7) - 3;
+            var b = -2 * a * sommetX;
+            var c = Math.floor(Math.random() * 9) - 4;
+
+            var texteB = "";
+
+            if (b > 0) {
+                texteB = " + " + b + "x";
+            } else if (b < 0) {
+                texteB = " − " + Math.abs(b) + "x";
+            }
+
+            var texteC = "";
+
+            if (c > 0) {
+                texteC = " + " + c;
+            } else if (c < 0) {
+                texteC = " − " + Math.abs(c);
+            }
+
+            container.innerHTML =
+                '<div class="exercice-card">' +
                     '<h3><span class="badge badge-appliquer">Appliquer</span></h3>' +
-                    '<p>f(x) = ' + a + 'x<sup>2</sup> ' + (b >= 0 ? '+' : '') + b + 'x + 1</p>' +
-                    '<p>Abscisse du sommet ?</p>' +
+                    '<p>f(x) = ' +
+                    a +
+                    'x<sup>2</sup>' +
+                    texteB +
+                    texteC +
+                    '</p>' +
+                    '<p>Quelle est l’abscisse du sommet ?</p>' +
                     '<input type="number" id="exo2-r" step="0.5">' +
-                    '<br><button class="btn" onclick="checkExo2(2)">OK</button>' +
+                    '<br>' +
+                    '<button class="btn" onclick="checkExo2(' +
+                    sommetX +
+                    ',' +
+                    a +
+                    ',' +
+                    b +
+                    ')">Vérifier</button>' +
                     '<div id="exo2-fb" class="feedback"></div>' +
-                    '</div>';
-            } else {
-                container.innerHTML = '<div class="exercice-card">' +
+                '</div>';
+        }
+
+        else {
+            var exemples = [
+                {
+                    a: 1,
+                    b: -4,
+                    c: 5,
+                    delta: -4,
+                    solutions: 0
+                },
+                {
+                    a: 1,
+                    b: -4,
+                    c: 4,
+                    delta: 0,
+                    solutions: 1
+                },
+                {
+                    a: 1,
+                    b: -5,
+                    c: 6,
+                    delta: 1,
+                    solutions: 2
+                }
+            ];
+
+            var exo3 = exemples[
+                Math.floor(Math.random() * exemples.length)
+            ];
+
+            var bx = exo3.b >= 0
+                ? " + " + exo3.b + "x"
+                : " − " + Math.abs(exo3.b) + "x";
+
+            var cc = exo3.c >= 0
+                ? " + " + exo3.c
+                : " − " + Math.abs(exo3.c);
+
+            container.innerHTML =
+                '<div class="exercice-card">' +
                     '<h3><span class="badge badge-raisonner">Raisonner</span></h3>' +
-                    '<p>f(x) = x<sup>2</sup> - 4x + 5</p>' +
-                    '<p>Nombre de zé··ros ?</p>' +
-                    '<select id="exo3-r"><option value="">Choisir…</option><option value="0">0</option><option value="1">1</option><option value="2">2</option></select>' +
-                    '<br><button class="btn" onclick="checkExo3()">OK</button>' +
+                    '<p>f(x) = ' +
+                    exo3.a +
+                    'x<sup>2</sup>' +
+                    bx +
+                    cc +
+                    '</p>' +
+                    '<p>Combien cette fonction possède-t-elle de zéros réels ?</p>' +
+                    '<select id="exo3-r">' +
+                        '<option value="">Choisir…</option>' +
+                        '<option value="0">0</option>' +
+                        '<option value="1">1</option>' +
+                        '<option value="2">2</option>' +
+                    '</select>' +
+                    '<br>' +
+                    '<button class="btn" onclick="checkExo3(' +
+                    exo3.solutions +
+                    ',' +
+                    exo3.delta +
+                    ')">Vérifier</button>' +
                     '<div id="exo3-fb" class="feedback"></div>' +
-                    '</div>';
-            }
+                '</div>';
+        }
+    }
+
+    function checkExo1(reponse, a) {
+        var r = document.getElementById("exo1-r").value;
+        var correct = r === reponse;
+
+        if (correct) {
+            resultatFeedback(
+                "exo1-fb",
+                true,
+                "✅ Correct ! Comme a=" +
+                afficherNombre(a) +
+                (a > 0
+                    ? "&gt;0, la parabole est ouverte vers le haut."
+                    : "&lt;0, la parabole est ouverte vers le bas."),
+                ""
+            );
+
+            enregistrerExerciceReussi();
+        } else {
+            resultatFeedback(
+                "exo1-fb",
+                false,
+                "",
+                "❌ Observe le signe du coefficient a : " +
+                (a > 0
+                    ? "a&gt;0 signifie une ouverture vers le haut."
+                    : "a&lt;0 signifie une ouverture vers le bas.")
+            );
+        }
+    }
+
+    function checkExo2(reponse, a, b) {
+        var r = parseFloat(document.getElementById("exo2-r").value);
+
+        if (!Number.isFinite(r)) {
+            resultatFeedback(
+                "exo2-fb",
+                false,
+                "",
+                "❌ Introduis une réponse numérique."
+            );
+            return;
         }
 
-        function checkExo1() {
-            var r = document.getElementById('exo1-r').value;
-            var fb = document.getElementById('exo1-fb');
-            if (r === 'haut') {
-                fb.textContent = '✅ Bravo ! a=3>0 donc vers le haut.';
-                fb.className = 'feedback success';
-                etat.exosOK++;
-                saveProgress();
+        var correct = Math.abs(r - reponse) < 0.001;
+
+        if (correct) {
+            resultatFeedback(
+                "exo2-fb",
+                true,
+                "✅ Correct ! x<sub>S</sub> = −b/(2a) = −(" +
+                b +
+                ")/(2×" +
+                a +
+                ") = " +
+                afficherNombre(reponse) +
+                ".",
+                ""
+            );
+
+            enregistrerExerciceReussi();
+        } else {
+            resultatFeedback(
+                "exo2-fb",
+                false,
+                "",
+                "❌ Utilise x<sub>S</sub> = −b/(2a). Ici : −(" +
+                b +
+                ")/(2×" +
+                a +
+                ") = " +
+                afficherNombre(reponse) +
+                "."
+            );
+        }
+    }
+
+    function checkExo3(reponse, delta) {
+        var r = document.getElementById("exo3-r").value;
+        var correct = r === String(reponse);
+
+        var conclusion =
+            delta > 0
+                ? "Δ&gt;0 : deux zéros réels."
+                : delta === 0
+                    ? "Δ=0 : un zéro réel double."
+                    : "Δ&lt;0 : aucun zéro réel.";
+
+        if (correct) {
+            resultatFeedback(
+                "exo3-fb",
+                true,
+                "✅ Correct ! Δ = " +
+                delta +
+                ". " +
+                conclusion,
+                ""
+            );
+
+            enregistrerExerciceReussi();
+        } else {
+            resultatFeedback(
+                "exo3-fb",
+                false,
+                "",
+                "❌ Δ = " +
+                delta +
+                ". " +
+                conclusion
+            );
+        }
+    }
+
+    /* =========================================================
+       PROBLÈMES
+       ========================================================= */
+
+    function checkQ1() {
+        var r = parseFloat(document.getElementById("q1").value);
+        var correct = Number.isFinite(r) && Math.abs(r - 2) < 0.01;
+
+        resultatFeedback(
+            "fb-q1",
+            correct,
+            "✅ Correct ! La hauteur initiale correspond à h(0). Donc h(0)=2 m.",
+            "❌ La hauteur initiale est h(0). En remplaçant t par 0, on obtient h(0)=2 m."
+        );
+    }
+
+    function checkQ2() {
+        var r = parseFloat(document.getElementById("q2").value);
+        var correct =
+            Number.isFinite(r) &&
+            (Math.abs(r - 5) < 0.01 || Math.abs(r - 500) < 0.01);
+
+        resultatFeedback(
+            "fb-q2",
+            correct,
+            "✅ Correct ! x<sub>S</sub> = −20/(2×−2) = 5. Cela correspond à 500 objets.",
+            "❌ x<sub>S</sub> = −b/(2a) = −20/(2×−2) = 5, soit 500 objets."
+        );
+    }
+
+    function checkQ3() {
+        var r = parseFloat(document.getElementById("q3").value);
+        var correct = Number.isFinite(r) && Math.abs(r - 80) < 0.01;
+
+        resultatFeedback(
+            "fb-q3",
+            correct,
+            "✅ Correct ! Le sommet est atteint pour t=4 et h(4)=80 m.",
+            "❌ t<sub>S</sub> = −40/(2×−5)=4. Ensuite h(4)=80 m."
+        );
+    }
+
+    function checkQ4() {
+        var r = parseFloat(document.getElementById("q4").value);
+        var correct = Number.isFinite(r) && Math.abs(r - 5) < 0.01;
+
+        resultatFeedback(
+            "fb-q4",
+            correct,
+            "✅ Correct ! Dans l'intervalle 0&lt;x&lt;15, le volume est maximal pour x=5 cm.",
+            "❌ Le volume est maximal pour x=5 cm dans l'intervalle étudié."
+        );
+    }
+
+    /* =========================================================
+       QUIZ
+       ========================================================= */
+
+    function startQuiz() {
+        document.getElementById("quiz-intro").classList.add("hidden");
+        document.getElementById("quiz-end").classList.add("hidden");
+        document.getElementById("quiz-area").classList.remove("hidden");
+
+        etat.questions = questionsDB
+            .slice()
+            .sort(function () {
+                return Math.random() - 0.5;
+            });
+
+        etat.qActuelle = 0;
+        etat.score = 0;
+        repChoisie = null;
+        quizBloque = false;
+
+        document.getElementById("q-score").textContent = "0";
+        document.getElementById("q-total").textContent =
+            String(etat.questions.length);
+
+        showQ();
+    }
+
+    function showQ() {
+        var total = etat.questions.length;
+
+        if (
+            etat.qActuelle < 0 ||
+            etat.qActuelle >= total
+        ) {
+            endQuiz();
+            return;
+        }
+
+        var q = etat.questions[etat.qActuelle];
+
+        document.getElementById("q-num").textContent =
+            etat.qActuelle + 1;
+
+        document.getElementById("q-progress").style.width =
+            ((etat.qActuelle) / total * 100) + "%";
+
+        var html =
+            '<p><span class="badge badge-' +
+            q.t +
+            '">' +
+            q.t.charAt(0).toUpperCase() +
+            q.t.slice(1) +
+            '</span></p>' +
+            '<h3>' +
+            q.q +
+            '</h3>' +
+            '<div class="quiz-options">';
+
+        for (var i = 0; i < q.r.length; i++) {
+            html +=
+                '<button type="button" ' +
+                'class="exercice-card quiz-option" ' +
+                'style="display:block;width:100%;text-align:left;" ' +
+                'onclick="selectR(' +
+                i +
+                ', this)">' +
+                q.r[i] +
+                '</button>';
+        }
+
+        html += "</div>";
+
+        document.getElementById("q-content").innerHTML = html;
+
+        repChoisie = null;
+        quizBloque = false;
+
+        var btnNext = document.getElementById("btn-next");
+        btnNext.disabled = true;
+        btnNext.textContent = "Valider la réponse";
+    }
+
+    function selectR(i, element) {
+        if (quizBloque) {
+            return;
+        }
+
+        repChoisie = i;
+
+        var opts =
+            document.querySelectorAll(".quiz-options .quiz-option");
+
+        opts.forEach(function (option) {
+            option.style.borderColor = "transparent";
+            option.style.borderWidth = "2px";
+            option.style.background = "#f8f9fa";
+        });
+
+        element.style.borderColor = "#4a90d9";
+        element.style.background = "#e8f4fc";
+
+        document.getElementById("btn-next").disabled = false;
+    }
+
+    function nextQ() {
+        if (repChoisie === null || quizBloque) {
+            return;
+        }
+
+        quizBloque = true;
+
+        var btnNext = document.getElementById("btn-next");
+        btnNext.disabled = true;
+
+        var q = etat.questions[etat.qActuelle];
+
+        var opts =
+            document.querySelectorAll(".quiz-options .quiz-option");
+
+        if (repChoisie === q.a) {
+            etat.score++;
+            opts[repChoisie].style.background = "#d4edda";
+            opts[repChoisie].style.borderColor = "#28a745";
+        } else {
+            opts[repChoisie].style.background = "#f8d7da";
+            opts[repChoisie].style.borderColor = "#dc3545";
+
+            opts[q.a].style.background = "#d4edda";
+            opts[q.a].style.borderColor = "#28a745";
+        }
+
+        document.getElementById("q-score").textContent =
+            etat.score;
+
+        etat.qActuelle++;
+
+        document.getElementById("q-progress").style.width =
+            (etat.qActuelle / etat.questions.length * 100) + "%";
+
+        setTimeout(function () {
+            if (etat.qActuelle >= etat.questions.length) {
+                endQuiz();
             } else {
-                fb.textContent = '❌ a=3>0 donc vers le haut.';
-                fb.className = 'feedback error';
+                showQ();
             }
+        }, 1100);
+    }
+
+    function endQuiz() {
+        document.getElementById("quiz-area").classList.add("hidden");
+        document.getElementById("quiz-end").classList.remove("hidden");
+
+        var score20 =
+            Math.round(
+                etat.score /
+                etat.questions.length *
+                20 *
+                10
+            ) / 10;
+
+        document.getElementById("final-score").textContent =
+            String(score20).replace(".", ",");
+
+        var message = "";
+
+        if (score20 >= 16) {
+            message =
+                "Excellent travail ! Tu maîtrises très bien les notions.";
+        } else if (score20 >= 12) {
+            message =
+                "Bon travail. Quelques notions peuvent encore être consolidées.";
+        } else if (score20 >= 10) {
+            message =
+                "Les bases sont acquises. Revois les questions incorrectes.";
+        } else {
+            message =
+                "Reprends les cartes de cours et les exercices avant de refaire le quiz.";
         }
 
-        function checkExo2(rep) {
-            var r = parseFloat(document.getElementById('exo2-r').value);
-            var fb = document.getElementById('exo2-fb');
-            if (Math.abs(r - rep) < 0.1) {
-                fb.textContent = '✅ Correct ! x<sub>S</sub> = -b/(2a) = ' + rep;
-                fb.className = 'feedback success';
-                etat.exosOK++;
-                saveProgress();
-            } else {
-                fb.textContent = '❌ x<sub>S</sub> = -b/(2a) = ' + rep;
-                fb.className = 'feedback error';
-            }
+        document.getElementById("quiz-message").textContent =
+            message;
+
+        if (score20 > etat.bestQuiz) {
+            etat.bestQuiz = score20;
         }
 
-        function checkExo3() {
-            var r = document.getElementById('exo3-r').value;
-            var fb = document.getElementById('exo3-fb');
-            if (r === '0') {
-                fb.textContent = '✅ Δ = 16-20 = -4 < 0, donc 0 zé··ro.';
-                fb.className = 'feedback success';
-                etat.exosOK++;
-                saveProgress();
-            } else {
-                fb.textContent = '❌ Δ = 16-20 = -4 < 0, donc 0 zé··ro.';
-                fb.className = 'feedback error';
-            }
+        saveProgress();
+    }
+
+    function restartQuiz() {
+        document.getElementById("quiz-end").classList.add("hidden");
+        document.getElementById("quiz-intro").classList.remove("hidden");
+    }
+
+    /* =========================================================
+       PROGRÈS ET LOCALSTORAGE
+       ========================================================= */
+
+    function saveProgress() {
+        try {
+            localStorage.setItem(
+                "progresF2",
+                JSON.stringify({
+                    exosOK: etat.exosOK,
+                    bestQuiz: etat.bestQuiz
+                })
+            );
+        } catch (erreur) {
+            console.warn(
+                "Impossible d'enregistrer la progression.",
+                erreur
+            );
         }
 
-        // PROBLÈ·MES
-        function checkQ1() {
-            var r = parseFloat(document.getElementById('q1').value);
-            var fb = document.getElementById('fb-q1');
-            if (Math.abs(r - 2) < 0.1) {
-                fb.textContent = '✅ h(0) = 2m';
-                fb.className = 'feedback success';
-            } else {
-                fb.textContent = '❌ h(0) = 2m';
-                fb.className = 'feedback error';
-            }
-        }
+        majStats();
+    }
 
-        function checkQ2() {
-            var r = parseFloat(document.getElementById('q2').value);
-            var fb = document.getElementById('fb-q2');
-            if (Math.abs(r - 5) < 0.1 || Math.abs(r - 500) < 1) {
-                fb.textContent = '✅ x = 5 (500 objets)';
-                fb.className = 'feedback success';
-            } else {
-                fb.textContent = '❌ x = -20/(2×¬2) = 5 (500 objets)';
-                fb.className = 'feedback error';
-            }
-        }
+    function loadProgress() {
+        try {
+            var s = localStorage.getItem("progresF2");
 
-        function checkQ3() {
-            var r = parseFloat(document.getElementById('q3').value);
-            var fb = document.getElementById('fb-q3');
-            if (Math.abs(r - 80) < 1) {
-                fb.textContent = '✅ h(4) = 80m';
-                fb.className = 'feedback success';
-            } else {
-                fb.textContent = '❌ Sommet en t=4, h(4)=80m';
-                fb.className = 'feedback error';
-            }
-        }
-
-        function checkQ4() {
-            var r = parseFloat(document.getElementById('q4').value);
-            var fb = document.getElementById('fb-q4');
-            if (Math.abs(r - 5) < 0.5) {
-                fb.textContent = '✅ x = 5cm';
-                fb.className = 'feedback success';
-            } else {
-                fb.textContent = '❌ x = 5cm';
-                fb.className = 'feedback error';
-            }
-        }
-
-        // QUIZ
-        function startQuiz() {
-            document.getElementById('quiz-intro').classList.add('hidden');
-            document.getElementById('quiz-area').classList.remove('hidden');
-            
-            etat.questions = questionsDB.slice().sort(function() { return Math.random() - 0.5; });
-            etat.qActuelle = 0;
-            etat.score = 0;
-            
-            showQ();
-        }
-
-        function showQ() {
-            var q = etat.questions[etat.qActuelle];
-            document.getElementById('q-num').textContent = etat.qActuelle + 1;
-            document.getElementById('q-progress').style.width = (etat.qActuelle / 15 * 100) + '%';
-            
-            var html = '<p><span class="badge badge-' + q.t + '">' + q.t + '</span></p>' +
-                '<h3>' + q.q + '</h3><div class="quiz-options">';
-            
-            for (var i = 0; i < q.r.length; i++) {
-                html += '<div class="exercice-card" style="cursor:pointer;" onclick="selectR(' + i + ')">' + q.r[i] + '</div>';
-            }
-            html += '</div>';
-            
-            document.getElementById('q-content').innerHTML = html;
-            document.getElementById('btn-next').disabled = true;
-        }
-
-        var repChoisie = null;
-
-        function selectR(i) {
-            repChoisie = i;
-            var opts = document.querySelectorAll('.quiz-options .exercice-card');
-            for (var j = 0; j < opts.length; j++) {
-                opts[j].style.borderColor = j === i ? '#4a90d9' : 'transparent';
-                opts[j].style.borderWidth = '2px';
-            }
-            document.getElementById('btn-next').disabled = false;
-        }
-
-        function nextQ() {
-            var q = etat.questions[etat.qActuelle];
-            var opts = document.querySelectorAll('.quiz-options .exercice-card');
-            
-            if (repChoisie === q.a) {
-                etat.score++;
-                opts[repChoisie].style.background = '#d4edda';
-            } else {
-                opts[repChoisie].style.background = '#f8d7da';
-                opts[q.a].style.background = '#d4edda';
-            }
-            
-            document.getElementById('q-score').textContent = etat.score;
-            etat.qActuelle++;
-            
-            if (etat.qActuelle >= Math.min(15, etat.questions.length)) {
-                setTimeout(endQuiz, 1500);
-            } else {
-                repChoisie = null;
-                setTimeout(showQ, 1500);
-            }
-        }
-
-        function endQuiz() {
-            document.getElementById('quiz-area').classList.add('hidden');
-            document.getElementById('quiz-end').classList.remove('hidden');
-            
-            var score20 = Math.round(etat.score / etat.questions.length * 20);
-            document.getElementById('final-score').textContent = score20;
-            
-            if (score20 > etat.bestQuiz) {
-                etat.bestQuiz = score20;
-                saveProgress();
-            }
-        }
-
-        function restartQuiz() {
-            document.getElementById('quiz-end').classList.add('hidden');
-            document.getElementById('quiz-intro').classList.remove('hidden');
-        }
-
-        // PROGRÈ·S
-        function saveProgress() {
-            localStorage.setItem('progresF2', JSON.stringify({
-                exosOK: etat.exosOK,
-                bestQuiz: etat.bestQuiz
-            }));
-            majStats();
-        }
-
-        function loadProgress() {
-            var s = localStorage.getItem('progresF2');
             if (s) {
                 var d = JSON.parse(s);
-                etat.exosOK = d.exosOK || 0;
-                etat.bestQuiz = d.bestQuiz || 0;
+
+                etat.exosOK =
+                    Number.isFinite(Number(d.exosOK))
+                    ? Number(d.exosOK)
+                    : 0;
+
+                etat.bestQuiz =
+                    Number.isFinite(Number(d.bestQuiz))
+                    ? Number(d.bestQuiz)
+                    : 0;
             }
+        } catch (erreur) {
+            console.warn(
+                "Impossible de charger la progression.",
+                erreur
+            );
+
+            etat.exosOK = 0;
+            etat.bestQuiz = 0;
+        }
+
+        majStats();
+    }
+
+    function majStats() {
+        var statExo = document.getElementById("stat-exo");
+        var statQuiz = document.getElementById("stat-quiz");
+        var progressBar = document.getElementById("progress-bar");
+        var progressText = document.getElementById("progress-text");
+
+        if (statExo) {
+            statExo.textContent = etat.exosOK;
+        }
+
+        if (statQuiz) {
+            statQuiz.textContent =
+                String(etat.bestQuiz).replace(".", ",") +
+                "/20";
+        }
+
+        /*
+         * La progression n'est pas une note :
+         * chaque nouvel exercice réussi apporte 5 %,
+         * avec un maximum de 100 %.
+         */
+        var progression =
+            Math.min(100, etat.exosOK * 5);
+
+        if (progressBar) {
+            progressBar.style.width =
+                progression + "%";
+
+            progressBar.parentElement.setAttribute(
+                "aria-valuenow",
+                progression
+            );
+        }
+
+        if (progressText) {
+            progressText.textContent =
+                progression;
+        }
+    }
+
+    function clearProgress() {
+        if (
+            confirm(
+                "Supprimer les progrès enregistrés sur cet appareil ?"
+            )
+        ) {
+            try {
+                localStorage.removeItem("progresF2");
+            } catch (erreur) {
+                console.warn(erreur);
+            }
+
+            etat.exosOK = 0;
+            etat.bestQuiz = 0;
+
             majStats();
         }
+    }
+</script>
 
-        function majStats() {
-            document.getElementById('stat-exo').textContent = etat.exosOK;
-            document.getElementById('stat-quiz').textContent = etat.bestQuiz + '%';
-            document.getElementById('progress-bar').style.width = Math.min(100, etat.exosOK * 2) + '%';
-            document.getElementById('progress-text').textContent = Math.min(100, etat.exosOK * 2);
-        }
-
-        function clearProgress() {
-            if (confirm('Reset ?')) {
-                localStorage.removeItem('progresF2');
-                etat.exosOK = 0;
-                etat.bestQuiz = 0;
-                majStats();
-            }
-        }
-    </script>
 </body>
 </html>
